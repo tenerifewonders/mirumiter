@@ -1,9 +1,10 @@
-const CACHE_NAME = 'tw-app-v12';
+const CACHE_NAME = 'tw-app-v13';
 
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.json',
+  './bird.png',
   './icon-192.png',
   './icon-512.png',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
