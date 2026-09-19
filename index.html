@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenerife Wonders Audioguides</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="theme-color" content="#121212">
+
+  <!-- Leaflet & Supabase -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding-bottom: 60px;
+    }
+
+    /* Top App Header */
+    .app-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .app-title {
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lang-select {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 13px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Views */
+    .view-container { display: none; }
+    .view-container.active-view { display: block; }
+
+    /* Catalog Screen */
+    .catalog-hero {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffffff;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .catalog-hero h1 { margin: 0 0 8px 0; font-size: 22px; }
+    .catalog-hero p { margin: 0; font-size: 13px; color: #94a3b8; }
+
+    /* License Input Box */
+    .license-box {
+      max-width: 500px;
+      margin: 16px auto;
+      padding: 16px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+    }
+    .license-box h3 { margin: 0 0 8px 0; font-size: 14px; color: #334155; }
+    .license-form { display: flex; gap: 8px; }
+    .license-form input {
+      flex: 1;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+    }
+    .license-form button {
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .license-msg { font-size: 12px; margin-top: 8px; display: none; }
+    .license-msg.success { color: #16a34a; }
+    .license-msg.error { color: #dc2626; }
+
+    /* Guide Cards Grid */
+    .catalog-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .guide-card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease;
+    }
+    .guide-card:hover { transform: translateY(-2px); }
+    .guide-card-header {
+      padding: 16px;
+      background: #f8fafc;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .guide-card-title { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+    .guide-card-meta { font-size: 12px; color: #64748b; }
+    .guide-card-body { padding: 16px; flex: 1; }
+    .badge-status {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge-unlocked { background: #dcfce7; color: #15803d; }
+    .badge-locked { background: #fee2e2; color: #b91c1c; }
+
+    .btn-open-route {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      border-top: 1px solid #e2e8f0;
+    }
+    .btn-open-route.disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+    }
+
+    /* Player View Navbar */
+    .player-nav {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn-back {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+    }
+
+    /* Map & Action Buttons */
+    #map { height: 45vh; width: 100%; }
+
+    .action-bar-wrapper {
+      background: #f8f9fa;
+      border-bottom: 1px solid #e9ecef;
+      padding: 12px 15px;
+    }
+    .action-bar {
+      display: flex;
+      gap: 12px;
+      max-width: 520px;
+      margin: 0;
+    }
+    .action-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 14px;
+      background: #eef2f6;
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 25px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .action-btn:hover { background: #f0f0f0; border-color: #cbd5e1; }
+    .action-btn:active { transform: scale(0.97); background: #dbe2ea; }
+    .action-btn small {
+      display: block;
+      font-weight: 400;
+      color: #64748b;
+      font-size: 11px;
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+    .maps-btn { border-left: 3px solid #4285f4; }
+    .tips-btn { border-left: 3px solid #f59e0b; }
+
+    /* Offline Installation Banner (Option 3 Sol Nube) */
+    .install-banner {
+      margin: 8px 15px;
+      padding: 6px 12px;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #334155;
+      max-width: 520px;
+    }
+    .install-banner summary {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      color: #1e293b;
+      outline: none;
+      user-select: none;
+      list-style: none;
+    }
+    .install-banner summary::-webkit-details-marker { display: none; }
+    .install-banner summary .plus-icon {
+      font-size: 11px;
+      transition: transform 0.2s ease;
+      color: #475569;
+    }
+    .install-banner[open] summary .plus-icon { transform: rotate(45deg); }
+    .install-banner .install-steps {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed #fcd34d;
+      font-weight: 400;
+      font-size: 11.5px;
+      color: #475569;
+      line-height: 1.5;
+    }
+    .install-banner .install-steps div { margin-bottom: 4px; }
+    .install-banner .install-steps div:last-child { margin-bottom: 0; }
+
+    /* Audio Playlist (Option 1 Spotify Card Style) */
+    #audio-list {
+      padding: 15px;
+      list-style: none;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 600px;
+    }
+    #audio-list li {
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .track-opt1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .track-opt1:hover { background: #f8fafc; border-color: #cbd5e1; }
+    .track-opt1 .track-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 14px;
+    }
+    .track-opt1 .play-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: #0284c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+    .track-opt1 .track-arrow { color: #94a3b8; font-size: 16px; }
+    #audio-list li.active-track {
+      background: #e0f2fe !important;
+      border-left: 5px solid #0284c7 !important;
+    }
+
+    #audio-player { width: 100%; position: fixed; bottom: 0; left: 0; z-index: 9999; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top App Header -->
+  <header class="app-header">
+    <div class="app-title">
+      <span>🌋</span> Tenerife Wonders
+    </div>
+    <select id="app-lang-select" class="lang-select" onchange="changeLanguage(this.value)">
+      <option value="en">🇬🇧 English</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="fr">🇫🇷 Français</option>
+    </select>
+  </header>
+
+  <!-- VIEW 1: CATALOG / MY GUIDES DASHBOARD -->
+  <div id="catalog-view" class="view-container active-view">
+    <div class="catalog-hero">
+      <h1>My Audioguides</h1>
+      <p>Select a route to start your interactive offline tour</p>
+    </div>
+
+    <!-- License Activation Box -->
+    <div class="license-box">
+      <h3>🔑 Enter License Code</h3>
+      <div class="license-form">
+        <input type="text" id="license-input" placeholder="e.g. TW-HERITAGE-1234">
+        <button onclick="activateLicense()">Activate</button>
+      </div>
+      <div id="license-msg" class="license-msg"></div>
+    </div>
+
+    <!-- 9 Route Cards Grid -->
+    <div class="catalog-grid" id="catalog-grid">
+      <!-- Generated dynamically in JS -->
+    </div>
+  </div>
+
+  <!-- VIEW 2: MAP & PLAYER SCREEN -->
+  <div id="player-view" class="view-container">
+    <div class="player-nav">
+      <button class="btn-back" onclick="showCatalog()">◄ My Guides</button>
+      <div id="active-route-name" style="font-weight:700; font-size:14px;"></div>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="action-bar-wrapper">
+      <div class="action-bar">
+        <a id="btn-google-maps" href="#" target="_blank" class="action-btn maps-btn">
+          <span>📍</span>
+          <span>Google Maps <small>(Data required)</small></span>
+        </a>
+
+        <a id="btn-key-tips" href="#" target="_blank" class="action-btn tips-btn">
+          <span>⭐️</span>
+          <span>Key Tips</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Installation Notice -->
+    <details id="android-msg" class="install-banner" style="display:none;">
+      <summary>
+        <span class="plus-icon">➕</span>
+        <span>Offline installation</span>
+      </summary>
+      <div class="install-steps">
+        <div>Open browser menu ( ⁝ 3 dots at top right)</div>
+        <div>Select "Add to Home screen" or "Install"</div>
+      </div>
+    </details>
+
+    <details id="ios-msg" class="install-banner" style="display:none;">
+      <summary>
+        <span class="plus-icon">➕</span>
+        <span>Offline installation</span>
+      </summary>
+      <div class="install-steps">
+        <div>Tap Share button ( ⎋ box with arrow)</div>
+        <div>Scroll & select "Add to Home Screen"</div>
+      </div>
+    </details>
+
+    <!-- Playlist -->
+    <ul id="audio-list"></ul>
+
+    <!-- Fixed Audio Player Controls -->
+    <audio id="audio-player" controls controlsList="nodownload"></audio>
+  </div>
+
+  <!-- App Logic -->
+  <script>
+    // Supabase Configuration
+    const supabaseUrl = 'https://xzymbvnljudyypdyuisf.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6eW1idm5sanVkeXlwZHl1aXNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1MjExMDYsImV4cCI6MjA5MjA5NzEwNn0.LRCkSCRF-0rDVAFkSvImWUNas21yXHZ29pQYUUZi8RY';
+    const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+    // Master Catalog Data
+    const ROUTES_DATA = {
+      'quinta': {
+        id: 'quinta',
+        title: 'La Quinta',
+        center: [28.4340, -16.4940],
+        zoom: 15,
+        maxNativeZoom: 18,
+        stopsCount: 5,
+        tipsUrl: { en: './tips/EN-LA-QUINTA.html', es: './tips/ES-LA-QUINTA.html' },
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4307331,-16.4913284&destination=28.4361456,-16.4963526&waypoints=28.431655,-16.4922505%7C28.4379028,-16.4927503%7C28.4370121,-16.4965031&travelmode=walking'
+      },
+      'santa-cruz': {
+        id: 'santa-cruz',
+        title: 'Santa Cruz de Tenerife',
+        center: [28.4636, -16.2518],
+        zoom: 14,
+        maxNativeZoom: 17,
+        stopsCount: 14,
+        tipsUrl: { en: './tips/EN-SANTA-CRUZ.html', es: './tips/ES-SANTA-CRUZ.html' },
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4561009,-16.251352&destination=28.4679412,-16.2493033&travelmode=walking'
+      },
+      'teide': {
+        id: 'teide',
+        title: 'Teide National Park',
+        center: [28.2249, -16.6358],
+        zoom: 14,
+        maxNativeZoom: 17,
+        stopsCount: 8,
+        tipsUrl: { en: './tips/EN-TEIDE.html', es: './tips/ES-TEIDE.html' },
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.2230957,-16.631272&destination=28.2230957,-16.631272&travelmode=walking'
+      },
+      'anaga': {
+        id: 'anaga',
+        title: 'Anaga Rural Park',
+        center: [28.5330, -16.2640],
+        zoom: 12,
+        maxNativeZoom: 14,
+        stopsCount: 9,
+        tipsUrl: { en: './tips/EN-ANAGA.html', es: './tips/ES-ANAGA.html' },
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4859,-16.3135&destination=28.4808,-16.2409&travelmode=driving'
+      },
+      'la-laguna': {
+        id: 'la-laguna',
+        title: 'San Cristóbal de La Laguna',
+        center: [28.4889, -16.3160],
+        zoom: 15,
+        maxNativeZoom: 17,
+        stopsCount: 7,
+        tipsUrl: { en: './tips/EN-LA-LAGUNA.html', es: './tips/ES-LA-LAGUNA.html' },
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4905227,-16.320638&destination=28.4858577,-16.3134226&travelmode=walking'
+      },
+      'la-orotava': {
+        id: 'la-orotava',
+        title: 'La Orotava',
+        center: [28.3895, -16.5249],
+        zoom: 15,
+        maxNativeZoom: 17,
+        stopsCount: 10,
+        tipsUrl: { en: './tips/EN-LA-OROTAVA.html', es: './tips/ES-LA-OROTAVA.html' },
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.3906668,-16.5232417&destination=28.3890959,-16.5260499&travelmode=walking'
+      },
+      'puerto-cruz': {
+        id: 'puerto-cruz',
+        title: 'Puerto de la Cruz',
+        center: [28.4166, -16.5504],
+        zoom: 15,
+        maxNativeZoom: 17,
+        stopsCount: 10,
+        tipsUrl: { en: './tips/EN-PUERTO-CRUZ.html', es: './tips/ES-PUERTO-CRUZ.html' },
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4118131,-16.547949&destination=28.4127752,-16.5585252&travelmode=walking'
+      },
+      'candelaria': {
+        id: 'candelaria',
+        title: 'Candelaria',
+        center: [28.3512, -16.3694],
+        zoom: 15,
+        maxNativeZoom: 18,
+        stopsCount: 4,
+        tipsUrl: { en: './tips/EN-CANDELARIA.html', es: './tips/ES-CANDELARIA.html' },
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.3513008,-16.3697868&destination=28.3516713,-16.3694086&travelmode=walking'
+      },
+      'costa-adeje': {
+        id: 'costa-adeje',
+        title: 'Costa Adeje',
+        center: [28.0682, -16.7328],
+        zoom: 14,
+        maxNativeZoom: 17,
+        stopsCount: 14,
+        tipsUrl: { en: './tips/EN-COSTA-ADEJE.html', es: './tips/ES-COSTA-ADEJE.html' },
+        mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.0503209,-16.7177511&destination=28.091441,-16.7439204&travelmode=walking'
+      }
+    };
+
+    // Bundle Definitions
+    const BUNDLES = {
+      'heritage_collection': ['santa-cruz', 'anaga', 'la-orotava'],
+      'mystic_collection': ['teide', 'la-laguna', 'quinta'],
+      'seaside_collection': ['costa-adeje', 'puerto-cruz', 'candelaria'],
+      'all_access': Object.keys(ROUTES_DATA)
+    };
+
+    // App State
+    let currentLang = localStorage.getItem('tw_app_lang') || 'en';
+    let unlockedRoutes = JSON.parse(localStorage.getItem('tw_unlocked_routes') || '[]');
+    let map = null;
+    let geoJsonLayer = null;
+    let markersByAudio = {};
+    let activeMarker = null;
+    let userMarker = null;
+
+    // Initialization
+    window.addEventListener('DOMContentLoaded', async () => {
+      document.getElementById('app-lang-select').value = currentLang;
+
+      // Auto-check License from URL
+      const params = new URLSearchParams(window.location.search);
+      const licenseCode = params.get('license');
+      if (licenseCode) {
+        document.getElementById('license-input').value = licenseCode;
+        await activateLicense();
+      }
+
+      renderCatalog();
+
+      // PWA Notice
+      if (/iphone|ipad|ipod/i.test(navigator.userAgent) && !window.navigator.standalone) {
+        document.getElementById('ios-msg').style.display = 'block';
+      }
+      if (/android/i.test(navigator.userAgent) && !window.matchMedia('(display-mode: standalone)').matches) {
+        document.getElementById('android-msg').style.display = 'block';
+      }
+    });
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('tw_app_lang', lang);
+      renderCatalog();
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById('catalog-grid');
+      grid.innerHTML = '';
+
+      Object.values(ROUTES_DATA).forEach(route => {
+        const isUnlocked = unlockedRoutes.includes(route.id) || unlockedRoutes.includes('all_access');
+        
+        const card = document.createElement('div');
+        card.className = 'guide-card';
+        card.innerHTML = `
+          <div class="guide-card-header">
+            <div class="guide-card-title">${route.title}</div>
+            <div class="guide-card-meta">📍 ${route.stopsCount} Audio Stops</div>
+          </div>
+          <div class="guide-card-body">
+            <span class="badge-status ${isUnlocked ? 'badge-unlocked' : 'badge-locked'}">
+              ${isUnlocked ? '✅ Ready to Listen' : '🔒 License Required'}
+            </span>
+          </div>
+          <button class="btn-open-route ${isUnlocked ? '' : 'disabled'}" ${isUnlocked ? `onclick="openRoute('${route.id}')"` : 'disabled'}>
+            ${isUnlocked ? 'Open Audioguide ➔' : 'Locked'}
+          </button>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    async function activateLicense() {
+      const input = document.getElementById('license-input');
+      const msg = document.getElementById('license-msg');
+      const code = input.value.trim();
+
+      if (!code) return;
+
+      msg.style.display = 'block';
+      msg.className = 'license-msg';
+      msg.textContent = 'Validating license with Supabase...';
+
+      const { data, error } = await supabaseClient
+        .from('licenses')
+        .select('guide')
+        .eq('license_code', code);
+
+      if (error || !data || data.length === 0) {
+        msg.className = 'license-msg error';
+        msg.textContent = '❌ Invalid or expired license code.';
+        return;
+      }
+
+      // Process unlocked routes
+      data.forEach(row => {
+        const guideKey = row.guide.toLowerCase();
+        if (BUNDLES[guideKey]) {
+          BUNDLES[guideKey].forEach(r => {
+            if (!unlockedRoutes.includes(r)) unlockedRoutes.push(r);
+          });
+        } else {
+          // Normalize e.g. "quinta_en" to "quinta"
+          const cleanKey = guideKey.split('_')[0];
+          if (!unlockedRoutes.includes(cleanKey)) unlockedRoutes.push(cleanKey);
+        }
+      });
+
+      localStorage.setItem('tw_unlocked_routes', JSON.stringify(unlockedRoutes));
+      msg.className = 'license-msg success';
+      msg.textContent = '🎉 License activated successfully!';
+      renderCatalog();
+    }
+
+    function showCatalog() {
+      document.getElementById('player-view').classList.remove('active-view');
+      document.getElementById('catalog-view').classList.add('active-view');
+    }
+
+    function openRoute(routeId) {
+      const route = ROUTES_DATA[routeId];
+      if (!route) return;
+
+      document.getElementById('active-route-name').textContent = `${route.title} (${currentLang.toUpperCase()})`;
+      document.getElementById('btn-google-maps').href = route.mapsUrl;
+      document.getElementById('btn-key-tips').href = route.tipsUrl[currentLang] || route.tipsUrl['en'];
+
+      document.getElementById('catalog-view').classList.remove('active-view');
+      document.getElementById('player-view').classList.add('active-view');
+
+      initMapAndRoute(route);
+    }
+
+    function initMapAndRoute(route) {
+      if (!map) {
+        map = L.map('map', { attributionControl: false });
+      }
+
+      map.setView(route.center, route.zoom);
+
+      L.tileLayer('./tiles/' + route.id + '/{z}/{x}/{y}.png', {
+        minZoom: 10,
+        maxZoom: 18,
+        maxNativeZoom: route.maxNativeZoom,
+        tileSize: 256
+      }).addTo(map);
+
+      if (geoJsonLayer) map.removeLayer(geoJsonLayer);
+      markersByAudio = {};
+
+      const audioList = document.getElementById('audio-list');
+      audioList.innerHTML = '';
+
+      fetch(`./routes/${route.id}.geojson`)
+        .then(res => res.json())
+        .then(data => {
+          geoJsonLayer = L.geoJSON(data, {
+            onEachFeature: (feature, layer) => {
+              const audioUrl = feature.properties.audio;
+              const name = feature.properties.Name;
+              layer.bindPopup(name);
+
+              if (audioUrl) {
+                markersByAudio[audioUrl] = layer;
+
+                // Render Option 1 Track Card
+                const li = document.createElement('li');
+                li.className = 'track-opt1';
+                li.setAttribute('data-audio', audioUrl);
+                li.innerHTML = `
+                  <div class="track-left">
+                    <span class="play-badge">▶</span>
+                    <span>${name}</span>
+                  </div>
+                  <span class="track-arrow">›</span>
+                `;
+                li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
+                audioList.appendChild(li);
+              }
+
+              layer.on('click', () => activateTrack(audioUrl, 'marker'));
+            }
+          }).addTo(map);
+        });
+
+      // Geolocation
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          pos => updatePosition(pos.coords.latitude, pos.coords.longitude),
+          err => console.warn("[GPS]", err.message)
+        );
+        navigator.geolocation.watchPosition(
+          pos => updatePosition(pos.coords.latitude, pos.coords.longitude),
+          err => console.warn("[GPS Watch]", err.message)
+        );
+      }
+    }
+
+    function activateTrack(audioUrl, triggerSource) {
+      const player = document.getElementById("audio-player");
+      if (player.src !== audioUrl) {
+        player.src = audioUrl;
+        player.play();
+      } else if (player.paused) {
+        player.play();
+      }
+
+      document.querySelectorAll("#audio-list li").forEach(li => {
+        if (li.getAttribute("data-audio") === audioUrl) {
+          li.classList.add("active-track");
+          if (triggerSource !== 'list') {
+            li.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        } else {
+          li.classList.remove("active-track");
+        }
+      });
+
+      const marker = markersByAudio[audioUrl];
+      if (marker) {
+        if (activeMarker && activeMarker._icon) {
+          activeMarker._icon.classList.remove("marker-active");
+        }
+        activeMarker = marker;
+        if (marker._icon) {
+          marker._icon.classList.add("marker-active");
+        }
+        if (triggerSource !== 'marker') {
+          marker.openPopup();
+          map.setView(marker.getLatLng(), map.getZoom() < 14 ? 14 : map.getZoom(), { animate: true });
+        }
+      }
+    }
+
+    function updatePosition(lat, lng) {
+      const latlng = [lat, lng];
+      if (!userMarker) {
+        userMarker = L.circleMarker(latlng, {
+          radius: 8,
+          color: "#007bff",
+          fillColor: "#3fa0ff",
+          fillOpacity: 0.8
+        }).addTo(map);
+      } else {
+        userMarker.setLatLng(latlng);
+      }
+    }
+  </script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./service-worker.js").then(reg => {
+        if (reg.waiting) {
+          reg.waiting.postMessage({ type: "SKIP_WAITING" });
+        }
+      });
+
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches 
+                        || window.navigator.standalone === true 
+                        || document.referrer.includes('android-app://');
+
+      if (isStandalone) {
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          if (!refreshing) {
+            refreshing = true;
+            window.location.reload();
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>
