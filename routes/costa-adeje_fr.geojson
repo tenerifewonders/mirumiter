@@ -5,8 +5,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Playa de los Cristianos and Playa de las Vistas",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/1.mp3"
+        "Name": "1. Playa de Los Cristianos & Playa de Las Vistas",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -19,8 +19,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Playa del Camisón: The Perfect Balance",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/2.mp3"
+        "Name": "2. Playa del Camisón",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/2.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -33,8 +33,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. The Golden Mile",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/3.mp3"
+        "Name": "3. Golden Mile (Playa de las Américas)",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/3.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -47,8 +47,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Francisco Andrade Fumero Promenade",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/4.mp3"
+        "Name": "4. Promenade Francisco Andrade Fumero & Jardin Danilenko",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/4.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -61,8 +61,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. The Wind Trap",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/5.mp3"
+        "Name": "5. Sculpture du Piège à vent",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -75,8 +75,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Mirador del Dedo and the Natural Pool",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/6.mp3"
+        "Name": "6. Mirador del Dedo & piscine naturelle",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -89,8 +89,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7. BIC Zone 'El Búnker - El Medio'",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/7.mp3"
+        "Name": "7. BIC ZONE \"El Búnker - El Medio\"",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/7.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -103,8 +103,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8. Playa de las Américas (Surf Zone)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/8.mp3"
+        "Name": "8. Playa de las Américas (zone de surf)",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/8.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -118,7 +118,7 @@
       "type": "Feature",
       "properties": {
         "Name": "9. Playas de Troya",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/9.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/9.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -132,7 +132,7 @@
       "type": "Feature",
       "properties": {
         "Name": "10. Puerto Colón",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/10.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/10.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -146,7 +146,7 @@
       "type": "Feature",
       "properties": {
         "Name": "11. Playa de la Pinta",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/11.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/11.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -160,7 +160,7 @@
       "type": "Feature",
       "properties": {
         "Name": "12. Playa de Fañabé",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/12.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/12.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -173,8 +173,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "13. La Caleta and Parque de la Fresa",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/13.mp3"
+        "Name": "13. La Caleta & Parque de La Fresa",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/13.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -188,7 +188,7 @@
       "type": "Feature",
       "properties": {
         "Name": "14. Playa del Duque",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/14.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/14.mp3"
       },
       "geometry": {
         "type": "Point",

@@ -1,12 +1,12 @@
 {
   "type": "FeatureCollection",
-  "name": "La Orotava Stops",
+  "name": "La Orotava Stops FR",
   "features": [
     {
       "type": "Feature",
       "properties": {
         "Name": "1. Plaza de la Constitución",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/1.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -20,7 +20,7 @@
       "type": "Feature",
       "properties": {
         "Name": "2. Liceo Taoro",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/2.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/2.0.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -33,8 +33,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Victoria Gardens & The Masonic Mausoleum",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/3.mp3"
+        "Name": "3. Les Jardins Victoria et le Mausolée Maçonnique",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/3.1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -47,8 +47,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Hijuela del Botánico",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/4.mp3"
+        "Name": "4. Hijuela du Jardin Botanique",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/4.1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -61,8 +61,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Town Hall Square",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/5.mp3"
+        "Name": "5. Ayuntamiento et Plaza del Ayuntamiento",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -75,8 +75,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Iglesia de La Concepción",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.mp3"
+        "Name": "6. L'église de la Concepción",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/6.1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -90,7 +90,7 @@
       "type": "Feature",
       "properties": {
         "Name": "7. Calle Tomás Zerolo",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/7.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/7.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -104,7 +104,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8. Molino de gofio La Máquina",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/8.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/8.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -118,7 +118,7 @@
       "type": "Feature",
       "properties": {
         "Name": "9.1 La Casa de Los Balcones",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/9.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/9.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -132,7 +132,7 @@
       "type": "Feature",
       "properties": {
         "Name": "9.2 Museo Molino de Gofio Del Hoyo",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/9.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/9.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -146,7 +146,7 @@
       "type": "Feature",
       "properties": {
         "Name": "10. Casa Palacio Lercaro",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/10.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_fr/10.1.mp3"
       },
       "geometry": {
         "type": "Point",

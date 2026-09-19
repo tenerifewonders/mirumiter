@@ -602,10 +602,21 @@
       }
     });
 
+    let currentRoute = null;
+
     function changeLanguage(lang) {
       currentLang = lang;
       localStorage.setItem('tw_app_lang', lang);
+      const select = document.getElementById('app-lang-select');
+      if (select) select.value = lang;
+      
       renderCatalog();
+
+      if (currentRoute) {
+        document.getElementById('active-route-name').textContent = `${currentRoute.title} (${currentLang.toUpperCase()})`;
+        document.getElementById('btn-key-tips').href = currentRoute.tipsUrl[currentLang] || currentRoute.tipsUrl['en'];
+        initMapAndRoute(currentRoute);
+      }
     }
 
     function renderCatalog() {
@@ -657,13 +668,28 @@
         return;
       }
 
-      // Process unlocked routes
+      // Process unlocked routes and detect language from guide column
       data.forEach(row => {
-        const guideKey = row.guide.toLowerCase();
+        const rawGuide = row.guide.toLowerCase().trim();
+        
+        // Detect language from guide column (e.g. puerto-cruz_de, heritage_collection_fr, etc.)
+        let detectedLang = null;
+        if (rawGuide.endsWith('_de')) detectedLang = 'de';
+        else if (rawGuide.endsWith('_fr')) detectedLang = 'fr';
+        else if (rawGuide.endsWith('_en')) detectedLang = 'en';
+
+        if (detectedLang) {
+          changeLanguage(detectedLang);
+        }
+
+        const guideKey = rawGuide.replace(/_(de|fr|en)$/, '');
+
         if (BUNDLES[guideKey]) {
           BUNDLES[guideKey].forEach(r => {
             if (!unlockedRoutes.includes(r)) unlockedRoutes.push(r);
           });
+        } else if (ROUTES_DATA[guideKey]) {
+          if (!unlockedRoutes.includes(guideKey)) unlockedRoutes.push(guideKey);
         } else {
           const cleanKey = guideKey.split('_')[0];
           if (!unlockedRoutes.includes(cleanKey)) unlockedRoutes.push(cleanKey);
@@ -687,6 +713,7 @@
       const route = ROUTES_DATA[routeId];
       if (!route) return;
 
+      currentRoute = route;
       document.getElementById('active-route-name').textContent = `${route.title} (${currentLang.toUpperCase()})`;
       document.getElementById('btn-google-maps').href = route.mapsUrl;
       document.getElementById('btn-key-tips').href = route.tipsUrl[currentLang] || route.tipsUrl['en'];
@@ -722,20 +749,19 @@
       const audioList = document.getElementById('audio-list');
       audioList.innerHTML = '';
 
-      fetch(`./routes/${route.id}.geojson`)
-        .then(res => res.json())
+      const geoJsonUrl = `./routes/${route.id}_${currentLang}.geojson`;
+
+      fetch(geoJsonUrl)
+        .then(res => {
+          if (!res.ok) return fetch(`./routes/${route.id}.geojson`).then(r => r.json());
+          return res.json();
+        })
         .then(data => {
           geoJsonLayer = L.geoJSON(data, {
             onEachFeature: (feature, layer) => {
-              const rawAudioUrl = feature.properties.audio;
+              const audioUrl = feature.properties.audio;
               const name = feature.properties.Name;
               layer.bindPopup(name);
-
-              // Adapt audio URL for selected language (en, de, fr)
-              let audioUrl = rawAudioUrl;
-              if (currentLang !== 'en' && rawAudioUrl.includes('_en/')) {
-                audioUrl = rawAudioUrl.replace('_en/', '_' + currentLang + '/');
-              }
 
               if (audioUrl) {
                 if (!markersByAudio[audioUrl]) {

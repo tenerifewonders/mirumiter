@@ -1,12 +1,12 @@
 {
   "type": "FeatureCollection",
-  "name": "La Laguna Stops",
+  "name": "La Laguna Stops DE",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Church of La Concepción – The Devil of La Laguna",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_en/1.mp3"
+        "Name": "1. Iglesia de la Concepción — Der Teufel von La Laguna",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_de/1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -19,8 +19,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Lercáro Palace – Catalina's Ghost",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_en/2.mp3"
+        "Name": "2. Palacio de Lercáro — Das Gespenst der Catalina",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_de/2.1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -33,8 +33,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Cathedral of San Cristóbal de La Laguna – Echoes Beneath the Dome",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_en/3.mp3"
+        "Name": "3. Kathedrale von La Laguna — Echos unter der Kuppel",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_de/3.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -47,8 +47,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Calle Obispo Rey Redondo – The Street of Noble Houses",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_en/4.mp3"
+        "Name": "4. Calle Obispo Rey Redondo — Die Straße der Adelshäuser",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_de/4.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -61,8 +61,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Nava Palace – Apparitions in the Nobility",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_en/5.mp3"
+        "Name": "5. Palacio de Nava — Erscheinungen im Adelshaus",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_de/5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -75,8 +75,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Plaza del Adelantado – The Ancient Heart of Power",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_en/6.mp3"
+        "Name": "6. Plaza del Adelantado — Das alte Herz der Macht",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_de/6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -89,8 +89,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.1 Ayuntamiento de San Cristóbal de La Laguna",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_en/6.mp3"
+        "Name": "6.1 Rathaus von La Laguna",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_de/6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -103,8 +103,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.2 Monasterio de Santa Catalina de Siena",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_en/6.mp3"
+        "Name": "6.2 Kloster Santa Catalina de Siena",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_de/6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -118,7 +118,7 @@
       "type": "Feature",
       "properties": {
         "Name": "6.3 Palacete Rodríguez de Azero",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_en/6.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_de/6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -131,8 +131,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7. Old Convent of Santo Domingo – Echoes of Faith, Science, and Pirates",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_en/7.mp3"
+        "Name": "7. Antiguo Convento de Santo Domingo — Echos von Glauben, Wissenschaft und Piraten",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_de/7.mp3"
       },
       "geometry": {
         "type": "Point",

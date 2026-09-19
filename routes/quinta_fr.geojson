@@ -4,8 +4,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. La Giganta – The Eternal Guardian",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_en/1.mp3"
+        "Name": "1. La Giganta – L’éternelle gardienne",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_fr/1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -18,8 +18,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Barranco de la Cruz – The Roads of War",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_en/2.mp3"
+        "Name": "2. Barranco de la Cruz – Les chemins de la guerre",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_fr/2.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -32,8 +32,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Mirador Callado Blanco – The Wandering Island",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_en/3.mp3"
+        "Name": "3. Mirador Callado Blanco – L’île errante",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_fr/3.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -46,8 +46,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Búnker de Santa Úrsula – The Voice of the Stones",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_en/4.mp3"
+        "Name": "4. Búnker de Santa Úrsula – La voix des pierres",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_fr/4.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -60,8 +60,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Mirador de La Quinta Roja – The Inner Kingdom",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_en/5.mp3"
+        "Name": "5. Mirador de La Quinta Roja – Le royaume intérieur",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_fr/5.mp3"
       },
       "geometry": {
         "type": "Point",

@@ -1,12 +1,12 @@
 {
   "type": "FeatureCollection",
-  "name": "Puerto de la Cruz Stops",
+  "name": "Puerto de la Cruz Étapes",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Parque Taoro and the Gran Hotel Taoro",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/1.mp3"
+        "Name": "1. Parc Taoro et le Gran Hotel Taoro",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -19,8 +19,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Avenida de Cristóbal Colón",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/2.mp3"
+        "Name": "2. Avenida de Colón",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/2.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -33,8 +33,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Plaza-Mirador de la Ermita de San Telmo",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/3.mp3"
+        "Name": "3. Place-Belvédère de l'Ermitage de San Telmo",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/3.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -47,8 +47,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "Mirador de San Telmo",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/3.mp3"
+        "Name": "Belvédère de San Telmo",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/3.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -61,8 +61,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Church of Nuestra Señora de la Peña de Francia",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/4.mp3"
+        "Name": "4. Église Nuestra Señora de la Peña de Francia",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/4.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -76,7 +76,7 @@
       "type": "Feature",
       "properties": {
         "Name": "5. Plaza de Europa",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -89,8 +89,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5.1 Puerto de la Cruz Town Hall",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+        "Name": "5.1 Hôtel de Ville de Puerto de la Cruz",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -103,8 +103,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5.2 Casa de la Aduana (Customs House)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+        "Name": "5.2 Casa de la Aduana",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -118,7 +118,7 @@
       "type": "Feature",
       "properties": {
         "Name": "5.3 Casa de Miranda",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -131,8 +131,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Church of San Francisco",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/6.mp3"
+        "Name": "6. Église San Francisco",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -146,7 +146,7 @@
       "type": "Feature",
       "properties": {
         "Name": "7. Plaza del Charco",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/7.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/7.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -160,7 +160,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8. La Ranilla",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.0.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.0.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -174,7 +174,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.1 Víctor Ash - Calle Mequinez, 2",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.1.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -188,7 +188,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.2 Ro.Ro - Calle Mequinez, 4",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.2.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.2.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -202,7 +202,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.3 Iker Muro - Calle Mequinez, 21",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.3.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.3.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -216,7 +216,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.4 Sex - Calle Mequinez, 66",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.4.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.4.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -230,7 +230,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.5 Juliana - Calle Maretas, 11",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.5.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -244,7 +244,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.6 Dulk - Calle Peñita, 6",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.6.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -258,7 +258,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.7 3ttman - Calle El Lomo, 28",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.7.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.7.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -272,7 +272,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.8 Kob - Calle Teobaldo Power, 28",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.8.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.8.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -286,7 +286,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.9 Belin - Calle Puerto Viejo, 17",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.9.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.9.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -300,7 +300,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.10 Sabotaje al Montaje - Calle Teobaldo Power, 16",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.10.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.10.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -314,7 +314,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.11 FEOFL!P - Calle Teobaldo Power, 8",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.11.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.11.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -328,7 +328,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.12 Roa - Calle El Lomo, 7",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.12.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.12.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -342,7 +342,7 @@
       "type": "Feature",
       "properties": {
         "Name": "8.13 Liqen - Calle Cruz Verde, 3",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.13.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.13.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -356,7 +356,7 @@
       "type": "Feature",
       "properties": {
         "Name": "9. Castillo de San Felipe",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/9.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/9.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -370,7 +370,7 @@
       "type": "Feature",
       "properties": {
         "Name": "10. Playa Jardín",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/10.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/10.mp3"
       },
       "geometry": {
         "type": "Point",

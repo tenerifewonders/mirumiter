@@ -5,8 +5,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. La Ruleta Viewpoint: The Gateway to the Lost World",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/1.mp3"
+        "Name": "1. Aussichtspunkt La Ruleta (Start)",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_de/1.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -19,8 +19,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Roque Cinchado: The Guardian of Time",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/2.mp3"
+        "Name": "2. Roque Cinchado",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_de/2.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -33,8 +33,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. El Torrotito and El Burro: Where Lava Takes Shape",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/3.mp3"
+        "Name": "3. Felsformationen El Torrotito & El Burro",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_de/3.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -47,8 +47,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Descent Toward Ucanca: Under the Rain of Stars",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/4.mp3"
+        "Name": "4. Abstieg in Richtung Llano de Ucanca",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_de/4.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -61,8 +61,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Llano de Ucanca: Where Reality Becomes Uncertain",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/5.mp3"
+        "Name": "5. Llano de Ucanca (Vulkanebene)",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_de/5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -75,8 +75,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. The Cathedral: The Volcano's Mineral Heart",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/6.mp3"
+        "Name": "6. La Catedral (Roques de García Formation)",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_de/6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -89,8 +89,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7. Ascent Toward La Ruleta: The Sea of Clouds and the Impossible Shadow",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/7.mp3"
+        "Name": "7. Aufstieg zurück zur La Ruleta (Wolkenmeer-Aussichtspunkte)",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_de/7.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -103,8 +103,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8. La Ruleta Viewpoint: The Circle of Fire and Time",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/8.mp3"
+        "Name": "8. Aussichtspunkt La Ruleta (Ende)",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_de/8.mp3"
       },
       "geometry": {
         "type": "Point",
