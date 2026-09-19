@@ -358,9 +358,9 @@
     </div>
     <!-- Language Selector: EN, DE, FR only -->
     <select id="app-lang-select" class="lang-select" onchange="changeLanguage(this.value)">
-      <option value="en">🇬🇧 English</option>
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="fr">🇫🇷 Français</option>
+      <option value="en">EN English</option>
+      <option value="de">DE Deutsch</option>
+      <option value="fr">FR Français</option>
     </select>
   </header>
 
@@ -400,12 +400,12 @@
       <div class="action-bar">
         <a id="btn-google-maps" href="#" target="_blank" class="action-btn maps-btn">
           <span>📍</span>
-          <span>Google Maps <small>(Data required)</small></span>
+          <span id="gmaps-text">Google Maps <small>(Data required)</small></span>
         </a>
 
         <a id="btn-key-tips" href="#" target="_blank" class="action-btn tips-btn">
           <span>⭐️</span>
-          <span>Key Tips</span>
+          <span id="tips-text">Key Tips</span>
         </a>
       </div>
     </div>
@@ -414,22 +414,22 @@
     <details id="android-msg" class="install-banner" style="display:none;">
       <summary>
         <span class="plus-icon">➕</span>
-        <span>Offline installation</span>
+        <span id="android-install-summary">Offline installation</span>
       </summary>
       <div class="install-steps">
-        <div>Open browser menu ( ⁝ 3 dots at top right)</div>
-        <div>Select "Add to Home screen" or "Install"</div>
+        <div id="android-step1">Open browser menu ( ⁝ 3 dots at top right)</div>
+        <div id="android-step2">Select "Add to Home screen" or "Install"</div>
       </div>
     </details>
 
     <details id="ios-msg" class="install-banner" style="display:none;">
       <summary>
         <span class="plus-icon">➕</span>
-        <span>Offline installation</span>
+        <span id="ios-install-summary">Offline installation</span>
       </summary>
       <div class="install-steps">
-        <div>Tap Share button ( ⎋ box with arrow)</div>
-        <div>Scroll & select "Add to Home Screen"</div>
+        <div id="ios-step1">Tap Share button ( ⎋ box with arrow)</div>
+        <div id="ios-step2">Scroll & select "Add to Home Screen"</div>
       </div>
     </details>
 
@@ -614,7 +614,14 @@
         openBtn: 'Open Audioguide ➔',
         lockedBtn: 'Locked',
         stopsMeta: 'Audio Stops',
-        backBtn: '◄ My Guides'
+        backBtn: '◄ My Guides',
+        gmapsBtn: 'Google Maps <small>(Data required)</small>',
+        keyTipsBtn: 'Key Tips',
+        installSummary: 'Offline installation',
+        androidStep1: 'Open browser menu ( ⁝ 3 dots at top right)',
+        androidStep2: 'Select "Add to Home screen" or "Install"',
+        iosStep1: 'Tap Share button ( ⎋ box with arrow)',
+        iosStep2: 'Scroll & select "Add to Home Screen"'
       },
       de: {
         heroTitle: 'DU BIST EINZIGARTIG',
@@ -627,7 +634,14 @@
         openBtn: 'Audioguide öffnen ➔',
         lockedBtn: 'Gesperrt',
         stopsMeta: 'Audio-Stopps',
-        backBtn: '◄ Meine Guides'
+        backBtn: '◄ Meine Guides',
+        gmapsBtn: 'Google Maps <small>(Daten erforderlich)</small>',
+        keyTipsBtn: 'Wichtige Tipps',
+        installSummary: 'Offline-Installation',
+        androidStep1: 'Browser-Menü öffnen ( ⁝ 3 Punkte oben rechts)',
+        androidStep2: 'Wählen Sie "Zum Startbildschirm hinzufügen" oder "Installieren"',
+        iosStep1: 'Tippen Sie auf Teilen ( ⎋ Quadrat mit Pfeil)',
+        iosStep2: 'Scrollen und "Zum Home-Bildschirm" wählen'
       },
       fr: {
         heroTitle: 'VOUS ÊTES UNIQUE',
@@ -640,7 +654,14 @@
         openBtn: "Ouvrir l'audioguide ➔",
         lockedBtn: 'Verrouillé',
         stopsMeta: 'Arrêts audio',
-        backBtn: '◄ Mes Guides'
+        backBtn: '◄ Mes Guides',
+        gmapsBtn: 'Google Maps <small>(Données requises)</small>',
+        keyTipsBtn: 'Conseils clés',
+        installSummary: 'Installation hors ligne',
+        androidStep1: 'Ouvrir le menu del navigateur ( ⁝ 3 points en haut à droite)',
+        androidStep2: 'Sélectionnez "Ajouter à l\'écran d\'accueil" ou "Installer"',
+        iosStep1: 'Appuyez sur Partager ( ⎋ carré avec flèche)',
+        iosStep2: 'Faites défiler et sélectionnez "Sur l\'écran d\'accueil"'
       }
     };
 
@@ -664,6 +685,28 @@
 
       const backBtn = document.getElementById('btn-back-nav');
       if (backBtn) backBtn.textContent = t.backBtn;
+
+      const gmapsText = document.getElementById('gmaps-text');
+      if (gmapsText) gmapsText.innerHTML = t.gmapsBtn;
+
+      const tipsText = document.getElementById('tips-text');
+      if (tipsText) tipsText.textContent = t.keyTipsBtn;
+
+      // Android Install Banner
+      const androidSummary = document.getElementById('android-install-summary');
+      if (androidSummary) androidSummary.textContent = t.installSummary;
+      const androidS1 = document.getElementById('android-step1');
+      if (androidS1) androidS1.textContent = t.androidStep1;
+      const androidS2 = document.getElementById('android-step2');
+      if (androidS2) androidS2.textContent = t.androidStep2;
+
+      // iOS Install Banner
+      const iosSummary = document.getElementById('ios-install-summary');
+      if (iosSummary) iosSummary.textContent = t.installSummary;
+      const iosS1 = document.getElementById('ios-step1');
+      if (iosS1) iosS1.textContent = t.iosStep1;
+      const iosS2 = document.getElementById('ios-step2');
+      if (iosS2) iosS2.textContent = t.iosStep2;
     }
 
     let currentRoute = null;
