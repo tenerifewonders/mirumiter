@@ -315,9 +315,34 @@
       flex-shrink: 0;
     }
     .track-opt1 .track-arrow { color: #94a3b8; font-size: 16px; }
+
+    /* Sub-item / sub-indexed track indentation styling */
+    .track-subitem {
+      margin-left: 24px;
+      width: calc(100% - 24px);
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+    }
+    .track-subitem .track-left {
+      font-weight: 500;
+      font-size: 13.5px;
+      color: #334155;
+    }
+    .track-subitem .play-badge {
+      width: 24px;
+      height: 24px;
+      font-size: 11px;
+      background: #e2e8f0;
+      color: #0284c7;
+    }
+
     #audio-list li.active-track {
       background: #e0f2fe !important;
       border-left: 5px solid #0284c7 !important;
+    }
+    #audio-list li.track-subitem.active-track .play-badge {
+      background: #0284c7;
+      color: #ffffff;
     }
 
     #audio-player { width: 100%; position: fixed; bottom: 0; left: 0; z-index: 9999; }
@@ -635,6 +660,8 @@
       document.getElementById('catalog-view').classList.add('active-view');
     }
 
+    let mainTileLayer = null;
+
     function openRoute(routeId) {
       const route = ROUTES_DATA[routeId];
       if (!route) return;
@@ -647,21 +674,26 @@
       document.getElementById('player-view').classList.add('active-view');
 
       initMapAndRoute(route);
+      setTimeout(() => {
+        if (map) map.invalidateSize();
+      }, 150);
     }
 
     function initMapAndRoute(route) {
       if (!map) {
         map = L.map('map', { attributionControl: false });
+        mainTileLayer = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
+          minZoom: 10,
+          maxZoom: 18,
+          maxNativeZoom: 18,
+          tileSize: 256
+        }).addTo(map);
       }
 
       map.setView(route.center, route.zoom);
-
-      L.tileLayer('./tiles/' + route.id + '/{z}/{x}/{y}.png', {
-        minZoom: 10,
-        maxZoom: 18,
-        maxNativeZoom: route.maxNativeZoom,
-        tileSize: 256
-      }).addTo(map);
+      setTimeout(() => {
+        if (map) map.invalidateSize();
+      }, 200);
 
       if (geoJsonLayer) map.removeLayer(geoJsonLayer);
       markersByAudio = {};
@@ -687,13 +719,16 @@
               if (audioUrl) {
                 markersByAudio[audioUrl] = layer;
 
+                // Check if track is a sub-indexed item (e.g. 2.1, 5.2, 8.10)
+                const isSubItem = /^\s*\d+\.\d+/.test(name);
+
                 // Option 1 Track Card
                 const li = document.createElement('li');
-                li.className = 'track-opt1';
+                li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
                 li.setAttribute('data-audio', audioUrl);
                 li.innerHTML = `
                   <div class="track-left">
-                    <span class="play-badge">▶</span>
+                    <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
                     <span>${name}</span>
                   </div>
                   <span class="track-arrow">›</span>
