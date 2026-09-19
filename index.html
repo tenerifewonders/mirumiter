@@ -549,8 +549,29 @@
       'all_access': Object.keys(ROUTES_DATA)
     };
 
-    // App State
-    let currentLang = localStorage.getItem('tw_app_lang') || 'en';
+    // Automatic Language Detection (1. URL param ?lang=de -> 2. LocalStorage -> 3. Browser Language -> 4. Default 'en')
+    function detectLanguage() {
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get('lang') || params.get('idioma');
+      if (urlLang && ['en', 'de', 'fr'].includes(urlLang.toLowerCase())) {
+        const cleanLang = urlLang.toLowerCase();
+        localStorage.setItem('tw_app_lang', cleanLang);
+        return cleanLang;
+      }
+
+      const savedLang = localStorage.getItem('tw_app_lang');
+      if (savedLang && ['en', 'de', 'fr'].includes(savedLang)) {
+        return savedLang;
+      }
+
+      const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (browserLang.startsWith('de')) return 'de';
+      if (browserLang.startsWith('fr')) return 'fr';
+
+      return 'en';
+    }
+
+    let currentLang = detectLanguage();
     let unlockedRoutes = JSON.parse(localStorage.getItem('tw_unlocked_routes') || '[]');
     let map = null;
     let geoJsonLayer = null;
@@ -717,24 +738,26 @@
               }
 
               if (audioUrl) {
-                markersByAudio[audioUrl] = layer;
+                if (!markersByAudio[audioUrl]) {
+                  markersByAudio[audioUrl] = layer;
 
-                // Check if track is a sub-indexed item (e.g. 2.1, 5.2, 8.10)
-                const isSubItem = /^\s*\d+\.\d+/.test(name);
+                  // Check if track is a sub-indexed item (e.g. 5.2, 8.10)
+                  const isSubItem = /^\s*\d+\.\d+/.test(name);
 
-                // Option 1 Track Card
-                const li = document.createElement('li');
-                li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
-                li.setAttribute('data-audio', audioUrl);
-                li.innerHTML = `
-                  <div class="track-left">
-                    <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
-                    <span>${name}</span>
-                  </div>
-                  <span class="track-arrow">›</span>
-                `;
-                li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
-                audioList.appendChild(li);
+                  // Option 1 Track Card
+                  const li = document.createElement('li');
+                  li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
+                  li.setAttribute('data-audio', audioUrl);
+                  li.innerHTML = `
+                    <div class="track-left">
+                      <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
+                      <span>${name}</span>
+                    </div>
+                    <span class="track-arrow">›</span>
+                  `;
+                  li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
+                  audioList.appendChild(li);
+                }
               }
 
               layer.on('click', () => activateTrack(audioUrl, 'marker'));

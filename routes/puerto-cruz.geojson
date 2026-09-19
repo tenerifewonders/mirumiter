@@ -19,7 +19,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Avenida de Cristóbal Colón",
+        "Name": "2. Avenida de Cristóbal Colón, Playa y Lago Martiánez",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/2.mp3"
       },
       "geometry": {
@@ -27,20 +27,6 @@
         "coordinates": [
           -16.5417437,
           28.417542
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "2.1 Costa Martiánez Municipal Tourist Complex",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/2.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.544278,
-          28.4187585
         ]
       }
     },
