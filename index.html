@@ -367,16 +367,16 @@
   <!-- VIEW 1: CATALOG / MY GUIDES DASHBOARD -->
   <div id="catalog-view" class="view-container active-view">
     <div class="catalog-hero">
-      <h1>YOU ARE UNIQUE</h1>
-      <p>AND YOU DESERVE A UNIQUE ADVENTURE</p>
+      <h1 id="hero-title">YOU ARE UNIQUE</h1>
+      <p id="hero-subtitle">AND YOU DESERVE A UNIQUE ADVENTURE</p>
     </div>
 
     <!-- License Activation Box -->
     <div class="license-box">
-      <h3>🔑 Enter License Code</h3>
+      <h3 id="license-title">🔑 Enter License Code</h3>
       <div class="license-form">
         <input type="text" id="license-input" placeholder="e.g. TW-HERITAGE-1234">
-        <button onclick="activateLicense()">Activate</button>
+        <button id="license-btn" onclick="activateLicense()">Activate</button>
       </div>
       <div id="license-msg" class="license-msg"></div>
     </div>
@@ -390,7 +390,7 @@
   <!-- VIEW 2: MAP & PLAYER SCREEN -->
   <div id="player-view" class="view-container">
     <div class="player-nav">
-      <button class="btn-back" onclick="showCatalog()">◄ My Guides</button>
+      <button id="btn-back-nav" class="btn-back" onclick="showCatalog()">◄ My Guides</button>
       <div id="active-route-name" style="font-weight:700; font-size:14px;"></div>
     </div>
 
@@ -602,6 +602,70 @@
       }
     });
 
+    const TRANSLATIONS = {
+      en: {
+        heroTitle: 'YOU ARE UNIQUE',
+        heroSubtitle: 'AND YOU DESERVE A UNIQUE ADVENTURE',
+        licenseTitle: '🔑 Enter License Code',
+        licensePlaceholder: 'e.g. TW-HERITAGE-1234',
+        licenseBtn: 'Activate',
+        ready: '✅ Ready to Listen',
+        locked: '🔒 License Required',
+        openBtn: 'Open Audioguide ➔',
+        lockedBtn: 'Locked',
+        stopsMeta: 'Audio Stops',
+        backBtn: '◄ My Guides'
+      },
+      de: {
+        heroTitle: 'DU BIST EINZIGARTIG',
+        heroSubtitle: 'UND DU VERDIENST EIN EINZIGARTIGES ABENTEUER',
+        licenseTitle: '🔑 Lizenzcode eingeben',
+        licensePlaceholder: 'z. B. TW-HERITAGE-1234',
+        licenseBtn: 'Aktivieren',
+        ready: '✅ Bereits freigeschaltet',
+        locked: '🔒 Lizenz erforderlich',
+        openBtn: 'Audioguide öffnen ➔',
+        lockedBtn: 'Gesperrt',
+        stopsMeta: 'Audio-Stopps',
+        backBtn: '◄ Meine Guides'
+      },
+      fr: {
+        heroTitle: 'VOUS ÊTES UNIQUE',
+        heroSubtitle: 'ET VOUS MÉRITEZ UNE AVENTURE UNIQUE',
+        licenseTitle: '🔑 Entrez le code de licence',
+        licensePlaceholder: 'ex. TW-HERITAGE-1234',
+        licenseBtn: 'Activer',
+        ready: '✅ Prêt à écouter',
+        locked: '🔒 Licence requise',
+        openBtn: "Ouvrir l'audioguide ➔",
+        lockedBtn: 'Verrouillé',
+        stopsMeta: 'Arrêts audio',
+        backBtn: '◄ Mes Guides'
+      }
+    };
+
+    function updateUITexts() {
+      const t = TRANSLATIONS[currentLang] || TRANSLATIONS['en'];
+
+      const hTitle = document.getElementById('hero-title');
+      if (hTitle) hTitle.textContent = t.heroTitle;
+
+      const hSub = document.getElementById('hero-subtitle');
+      if (hSub) hSub.textContent = t.heroSubtitle;
+
+      const licTitle = document.getElementById('license-title');
+      if (licTitle) licTitle.textContent = t.licenseTitle;
+
+      const licInput = document.getElementById('license-input');
+      if (licInput) licInput.placeholder = t.licensePlaceholder;
+
+      const licBtn = document.getElementById('license-btn');
+      if (licBtn) licBtn.textContent = t.licenseBtn;
+
+      const backBtn = document.getElementById('btn-back-nav');
+      if (backBtn) backBtn.textContent = t.backBtn;
+    }
+
     let currentRoute = null;
 
     function changeLanguage(lang) {
@@ -620,6 +684,9 @@
     }
 
     function renderCatalog() {
+      updateUITexts();
+      const t = TRANSLATIONS[currentLang] || TRANSLATIONS['en'];
+
       const grid = document.getElementById('catalog-grid');
       grid.innerHTML = '';
 
@@ -631,15 +698,15 @@
         card.innerHTML = `
           <div class="guide-card-header">
             <div class="guide-card-title">${route.title}</div>
-            <div class="guide-card-meta">📍 ${route.stopsCount} Audio Stops</div>
+            <div class="guide-card-meta">📍 ${route.stopsCount} ${t.stopsMeta}</div>
           </div>
           <div class="guide-card-body">
             <span class="badge-status ${isUnlocked ? 'badge-unlocked' : 'badge-locked'}">
-              ${isUnlocked ? '✅ Ready to Listen' : '🔒 License Required'}
+              ${isUnlocked ? t.ready : t.locked}
             </span>
           </div>
           <button class="btn-open-route ${isUnlocked ? '' : 'disabled'}" ${isUnlocked ? `onclick="openRoute('${route.id}')"` : 'disabled'}>
-            ${isUnlocked ? 'Open Audioguide ➔' : 'Locked'}
+            ${isUnlocked ? t.openBtn : t.lockedBtn}
           </button>
         `;
         grid.appendChild(card);
