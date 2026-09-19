@@ -331,6 +331,7 @@
     <div class="app-title">
       <span>🌋</span> Tenerife Wonders
     </div>
+    <!-- Language Selector: EN, DE, FR only -->
     <select id="app-lang-select" class="lang-select" onchange="changeLanguage(this.value)">
       <option value="en">🇬🇧 English</option>
       <option value="de">🇩🇪 Deutsch</option>
@@ -341,8 +342,8 @@
   <!-- VIEW 1: CATALOG / MY GUIDES DASHBOARD -->
   <div id="catalog-view" class="view-container active-view">
     <div class="catalog-hero">
-      <h1>YOU ARE UNIQUE AND YOU DESERVE A UNIQUE ADVENTURE</h1>
-      <p>Select a route to start</p>
+      <h1>My Audioguides</h1>
+      <p>Select a route to start your interactive offline tour</p>
     </div>
 
     <!-- License Activation Box -->
@@ -430,7 +431,7 @@
         zoom: 15,
         maxNativeZoom: 18,
         stopsCount: 5,
-        tipsUrl: { en: './tips/EN-LA-QUINTA.html', es: './tips/ES-LA-QUINTA.html' },
+        tipsUrl: { en: './tips/EN-LA-QUINTA.html', de: './tips/DE-LA-QUINTA.html', fr: './tips/FR-LA-QUINTA.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4307331,-16.4913284&destination=28.4361456,-16.4963526&waypoints=28.431655,-16.4922505%7C28.4379028,-16.4927503%7C28.4370121,-16.4965031&travelmode=walking'
       },
       'santa-cruz': {
@@ -440,7 +441,7 @@
         zoom: 14,
         maxNativeZoom: 17,
         stopsCount: 14,
-        tipsUrl: { en: './tips/EN-SANTA-CRUZ.html', es: './tips/ES-SANTA-CRUZ.html' },
+        tipsUrl: { en: './tips/EN-SANTA-CRUZ.html', de: './tips/DE-SANTA-CRUZ.html', fr: './tips/FR-SANTA-CRUZ.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4561009,-16.251352&destination=28.4679412,-16.2493033&travelmode=walking'
       },
       'teide': {
@@ -450,7 +451,7 @@
         zoom: 14,
         maxNativeZoom: 17,
         stopsCount: 8,
-        tipsUrl: { en: './tips/EN-TEIDE.html', es: './tips/ES-TEIDE.html' },
+        tipsUrl: { en: './tips/EN-TEIDE.html', de: './tips/DE-TEIDE.html', fr: './tips/FR-TEIDE.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.2230957,-16.631272&destination=28.2230957,-16.631272&travelmode=walking'
       },
       'anaga': {
@@ -460,7 +461,7 @@
         zoom: 12,
         maxNativeZoom: 14,
         stopsCount: 9,
-        tipsUrl: { en: './tips/EN-ANAGA.html', es: './tips/ES-ANAGA.html' },
+        tipsUrl: { en: './tips/EN-ANAGA.html', de: './tips/DE-ANAGA.html', fr: './tips/FR-ANAGA.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4859,-16.3135&destination=28.4808,-16.2409&travelmode=driving'
       },
       'la-laguna': {
@@ -470,7 +471,7 @@
         zoom: 15,
         maxNativeZoom: 17,
         stopsCount: 7,
-        tipsUrl: { en: './tips/EN-LA-LAGUNA.html', es: './tips/ES-LA-LAGUNA.html' },
+        tipsUrl: { en: './tips/EN-LA-LAGUNA.html', de: './tips/DE-LA-LAGUNA.html', fr: './tips/FR-LA-LAGUNA.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4905227,-16.320638&destination=28.4858577,-16.3134226&travelmode=walking'
       },
       'la-orotava': {
@@ -480,7 +481,7 @@
         zoom: 15,
         maxNativeZoom: 17,
         stopsCount: 10,
-        tipsUrl: { en: './tips/EN-LA-OROTAVA.html', es: './tips/ES-LA-OROTAVA.html' },
+        tipsUrl: { en: './tips/EN-LA-OROTAVA.html', de: './tips/DE-LA-OROTAVA.html', fr: './tips/FR-LA-OROTAVA.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.3906668,-16.5232417&destination=28.3890959,-16.5260499&travelmode=walking'
       },
       'puerto-cruz': {
@@ -490,7 +491,7 @@
         zoom: 15,
         maxNativeZoom: 17,
         stopsCount: 10,
-        tipsUrl: { en: './tips/EN-PUERTO-CRUZ.html', es: './tips/ES-PUERTO-CRUZ.html' },
+        tipsUrl: { en: './tips/EN-PUERTO-CRUZ.html', de: './tips/DE-PUERTO-CRUZ.html', fr: './tips/FR-PUERTO-CRUZ.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4118131,-16.547949&destination=28.4127752,-16.5585252&travelmode=walking'
       },
       'candelaria': {
@@ -500,7 +501,7 @@
         zoom: 15,
         maxNativeZoom: 18,
         stopsCount: 4,
-        tipsUrl: { en: './tips/EN-CANDELARIA.html', es: './tips/ES-CANDELARIA.html' },
+        tipsUrl: { en: './tips/EN-CANDELARIA.html', de: './tips/DE-CANDELARIA.html', fr: './tips/FR-CANDELARIA.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.3513008,-16.3697868&destination=28.3516713,-16.3694086&travelmode=walking'
       },
       'costa-adeje': {
@@ -510,7 +511,7 @@
         zoom: 14,
         maxNativeZoom: 17,
         stopsCount: 14,
-        tipsUrl: { en: './tips/EN-COSTA-ADEJE.html', es: './tips/ES-COSTA-ADEJE.html' },
+        tipsUrl: { en: './tips/EN-COSTA-ADEJE.html', de: './tips/DE-COSTA-ADEJE.html', fr: './tips/FR-COSTA-ADEJE.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.0503209,-16.7177511&destination=28.091441,-16.7439204&travelmode=walking'
       }
     };
@@ -618,7 +619,6 @@
             if (!unlockedRoutes.includes(r)) unlockedRoutes.push(r);
           });
         } else {
-          // Normalize e.g. "quinta_en" to "quinta"
           const cleanKey = guideKey.split('_')[0];
           if (!unlockedRoutes.includes(cleanKey)) unlockedRoutes.push(cleanKey);
         }
@@ -674,14 +674,20 @@
         .then(data => {
           geoJsonLayer = L.geoJSON(data, {
             onEachFeature: (feature, layer) => {
-              const audioUrl = feature.properties.audio;
+              const rawAudioUrl = feature.properties.audio;
               const name = feature.properties.Name;
               layer.bindPopup(name);
+
+              // Adapt audio URL for selected language (en, de, fr)
+              let audioUrl = rawAudioUrl;
+              if (currentLang !== 'en' && rawAudioUrl.includes('_en/')) {
+                audioUrl = rawAudioUrl.replace('_en/', '_' + currentLang + '/');
+              }
 
               if (audioUrl) {
                 markersByAudio[audioUrl] = layer;
 
-                // Render Option 1 Track Card
+                // Option 1 Track Card
                 const li = document.createElement('li');
                 li.className = 'track-opt1';
                 li.setAttribute('data-audio', audioUrl);
