@@ -1,0 +1,17 @@
+{
+  "type": "FeatureCollection",
+  "name": "La Orotava Stops",
+  "features": [
+    { "type": "Feature", "properties": { "Name": "1. Plaza de la Constitución", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/1.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.5232417, 28.3906668] } },
+    { "type": "Feature", "properties": { "Name": "2. Liceo Taoro", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/2.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.5226334, 28.3901557] } },
+    { "type": "Feature", "properties": { "Name": "3. Victoria Gardens & The Masonic Mausoleum", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/3.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.5229748, 28.3895012] } },
+    { "type": "Feature", "properties": { "Name": "4. Hijuela del Botánico", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/4.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.524097, 28.3890788] } },
+    { "type": "Feature", "properties": { "Name": "5. Town Hall Square", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/5.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.5249449, 28.3893242] } },
+    { "type": "Feature", "properties": { "Name": "6. Iglesia de La Concepción", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.5256631, 28.389966] } },
+    { "type": "Feature", "properties": { "Name": "7. Calle Tomás Zerolo", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/7.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.5241823, 28.3907512] } },
+    { "type": "Feature", "properties": { "Name": "8. Molino de gofio La Máquina", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/8.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.5260502, 28.3889326] } },
+    { "type": "Feature", "properties": { "Name": "9.1 La Casa de Los Balcones", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/9.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.5258333, 28.3883333] } },
+    { "type": "Feature", "properties": { "Name": "9.2 Museo Molino de Gofio Del Hoyo", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/9.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.5260507, 28.3890959] } },
+    { "type": "Feature", "properties": { "Name": "10. Casa Palacio Lercaro", "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/10.mp3" }, "geometry": { "type": "Point", "coordinates": [-16.5260499, 28.3890959] } }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "type": "FeatureCollection",
+  "name": "Santa Cruz Stops",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. Auditorio de Tenerife Adán Martín",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.251352,
+          28.4561009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2. Castillo de San Juan Bautista",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2523846,
+          28.4554121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3. Iglesia Matriz de Nuestra Señora de la Concepción",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/3.1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2490285,
+          28.4644615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3.1 Calle La Noria",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/3.2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.250358,
+          28.4649052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4. Plaza de España",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2473624,
+          28.4676874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4.1 Castillo de San Cristóbal",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2467901,
+          28.4669857
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "5. Plaza del Chicharro",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2506229,
+          28.4676915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "5.1 Plaza del Príncipe de Asturias",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.250331,
+          28.4682518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6. Templo Masónico de la Logia de Añaza",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/6.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2528559,
+          28.4687517
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "7. García Sanabria Park",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2535446,
+          28.4720365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "7.1 Reloj de flores",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2532834,
+          28.4715172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "7.2 Fuente \"La Fecundidad\"",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.253667,
+          28.4720447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "7.3 Paseo de la rosaleda",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2541501,
+          28.4726292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "7.4 Estanque de Nenúfares",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2535731,
+          28.4722885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "7.6 \"Monumento al Gato\" (Óscar Domínguez)",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.6.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2532737,
+          28.4723845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8. Plaza de los Patos",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/8.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2558131,
+          28.470559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "9. Plaza Weyler",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/9.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2554298,
+          28.4675177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "10. Casa del Carnaval",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/10.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2558632,
+          28.4646698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "11. Mercado Ntra. Señora de África",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/11.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2518818,
+          28.4633506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "12. TEA Tenerife Espacio de las Artes",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/12.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2510159,
+          28.4639687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "13. Teatro Guimerá",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/13.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2508954,
+          28.4658898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "14. Parroquia de San Francisco de Asís",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/14.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2493033,
+          28.4679412
+        ]
+      }
+    }
+  ]
+}

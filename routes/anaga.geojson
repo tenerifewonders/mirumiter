@@ -1,0 +1,116 @@
+{
+  "type": "FeatureCollection",
+  "name": "Anaga English Stops",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "0. Intro",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.313500, 28.485900, 0.0]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. Former Convent of Santo Domingo",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.313423, 28.485858, 0.0]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2. Old path to Pico del Inglés",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.268433, 28.535007, 0.0]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3. Pico del Inglés Viewpoint",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.263997, 28.533007, 0.0]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4. Bailadero Viewpoint",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.206877, 28.549166, 0.0]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "5. Risco Amogoje Viewpoint",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.205677, 28.558258, 0.0]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6. Taganana",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.6.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.21727, 28.56047, 0.0]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "7. Roque de las Bodegas",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.7.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.204568, 28.571198, 0.0]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8. Almáciga Beach",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.8.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.192508, 28.572064, 0.0]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "9. Paso Alto Castle",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.9.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.240959, 28.480816, 0.0]
+      }
+    }
+  ]
+}

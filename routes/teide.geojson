@@ -1,0 +1,118 @@
+{
+  "type": "FeatureCollection",
+  "name": "El Teide Stops",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. La Ruleta Viewpoint: The Gateway to the Lost World",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.631272,
+          28.2230957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2. Roque Cinchado: The Guardian of Time",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.631667,
+          28.224722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3. El Torrotito and El Burro: Where Lava Takes Shape",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.631498,
+          28.2252322
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4. Descent Toward Ucanca: Under the Rain of Stars",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.63875,
+          28.2317777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "5. Llano de Ucanca: Where Reality Becomes Uncertain",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6358888888889,
+          28.2249166666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6. The Cathedral: The Volcano's Mineral Heart",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/6.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.634853,
+          28.224346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "7. Ascent Toward La Ruleta: The Sea of Clouds and the Impossible Shadow",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/7.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.632263,
+          28.22293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8. La Ruleta Viewpoint: The Circle of Fire and Time",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/teide_en/8.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.631272,
+          28.2230957
+        ]
+      }
+    }
+  ]
+}

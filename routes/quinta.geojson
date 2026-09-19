@@ -1,0 +1,75 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. La Giganta – The Eternal Guardian",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_en/1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4913284,
+          28.4307331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2. Barranco de la Cruz – The Roads of War",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_en/2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4922505,
+          28.431655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3. Mirador Callado Blanco – The Wandering Island",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_en/3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4927503,
+          28.4379028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4. Búnker de Santa Úrsula – The Voice of the Stones",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_en/4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4965031,
+          28.4370121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "5. Mirador de La Quinta Roja – The Inner Kingdom",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_en/5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4963526,
+          28.4361456
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+{
+  "type": "FeatureCollection",
+  "name": "Puerto de la Cruz Stops",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. Parque Taoro and the Gran Hotel Taoro",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.547949,
+          28.4118131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2. Avenida de Cristóbal Colón",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5417437,
+          28.417542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.1 Costa Martiánez Municipal Tourist Complex",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.544278,
+          28.4187585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3. Plaza-Mirador de la Ermita de San Telmo",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5456288,
+          28.4176278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mirador de San Telmo",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5463681,
+          28.4173442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4. Church of Nuestra Señora de la Peña de Francia",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5481873,
+          28.4170105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "5. Plaza de Europa",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5491026,
+          28.4183182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "5.1 Puerto de la Cruz Town Hall",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5485698,
+          28.4179882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "5.2 Casa de la Aduana (Customs House)",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "5.3 Casa de Miranda",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5488618,
+          28.4178853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6. Church of San Francisco",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/6.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5499245,
+          28.4168196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "7. Plaza del Charco",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/7.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5504946,
+          28.4166788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8. La Ranilla",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5538396,
+          28.4175173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.1 Víctor Ash - Calle Mequinez, 2",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5516327,
+          28.4177858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.2 Ro.Ro - Calle Mequinez, 4",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5520908,
+          28.4177605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.3 Iker Muro - Calle Mequinez, 21",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5524578,
+          28.4175767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.4 Sex - Calle Mequinez, 66",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5542802,
+          28.4176471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.5 Juliana - Calle Maretas, 11",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5543779,
+          28.4166145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.6 Dulk - Calle Peñita, 6",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.6.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5538448,
+          28.4168053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.7 3ttman - Calle El Lomo, 28",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.7.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5533527,
+          28.417294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.8 Kob - Calle Teobaldo Power, 28",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.8.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5528499,
+          28.4162771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.9 Belin - Calle Puerto Viejo, 17",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.9.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5524201,
+          28.4158471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.10 Sabotaje al Montaje - Calle Teobaldo Power, 16",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.10.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5529532,
+          28.4168439
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.11 FEOFL!P - Calle Teobaldo Power, 8",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.11.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5529532,
+          28.4168439
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.12 Roa - Calle El Lomo, 7",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.12.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5522205,
+          28.4170627
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.13 Liqen - Calle Cruz Verde, 3",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.13.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5521765,
+          28.4174288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "9. Castillo de San Felipe",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/9.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5584324,
+          28.4143524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "10. Playa Jardín",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/10.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5585252,
+          28.4127752
+        ]
+      }
+    }
+  ]
+}
