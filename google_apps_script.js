@@ -52,45 +52,72 @@ const BUNDLE_ROUTES = {
 
 function doPost(e) {
   try {
-    const data = JSON.parse(e.postData.contents);
-    const email = data.email || data.user_email || data.customer_email || '';
-    
-    // Support all property names sent by Edge Function: guide, fullGuideCode, guideCode, product, collection
-    const rawGuide = (data.guide || data.fullGuideCode || data.guideCode || data.product || data.collection || '').toLowerCase().trim();
+    const rawContent = e && e.postData ? e.postData.contents : '';
+    let data = {};
+    try { data = JSON.parse(rawContent); } catch (pErr) {}
 
-    // Support all property names & formats for licenses: licenses (array or string), license, license_codes, codes
+    // Fail-proof email extraction from any JSON structure
+    let email = data.email || data.user_email || data.customer_email || '';
+    if (!email && rawContent) {
+      const emailMatch = rawContent.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+      if (emailMatch) email = emailMatch[0];
+    }
+
+    // Fail-proof guide key extraction from any JSON structure
+    const rawString = (rawContent + ' ' + JSON.stringify(data)).toLowerCase();
+    let guideKey = '';
+    const knownKeys = [
+      'heritage_collection', 'heritage',
+      'mystic_collection', 'mystic',
+      'seaside_collection', 'seaside',
+      'discovery_collection', 'discovery', 'all_access',
+      'santa-cruz', 'teide', 'costa-adeje', 'anaga',
+      'la-laguna', 'la-orotava', 'puerto-cruz', 'candelaria', 'quinta'
+    ];
+    for (var i = 0; i < knownKeys.length; i++) {
+      var k = knownKeys[i];
+      if (rawString.indexOf(k) !== -1) {
+        guideKey = k;
+        break;
+      }
+    }
+
+    // Fail-proof license extraction (scans for any LIC-XXXXXX codes in raw content)
     let licenses = [];
-    if (Array.isArray(data.licenses) && data.licenses.length > 0) licenses = data.licenses;
-    else if (Array.isArray(data.license_codes) && data.license_codes.length > 0) licenses = data.license_codes;
-    else if (Array.isArray(data.codes) && data.codes.length > 0) licenses = data.codes;
-    else if (typeof data.licenses === 'string' && data.licenses) licenses = data.licenses.split(',').map(s=>s.trim()).filter(Boolean);
-    else if (typeof data.license === 'string' && data.license) licenses = data.license.split(',').map(s=>s.trim()).filter(Boolean);
-    else if (typeof data.code === 'string' && data.code) licenses = data.code.split(',').map(s=>s.trim()).filter(Boolean);
+    if (rawContent) {
+      const licMatches = rawContent.match(/LIC-[A-Z0-9]+/gi) || [];
+      licenses = licMatches.map(function(m) { return m.toUpperCase(); });
+      licenses = licenses.filter(function(item, pos) { return licenses.indexOf(item) === pos; });
+    }
 
-    // Detect language
+    // Detect language from string (e.g. _de, _fr, _en)
     let lang = 'en';
-    if (rawGuide.endsWith('_de')) lang = 'de';
-    else if (rawGuide.endsWith('_fr')) lang = 'fr';
-    else if (rawGuide.endsWith('_en')) lang = 'en';
-
-    const guideKey = rawGuide.replace(/_(de|fr|en)$/, '');
+    if (rawString.indexOf('_de') !== -1) lang = 'de';
+    else if (rawString.indexOf('_fr') !== -1) lang = 'fr';
 
     // Record in Google Sheets (if bound to a spreadsheet)
     try {
       const ss = SpreadsheetApp.getActiveSpreadsheet();
       if (ss) {
         const sheet = ss.getActiveSheet();
-        sheet.appendRow([new Date(), email, rawGuide, licenses.join(','), lang]);
+        sheet.appendRow([new Date(), email, guideKey, licenses.join(','), lang]);
       }
     } catch (sheetErr) {
       Logger.log('Sheet logging skipped: ' + sheetErr);
     }
 
     // Build & Send Customer Email
-    sendCustomerEmail(email, guideKey, licenses, lang);
+    if (email) {
+      sendCustomerEmail(email, guideKey, licenses, lang);
+    }
 
-    return ContentService.createTextOutput(JSON.stringify({ status: 'success' }))
-      .setMimeType(ContentService.MimeType.JSON);
+    return ContentService.createTextOutput(JSON.stringify({ 
+      status: 'success', 
+      email: email, 
+      guideKey: guideKey, 
+      licensesCount: licenses.length 
+    })).setMimeType(ContentService.MimeType.JSON);
+
   } catch (err) {
     return ContentService.createTextOutput(JSON.stringify({ status: 'error', message: err.toString() }))
       .setMimeType(ContentService.MimeType.JSON);
@@ -105,10 +132,10 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
   let headerIconUrl = PACK_ICONS[guideKey] || ROUTE_ICONS[guideKey] || '';
 
   let titleText = '';
-  if (guideKey.includes('heritage')) titleText = 'Heritage Collection';
-  else if (guideKey.includes('mystic')) titleText = 'Mystic Collection';
-  else if (guideKey.includes('seaside')) titleText = 'Seaside Collection';
-  else if (guideKey.includes('discovery') || guideKey.includes('all_access')) titleText = 'Discovery Collection';
+  if (guideKey.indexOf('heritage') !== -1) titleText = 'Heritage Collection';
+  else if (guideKey.indexOf('mystic') !== -1) titleText = 'Mystic Collection';
+  else if (guideKey.indexOf('seaside') !== -1) titleText = 'Seaside Collection';
+  else if (guideKey.indexOf('discovery') !== -1 || guideKey.indexOf('all_access') !== -1) titleText = 'Discovery Collection';
   else titleText = (ROUTE_NAMES[guideKey] && ROUTE_NAMES[guideKey][lang]) || guideKey;
 
   let itemsHtml = '';
@@ -136,7 +163,6 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
   }
 
   const subject = `Your Tenerife Wonders Audioguide Access`;
-
   const headerImageHtml = headerIconUrl ? `<img src="${headerIconUrl}" height="42" style="vertical-align: middle; margin-right: 8px;" alt="">` : '';
 
   const htmlBody = `
