@@ -3,15 +3,15 @@
  */
 
 const PACK_ICONS = {
-  'heritage_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/Heritage.1.png',
-  'heritage': 'https://mirumiter.com/wp-content/uploads/2026/08/Heritage.1.png',
-  'mystic_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/Mystic.1.png',
-  'mystic': 'https://mirumiter.com/wp-content/uploads/2026/08/Mystic.1.png',
-  'seaside_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/Seaside.1.png',
-  'seaside': 'https://mirumiter.com/wp-content/uploads/2026/08/Seaside.1.png',
-  'discovery_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/Heritage.1.png',
-  'discovery': 'https://mirumiter.com/wp-content/uploads/2026/08/Heritage.1.png',
-  'all_access': 'https://mirumiter.com/wp-content/uploads/2026/08/Heritage.1.png'
+  'heritage_collection': 'https://tenerifewonders.github.io/mirumiter/icons/heritage.png',
+  'heritage': 'https://tenerifewonders.github.io/mirumiter/icons/heritage.png',
+  'mystic_collection': 'https://tenerifewonders.github.io/mirumiter/icons/mystic.png',
+  'mystic': 'https://tenerifewonders.github.io/mirumiter/icons/mystic.png',
+  'seaside_collection': 'https://tenerifewonders.github.io/mirumiter/icons/seaside.png',
+  'seaside': 'https://tenerifewonders.github.io/mirumiter/icons/seaside.png',
+  'discovery_collection': 'https://tenerifewonders.github.io/mirumiter/icons/discovery.png',
+  'discovery': 'https://tenerifewonders.github.io/mirumiter/icons/discovery.png',
+  'all_access': 'https://tenerifewonders.github.io/mirumiter/icons/discovery.png'
 };
 
 const ROUTE_ICONS = {
