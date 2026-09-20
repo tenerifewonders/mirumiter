@@ -95,13 +95,11 @@ function doPost(e) {
     if (rawString.indexOf('_de') !== -1) lang = 'de';
     else if (rawString.indexOf('_fr') !== -1) lang = 'fr';
 
-    // Record in Google Sheets (if bound to a spreadsheet)
+    // Record in Google Sheets
     try {
-      const ss = SpreadsheetApp.getActiveSpreadsheet();
-      if (ss) {
-        const sheet = ss.getActiveSheet();
-        sheet.appendRow([new Date(), email, guideKey, licenses.join(','), lang]);
-      }
+      const ss = SpreadsheetApp.openById('1uvSuneI-oah9zS8ykVqOcvP9BUxPCaf8x9phgtB46kU');
+      const sheet = ss.getActiveSheet();
+      sheet.appendRow([new Date(), email, guideKey, licenses.join(','), lang]);
     } catch (sheetErr) {
       Logger.log('Sheet logging skipped: ' + sheetErr);
     }
