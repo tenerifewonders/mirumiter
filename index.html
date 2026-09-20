@@ -136,13 +136,15 @@
       margin-bottom: 0;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       line-height: 1.3;
     }
-    .guide-card-title .route-icon {
-      font-size: 18px;
-      line-height: 1;
+    .route-icon-img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
       flex-shrink: 0;
+      filter: brightness(0);
     }
     .guide-card-body { padding: 16px; flex: 1; }
     .badge-status {
@@ -463,7 +465,7 @@
     const ROUTES_DATA = {
       'quinta': {
         id: 'quinta',
-        icon: '🗿',
+        iconUrl: './icons/19-4.svg',
         title: 'La Quinta',
         center: [28.4340, -16.4940],
         zoom: 15,
@@ -474,7 +476,7 @@
       },
       'santa-cruz': {
         id: 'santa-cruz',
-        icon: '🚢',
+        iconUrl: './icons/12-4.svg',
         title: 'Santa Cruz de Tenerife',
         center: [28.4636, -16.2518],
         zoom: 14,
@@ -485,7 +487,7 @@
       },
       'teide': {
         id: 'teide',
-        icon: '🌋',
+        iconUrl: './icons/13-4.svg',
         title: 'Teide National Park',
         center: [28.2249, -16.6358],
         zoom: 14,
@@ -496,7 +498,7 @@
       },
       'anaga': {
         id: 'anaga',
-        icon: '☠️',
+        iconUrl: './icons/15-4.svg',
         title: 'Anaga Rural Park',
         center: [28.5330, -16.2640],
         zoom: 12,
@@ -507,7 +509,7 @@
       },
       'la-laguna': {
         id: 'la-laguna',
-        icon: '👻',
+        iconUrl: './icons/16-4.svg',
         title: 'San Cristóbal de La Laguna',
         center: [28.4889, -16.3160],
         zoom: 15,
@@ -518,7 +520,7 @@
       },
       'la-orotava': {
         id: 'la-orotava',
-        icon: '🏛️',
+        iconUrl: './icons/23-4.svg',
         title: 'La Orotava',
         center: [28.3895, -16.5249],
         zoom: 15,
@@ -529,7 +531,7 @@
       },
       'puerto-cruz': {
         id: 'puerto-cruz',
-        icon: '🕯️',
+        iconUrl: './icons/17-4.svg',
         title: 'Puerto de la Cruz',
         center: [28.4166, -16.5504],
         zoom: 15,
@@ -540,7 +542,7 @@
       },
       'candelaria': {
         id: 'candelaria',
-        icon: '⛪',
+        iconUrl: './icons/22-4.svg',
         title: 'Candelaria',
         center: [28.3512, -16.3694],
         zoom: 15,
@@ -551,7 +553,7 @@
       },
       'costa-adeje': {
         id: 'costa-adeje',
-        icon: '🌴',
+        iconUrl: './icons/14-4.svg',
         title: 'Costa Adeje',
         center: [28.0682, -16.7328],
         zoom: 14,
@@ -766,7 +768,7 @@
         card.className = 'guide-card';
         card.innerHTML = `
           <div class="guide-card-header">
-            <div class="guide-card-title"><span class="route-icon">${route.icon}</span> <span>${route.title}</span></div>
+            <div class="guide-card-title"><img src="${route.iconUrl}" alt="" class="route-icon-img"> <span>${route.title}</span></div>
           </div>
           <div class="guide-card-body">
             <span class="badge-status ${isUnlocked ? 'badge-unlocked' : 'badge-locked'}">
