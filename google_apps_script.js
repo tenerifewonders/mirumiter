@@ -95,11 +95,21 @@ function doPost(e) {
     if (rawString.indexOf('_de') !== -1) lang = 'de';
     else if (rawString.indexOf('_fr') !== -1) lang = 'fr';
 
-    // Record in Google Sheets
+    // Record in Google Sheets - one row per guide/license (matching historical format)
     try {
       const ss = SpreadsheetApp.openById('1uvSuneI-oah9zS8ykVqOcvP9BUxPCaf8x9phgtB46kU');
       const sheet = ss.getActiveSheet();
-      sheet.appendRow([new Date(), email, guideKey, licenses.join(','), lang]);
+      const isBundle = !!BUNDLE_ROUTES[guideKey];
+      if (isBundle) {
+        const routesList = BUNDLE_ROUTES[guideKey];
+        routesList.forEach(function(rKey, index) {
+          const lic = licenses[index] || licenses[0] || '';
+          sheet.appendRow([new Date(), email, lic, rKey + '_' + lang, lang]);
+        });
+      } else {
+        const lic = licenses[0] || '';
+        sheet.appendRow([new Date(), email, lic, guideKey + '_' + lang, lang]);
+      }
     } catch (sheetErr) {
       Logger.log('Sheet logging skipped: ' + sheetErr);
     }
