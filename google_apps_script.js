@@ -3,15 +3,15 @@
  */
 
 const PACK_ICONS = {
-  'heritage_collection': 'https://tenerifewonders.github.io/mirumiter/icons/heritage.png',
-  'heritage': 'https://tenerifewonders.github.io/mirumiter/icons/heritage.png',
-  'mystic_collection': 'https://tenerifewonders.github.io/mirumiter/icons/mystic.png',
-  'mystic': 'https://tenerifewonders.github.io/mirumiter/icons/mystic.png',
-  'seaside_collection': 'https://tenerifewonders.github.io/mirumiter/icons/seaside.png',
-  'seaside': 'https://tenerifewonders.github.io/mirumiter/icons/seaside.png',
-  'discovery_collection': 'https://tenerifewonders.github.io/mirumiter/icons/discovery.png',
-  'discovery': 'https://tenerifewonders.github.io/mirumiter/icons/discovery.png',
-  'all_access': 'https://tenerifewonders.github.io/mirumiter/icons/discovery.png'
+  'heritage_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/Heritage.1.png',
+  'heritage': 'https://mirumiter.com/wp-content/uploads/2026/08/Heritage.1.png',
+  'mystic_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/Mystic.1.png',
+  'mystic': 'https://mirumiter.com/wp-content/uploads/2026/08/Mystic.1.png',
+  'seaside_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/Seaside.1.png',
+  'seaside': 'https://mirumiter.com/wp-content/uploads/2026/08/Seaside.1.png',
+  'discovery_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/Discovery.1.png',
+  'discovery': 'https://mirumiter.com/wp-content/uploads/2026/08/Discovery.1.png',
+  'all_access': 'https://mirumiter.com/wp-content/uploads/2026/08/Discovery.1.png'
 };
 
 const ROUTE_ICONS = {
@@ -147,20 +147,20 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
       const rIcon = ROUTE_ICONS[rKey] || '';
       const lic = licenses[index] || licenses[0] || '';
       itemsHtml += `
-        <li style="margin-bottom: 14px; font-size: 15px; list-style: none; display: flex; align-items: center; gap: 12px;">
-          ${rIcon ? `<img src="${rIcon}" width="38" height="38" style="vertical-align: middle; flex-shrink: 0;" alt="">` : ''}
-          <span><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 13px;">(License: ${lic})</span>` : ''}</span>
-        </li>`;
+        <tr>
+          ${rIcon ? `<td width="50" valign="middle" style="padding-bottom: 12px;"><img src="${rIcon}" width="38" height="38" style="display: block; margin: 0 auto;" alt=""></td>` : ''}
+          <td valign="middle" style="padding-bottom: 12px; font-size: 15px;"><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 13px;">(License: ${lic})</span>` : ''}</td>
+        </tr>`;
     });
   } else {
     const rName = (ROUTE_NAMES[guideKey] && ROUTE_NAMES[guideKey][lang]) || guideKey;
     const rIcon = ROUTE_ICONS[guideKey] || '';
     const lic = licenses[0] || '';
     itemsHtml += `
-      <li style="margin-bottom: 0; font-size: 15px; list-style: none; display: flex; align-items: center; gap: 12px;">
-        ${rIcon ? `<img src="${rIcon}" width="38" height="38" style="vertical-align: middle; flex-shrink: 0;" alt="">` : ''}
-        <span><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 13px;">(License: ${lic})</span>` : ''}</span>
-      </li>`;
+      <tr>
+        ${rIcon ? `<td width="50" valign="middle"><img src="${rIcon}" width="38" height="38" style="display: block; margin: 0 auto;" alt=""></td>` : ''}
+        <td valign="middle" style="font-size: 15px;"><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 13px;">(License: ${lic})</span>` : ''}</td>
+      </tr>`;
   }
 
   const subject = `Your Tenerife Wonders Audioguide Access`;
@@ -177,9 +177,13 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
 
       <p style="font-size: 14px; color: #475569;">The following audioguide${isBundle ? 's are' : ' is'} included in your ${isBundle ? 'collection' : 'purchase'}:</p>
       
-      <ul style="padding-left: 0; margin: 16px 0; background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
-        ${itemsHtml}
-      </ul>
+      <div style="margin: 16px 0; background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tbody>
+            ${itemsHtml}
+          </tbody>
+        </table>
+      </div>
 
       <div style="text-align: center; margin: 28px 0 16px 0;">
         <a href="${appUrl}" target="_blank" style="background-color: #0284c7; color: #ffffff; padding: 14px 28px; text-decoration: none; font-weight: 700; border-radius: 8px; font-size: 15px; display: inline-block;">Open App & Unlock ${isBundle ? 'Collection' : 'Audioguide'}</a>
