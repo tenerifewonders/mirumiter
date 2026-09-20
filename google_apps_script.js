@@ -95,7 +95,15 @@ function doPost(e) {
     if (rawString.indexOf('_de') !== -1) lang = 'de';
     else if (rawString.indexOf('_fr') !== -1) lang = 'fr';
 
+    // Extract Stripe session ID (cs_live_... or cs_test_...)
+    let stripeSessionId = '';
+    if (rawContent) {
+      const sessionMatch = rawContent.match(/cs_(live|test)_[A-Za-z0-9]+/);
+      if (sessionMatch) stripeSessionId = sessionMatch[0];
+    }
+
     // Record in Google Sheets - one row per guide/license (matching historical format)
+    // Columns: date | email | license | guide_lang | lang | stripe_session_id
     try {
       const ss = SpreadsheetApp.openById('1uvSuneI-oah9zS8ykVqOcvP9BUxPCaf8x9phgtB46kU');
       const sheet = ss.getActiveSheet();
@@ -104,11 +112,11 @@ function doPost(e) {
         const routesList = BUNDLE_ROUTES[guideKey];
         routesList.forEach(function(rKey, index) {
           const lic = licenses[index] || licenses[0] || '';
-          sheet.appendRow([new Date(), email, lic, rKey + '_' + lang, lang]);
+          sheet.appendRow([new Date(), email, lic, rKey + '_' + lang, lang, stripeSessionId]);
         });
       } else {
         const lic = licenses[0] || '';
-        sheet.appendRow([new Date(), email, lic, guideKey + '_' + lang, lang]);
+        sheet.appendRow([new Date(), email, lic, guideKey + '_' + lang, lang, stripeSessionId]);
       }
     } catch (sheetErr) {
       Logger.log('Sheet logging skipped: ' + sheetErr);
@@ -156,7 +164,7 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
       const lic = licenses[index] || licenses[0] || '';
       itemsHtml += `
         <tr>
-          ${rIcon ? `<td width="50" valign="middle" style="padding-bottom: 12px;"><img src="${rIcon}" width="38" height="38" style="display: block; margin: 0 auto;" alt=""></td>` : ''}
+          ${rIcon ? `<td width="50" valign="middle" style="padding-bottom: 12px;"><img src="${rIcon}" width="40" height="40" style="display: block; margin: 0 auto;" alt=""></td>` : ''}
           <td valign="middle" style="padding-bottom: 12px; font-size: 15px;"><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 13px;">(License: ${lic})</span>` : ''}</td>
         </tr>`;
     });
@@ -166,7 +174,7 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
     const lic = licenses[0] || '';
     itemsHtml += `
       <tr>
-        ${rIcon ? `<td width="50" valign="middle"><img src="${rIcon}" width="38" height="38" style="display: block; margin: 0 auto;" alt=""></td>` : ''}
+        ${rIcon ? `<td width="50" valign="middle"><img src="${rIcon}" width="40" height="40" style="display: block; margin: 0 auto;" alt=""></td>` : ''}
         <td valign="middle" style="font-size: 15px;"><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 13px;">(License: ${lic})</span>` : ''}</td>
       </tr>`;
   }
