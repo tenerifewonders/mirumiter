@@ -71,9 +71,16 @@ function doPost(e) {
 
     const guideKey = rawGuide.replace(/_(de|fr|en)$/, '');
 
-    // Record in Google Sheets
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    sheet.appendRow([new Date(), email, rawGuide, licenses.join(','), lang]);
+    // Record in Google Sheets (if bound to a spreadsheet)
+    try {
+      const ss = SpreadsheetApp.getActiveSpreadsheet();
+      if (ss) {
+        const sheet = ss.getActiveSheet();
+        sheet.appendRow([new Date(), email, rawGuide, licenses.join(','), lang]);
+      }
+    } catch (sheetErr) {
+      Logger.log('Sheet logging skipped or failed: ' + sheetErr);
+    }
 
     // Build Email
     sendCustomerEmail(email, guideKey, licenses, lang);
