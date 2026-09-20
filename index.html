@@ -546,6 +546,11 @@
       'heritage_collection': ['santa-cruz', 'anaga', 'la-orotava'],
       'mystic_collection': ['teide', 'la-laguna', 'quinta'],
       'seaside_collection': ['costa-adeje', 'puerto-cruz', 'candelaria'],
+      'discovery_collection': Object.keys(ROUTES_DATA),
+      'heritage': ['santa-cruz', 'anaga', 'la-orotava'],
+      'mystic': ['teide', 'la-laguna', 'quinta'],
+      'seaside': ['costa-adeje', 'puerto-cruz', 'candelaria'],
+      'discovery': Object.keys(ROUTES_DATA),
       'all_access': Object.keys(ROUTES_DATA)
     };
 
@@ -759,18 +764,21 @@
     async function activateLicense() {
       const input = document.getElementById('license-input');
       const msg = document.getElementById('license-msg');
-      const code = input.value.trim();
+      const rawCode = input.value.trim();
 
-      if (!code) return;
+      if (!rawCode) return;
 
       msg.style.display = 'block';
       msg.className = 'license-msg';
       msg.textContent = 'Validating license with Supabase...';
 
+      // Support comma-separated license codes in URL or input (e.g. LIC1,LIC2,LIC3)
+      const codeList = rawCode.split(',').map(c => c.trim()).filter(Boolean);
+
       const { data, error } = await supabaseClient
         .from('licenses')
-        .select('guide')
-        .eq('license_code', code);
+        .select('guide, license_code')
+        .in('license_code', codeList);
 
       if (error || !data || data.length === 0) {
         msg.className = 'license-msg error';
@@ -802,7 +810,13 @@
           if (!unlockedRoutes.includes(guideKey)) unlockedRoutes.push(guideKey);
         } else {
           const cleanKey = guideKey.split('_')[0];
-          if (!unlockedRoutes.includes(cleanKey)) unlockedRoutes.push(cleanKey);
+          if (BUNDLES[cleanKey]) {
+            BUNDLES[cleanKey].forEach(r => {
+              if (!unlockedRoutes.includes(r)) unlockedRoutes.push(r);
+            });
+          } else if (!unlockedRoutes.includes(cleanKey)) {
+            unlockedRoutes.push(cleanKey);
+          }
         }
       });
 
