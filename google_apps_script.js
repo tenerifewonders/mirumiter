@@ -1,11 +1,5 @@
 /**
  * Google Apps Script - Webhook Handler for Supabase / Stripe
- * Receives POST payload from Supabase Edge Function:
- * {
- *   email: "customer@example.com",
- *   guide: "heritage_collection_en" / "quinta_de" / "mystic_collection_es",
- *   licenses: ["LIC-XXXXX", "LIC-YYYYY", "LIC-ZZZZZ"]
- * }
  */
 
 const PACK_ICONS = {
@@ -15,21 +9,21 @@ const PACK_ICONS = {
   'mystic': 'https://mirumiter.com/wp-content/uploads/2026/08/Mystic.1.png',
   'seaside_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/Seaside.1.png',
   'seaside': 'https://mirumiter.com/wp-content/uploads/2026/08/Seaside.1.png',
-  'discovery_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/mirumiter-1.svg',
-  'discovery': 'https://mirumiter.com/wp-content/uploads/2026/08/mirumiter-1.svg',
-  'all_access': 'https://mirumiter.com/wp-content/uploads/2026/08/mirumiter-1.svg'
+  'discovery_collection': 'https://mirumiter.com/wp-content/uploads/2026/08/Heritage.1.png',
+  'discovery': 'https://mirumiter.com/wp-content/uploads/2026/08/Heritage.1.png',
+  'all_access': 'https://mirumiter.com/wp-content/uploads/2026/08/Heritage.1.png'
 };
 
 const ROUTE_ICONS = {
-  'santa-cruz': 'https://mirumiter.com/wp-content/uploads/2026/08/12-4.svg',
-  'teide': 'https://mirumiter.com/wp-content/uploads/2026/08/13-4.svg',
-  'costa-adeje': 'https://mirumiter.com/wp-content/uploads/2026/08/14-4.svg',
-  'anaga': 'https://mirumiter.com/wp-content/uploads/2026/08/15-4.svg',
-  'la-laguna': 'https://mirumiter.com/wp-content/uploads/2026/08/16-4.svg',
-  'puerto-cruz': 'https://mirumiter.com/wp-content/uploads/2026/08/17-4.svg',
-  'quinta': 'https://mirumiter.com/wp-content/uploads/2026/08/19-4.svg',
-  'candelaria': 'https://mirumiter.com/wp-content/uploads/2026/08/22-4.svg',
-  'la-orotava': 'https://mirumiter.com/wp-content/uploads/2026/08/23-4.svg'
+  'santa-cruz': 'https://tenerifewonders.github.io/mirumiter/icons/12-4.png',
+  'teide': 'https://tenerifewonders.github.io/mirumiter/icons/13-4.png',
+  'costa-adeje': 'https://tenerifewonders.github.io/mirumiter/icons/14-4.png',
+  'anaga': 'https://tenerifewonders.github.io/mirumiter/icons/15-4.png',
+  'la-laguna': 'https://tenerifewonders.github.io/mirumiter/icons/16-4.png',
+  'puerto-cruz': 'https://tenerifewonders.github.io/mirumiter/icons/17-4.png',
+  'quinta': 'https://tenerifewonders.github.io/mirumiter/icons/19-4.png',
+  'candelaria': 'https://tenerifewonders.github.io/mirumiter/icons/22-4.png',
+  'la-orotava': 'https://tenerifewonders.github.io/mirumiter/icons/23-4.png'
 };
 
 const ROUTE_NAMES = {
@@ -59,9 +53,19 @@ const BUNDLE_ROUTES = {
 function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
-    const email = data.email;
-    const rawGuide = (data.guide || '').toLowerCase().trim();
-    const licenses = data.licenses || []; // array of license strings
+    const email = data.email || data.user_email || data.customer_email || '';
+    
+    // Support all property names sent by Edge Function: guide, fullGuideCode, guideCode, product, collection
+    const rawGuide = (data.guide || data.fullGuideCode || data.guideCode || data.product || data.collection || '').toLowerCase().trim();
+
+    // Support all property names & formats for licenses: licenses (array or string), license, license_codes, codes
+    let licenses = [];
+    if (Array.isArray(data.licenses) && data.licenses.length > 0) licenses = data.licenses;
+    else if (Array.isArray(data.license_codes) && data.license_codes.length > 0) licenses = data.license_codes;
+    else if (Array.isArray(data.codes) && data.codes.length > 0) licenses = data.codes;
+    else if (typeof data.licenses === 'string' && data.licenses) licenses = data.licenses.split(',').map(s=>s.trim()).filter(Boolean);
+    else if (typeof data.license === 'string' && data.license) licenses = data.license.split(',').map(s=>s.trim()).filter(Boolean);
+    else if (typeof data.code === 'string' && data.code) licenses = data.code.split(',').map(s=>s.trim()).filter(Boolean);
 
     // Detect language
     let lang = 'en';
@@ -79,10 +83,10 @@ function doPost(e) {
         sheet.appendRow([new Date(), email, rawGuide, licenses.join(','), lang]);
       }
     } catch (sheetErr) {
-      Logger.log('Sheet logging skipped or failed: ' + sheetErr);
+      Logger.log('Sheet logging skipped: ' + sheetErr);
     }
 
-    // Build Email
+    // Build & Send Customer Email
     sendCustomerEmail(email, guideKey, licenses, lang);
 
     return ContentService.createTextOutput(JSON.stringify({ status: 'success' }))
@@ -98,10 +102,8 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
   const licenseParam = licenses.join(',');
   const appUrl = `https://tenerifewonders.github.io/mirumiter/?lang=${lang}&license=${licenseParam}`;
 
-  // Pack / Route Header Icon
-  let headerIconUrl = PACK_ICONS[guideKey] || ROUTE_ICONS[guideKey] || 'https://mirumiter.com/wp-content/uploads/2026/08/mirumiter-1.svg';
+  let headerIconUrl = PACK_ICONS[guideKey] || ROUTE_ICONS[guideKey] || '';
 
-  // Pack / Route Title Text
   let titleText = '';
   if (guideKey.includes('heritage')) titleText = 'Heritage Collection';
   else if (guideKey.includes('mystic')) titleText = 'Mystic Collection';
@@ -109,7 +111,6 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
   else if (guideKey.includes('discovery') || guideKey.includes('all_access')) titleText = 'Discovery Collection';
   else titleText = (ROUTE_NAMES[guideKey] && ROUTE_NAMES[guideKey][lang]) || guideKey;
 
-  // Build List of Included Items
   let itemsHtml = '';
   if (isBundle) {
     const routesList = BUNDLE_ROUTES[guideKey];
@@ -118,9 +119,9 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
       const rIcon = ROUTE_ICONS[rKey] || '';
       const lic = licenses[index] || licenses[0] || '';
       itemsHtml += `
-        <li style="margin-bottom: 10px; font-size: 14px; list-style: none; display: flex; align-items: center; gap: 8px;">
-          <img src="${rIcon}" width="20" height="20" style="vertical-align: middle; filter: brightness(0);" alt="">
-          <span><strong>${rName}</strong> <span style="color: #64748b; font-size: 12px;">(License: ${lic})</span></span>
+        <li style="margin-bottom: 12px; font-size: 14px; list-style: none; display: flex; align-items: center; gap: 8px;">
+          ${rIcon ? `<img src="${rIcon}" width="20" height="20" style="vertical-align: middle; flex-shrink: 0;" alt="">` : ''}
+          <span><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 12px;">(License: ${lic})</span>` : ''}</span>
         </li>`;
     });
   } else {
@@ -128,20 +129,22 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
     const rIcon = ROUTE_ICONS[guideKey] || '';
     const lic = licenses[0] || '';
     itemsHtml += `
-      <li style="margin-bottom: 10px; font-size: 14px; list-style: none; display: flex; align-items: center; gap: 8px;">
-        <img src="${rIcon}" width="20" height="20" style="vertical-align: middle; filter: brightness(0);" alt="">
-        <span><strong>${rName}</strong> <span style="color: #64748b; font-size: 12px;">(License: ${lic})</span></span>
+      <li style="margin-bottom: 12px; font-size: 14px; list-style: none; display: flex; align-items: center; gap: 8px;">
+        ${rIcon ? `<img src="${rIcon}" width="20" height="20" style="vertical-align: middle; flex-shrink: 0;" alt="">` : ''}
+        <span><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 12px;">(License: ${lic})</span>` : ''}</span>
       </li>`;
   }
 
   const subject = `Your Tenerife Wonders Audioguide Access`;
+
+  const headerImageHtml = headerIconUrl ? `<img src="${headerIconUrl}" height="42" style="vertical-align: middle; margin-right: 8px;" alt="">` : '';
 
   const htmlBody = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; color: #1e293b;">
       <h2 style="text-align: center; color: #0f172a; margin-top: 0;">Thank you for your purchase!</h2>
       
       <div style="text-align: center; margin: 20px 0;">
-        <img src="${headerIconUrl}" height="40" style="vertical-align: middle; margin-right: 8px;" alt="">
+        ${headerImageHtml}
         <h3 style="display: inline-block; vertical-align: middle; margin: 0; color: #0284c7; font-size: 20px;">${titleText}</h3>
       </div>
 
