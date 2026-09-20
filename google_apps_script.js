@@ -56,14 +56,14 @@ function doPost(e) {
     let data = {};
     try { data = JSON.parse(rawContent); } catch (pErr) {}
 
-    // Fail-proof email extraction from any JSON structure
+    // Fail-proof email extraction
     let email = data.email || data.user_email || data.customer_email || '';
     if (!email && rawContent) {
       const emailMatch = rawContent.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
       if (emailMatch) email = emailMatch[0];
     }
 
-    // Fail-proof guide key extraction from any JSON structure
+    // Fail-proof guide key extraction
     const rawString = (rawContent + ' ' + JSON.stringify(data)).toLowerCase();
     let guideKey = '';
     const knownKeys = [
@@ -82,7 +82,7 @@ function doPost(e) {
       }
     }
 
-    // Fail-proof license extraction (scans for any LIC-XXXXXX codes in raw content)
+    // Fail-proof license extraction (extracts any LIC-XXXXXX codes in raw content)
     let licenses = [];
     if (rawContent) {
       const licMatches = rawContent.match(/LIC-[A-Z0-9]+/gi) || [];
@@ -90,7 +90,7 @@ function doPost(e) {
       licenses = licenses.filter(function(item, pos) { return licenses.indexOf(item) === pos; });
     }
 
-    // Detect language from string (e.g. _de, _fr, _en)
+    // Detect language
     let lang = 'en';
     if (rawString.indexOf('_de') !== -1) lang = 'de';
     else if (rawString.indexOf('_fr') !== -1) lang = 'fr';
@@ -129,7 +129,8 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
   const licenseParam = licenses.join(',');
   const appUrl = `https://tenerifewonders.github.io/mirumiter/?lang=${lang}&license=${licenseParam}`;
 
-  let headerIconUrl = PACK_ICONS[guideKey] || ROUTE_ICONS[guideKey] || '';
+  // Only show top header icon for Collection Packs (not for single guides)
+  let headerIconUrl = isBundle ? (PACK_ICONS[guideKey] || '') : '';
 
   let titleText = '';
   if (guideKey.indexOf('heritage') !== -1) titleText = 'Heritage Collection';
@@ -146,9 +147,9 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
       const rIcon = ROUTE_ICONS[rKey] || '';
       const lic = licenses[index] || licenses[0] || '';
       itemsHtml += `
-        <li style="margin-bottom: 12px; font-size: 14px; list-style: none; display: flex; align-items: center; gap: 8px;">
-          ${rIcon ? `<img src="${rIcon}" width="20" height="20" style="vertical-align: middle; flex-shrink: 0;" alt="">` : ''}
-          <span><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 12px;">(License: ${lic})</span>` : ''}</span>
+        <li style="margin-bottom: 14px; font-size: 15px; list-style: none; display: flex; align-items: center; gap: 12px;">
+          ${rIcon ? `<img src="${rIcon}" width="38" height="38" style="vertical-align: middle; flex-shrink: 0;" alt="">` : ''}
+          <span><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 13px;">(License: ${lic})</span>` : ''}</span>
         </li>`;
     });
   } else {
@@ -156,9 +157,9 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
     const rIcon = ROUTE_ICONS[guideKey] || '';
     const lic = licenses[0] || '';
     itemsHtml += `
-      <li style="margin-bottom: 12px; font-size: 14px; list-style: none; display: flex; align-items: center; gap: 8px;">
-        ${rIcon ? `<img src="${rIcon}" width="20" height="20" style="vertical-align: middle; flex-shrink: 0;" alt="">` : ''}
-        <span><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 12px;">(License: ${lic})</span>` : ''}</span>
+      <li style="margin-bottom: 0; font-size: 15px; list-style: none; display: flex; align-items: center; gap: 12px;">
+        ${rIcon ? `<img src="${rIcon}" width="38" height="38" style="vertical-align: middle; flex-shrink: 0;" alt="">` : ''}
+        <span><strong>${rName}</strong> ${lic ? `<span style="color: #64748b; font-size: 13px;">(License: ${lic})</span>` : ''}</span>
       </li>`;
   }
 
@@ -174,7 +175,7 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
         <h3 style="display: inline-block; vertical-align: middle; margin: 0; color: #0284c7; font-size: 20px;">${titleText}</h3>
       </div>
 
-      <p style="font-size: 14px; color: #475569;">The following audioguides are included in your collection:</p>
+      <p style="font-size: 14px; color: #475569;">The following audioguide${isBundle ? 's are' : ' is'} included in your ${isBundle ? 'collection' : 'purchase'}:</p>
       
       <ul style="padding-left: 0; margin: 16px 0; background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
         ${itemsHtml}
