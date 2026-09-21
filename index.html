@@ -296,7 +296,7 @@
       line-height: 1.55;
     }
     .route-notice strong {
-      display: block;
+      display: inline;
       margin-bottom: 4px;
       font-size: 12.5px;
       color: #1e293b;
@@ -562,19 +562,16 @@
         tipsUrl: { en: './tips/EN-PUERTO-CRUZ.html', de: './tips/DE-PUERTO-CRUZ.html', fr: './tips/FR-PUERTO-CRUZ.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4118131,-16.547949&destination=28.4127752,-16.5585252&travelmode=walking',
         notice: {
-          en: {
-            title: 'Route information',
-            text: 'Full-day route. Please note that the starting point and the end of the route are 2.2 km apart. There is an 84-meter downward slope with stairs between the first and second stops. Some travelers prefer to do the first stop and then drive to the second one; from that point on, the route is completely flat.'
-          },
-          de: {
-            title: 'Routeninformation',
-            text: 'Ganztägige Route. Bitte beachten Sie, dass Start- und Endpunkt der Route 2,2 km voneinander entfernt sind. Zwischen der ersten und der zweiten Station gibt es ein Gefälle von 84 Höhenmetern mit Treppen. Einige Reisende ziehen es vor, die erste Station zu besuchen und dann mit dem Auto zur zweiten zu fahren; von dort an ist der Weg völlig flach.'
-          },
-          fr: {
-            title: "Informations sur l'itinéraire",
-            text: "Itinéraire d'une journée complète. Veuillez noter que le point de départ et la fin du parcours sont distants de 2,2 km. Il y a un dénivelé descendant de 84 mètres avec des escaliers entre le premier et le deuxième arrêt. Certains voyageurs préfèrent faire le premier arrêt puis se rendre au second en voiture ; à partir de là, le trajet est entièrement plat."
-          }
-        }
+  		en: {
+    text: '<strong>Full-day route.</strong> Please note that the starting point and the end of the route are 2.2 km apart. There is an 84-meter downward slope with stairs between the first and second stops.<br>Some travelers prefer to do the first stop and then drive to the second one; from that point on, the route is completely flat.'
+  },
+  		de: {
+    text: '<strong>Ganztägige Route.</strong> Bitte beachten Sie, dass Start- und Endpunkt der Route 2,2 km voneinander entfernt sind. Zwischen der ersten und der zweiten Station gibt es ein Gefälle von 84 Höhenmetern mit Treppen.<br>Einige Reisende ziehen es vor, die erste Station zu besuchen und dann mit dem Auto zur zweiten zu fahren; von dort an ist der Weg völlig flach.'
+  },
+  		fr: {
+    text: "<strong>Itinéraire d'une journée complète.</strong> Veuillez noter que le point de départ et la fin du parcours sont distants de 2,2 km. Il y a un dénivelé descendant de 84 mètres avec des escaliers entre le premier et le deuxième arrêt.<br>Certains voyageurs préfèrent faire le premier arrêt puis se rendre au second en voiture ; à partir de là, le trajet est entièrement plat."
+  }
+}
       },
       'candelaria': {
         id: 'candelaria',
@@ -775,18 +772,18 @@
 
     let currentRoute = null;
 
-    function updateRouteNotice(route) {
-      const noticeEl = document.getElementById('route-notice');
-      if (!noticeEl) return;
-      const langNotice = route && route.notice ? (route.notice[currentLang] || route.notice.en) : null;
-      if (!langNotice) {
-        noticeEl.style.display = 'none';
-        noticeEl.innerHTML = '';
-        return;
-      }
-      noticeEl.innerHTML = '<strong>' + langNotice.title + '</strong> ' + langNotice.text;
-      noticeEl.style.display = 'block';
-    }
+ function updateRouteNotice(route) {
+  const noticeEl = document.getElementById('route-notice');
+  if (!noticeEl) return;
+  const langNotice = route && route.notice ? (route.notice[currentLang] || route.notice.en) : null;
+  if (!langNotice) {
+    noticeEl.style.display = 'none';
+    noticeEl.innerHTML = '';
+    return;
+  }
+  noticeEl.innerHTML = langNotice.text;
+  noticeEl.style.display = 'block';
+}
 
     function changeLanguage(lang) {
       currentLang = lang;
