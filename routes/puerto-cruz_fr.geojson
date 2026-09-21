@@ -173,7 +173,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.1 Víctor Ash - Calle Mequinez, 2",
+        "Name": "8.1 \"La frontera del paraíso\" (Rue Mequinez, 2)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.1.mp3"
       },
       "geometry": {
@@ -187,7 +187,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.2 Ro.Ro - Calle Mequinez, 4",
+        "Name": "8.2 \"¡Rum, rum, rum, la botella de rum!\" (Rue Mequinez, 4)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.2.mp3"
       },
       "geometry": {
@@ -201,7 +201,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.3 Iker Muro - Calle Mequinez, 21",
+        "Name": "8.3 \"La Macaronesia\" (Rue Mequinez, 21)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.3.mp3"
       },
       "geometry": {
@@ -215,7 +215,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.4 Sex - Calle Mequinez, 66",
+        "Name": "8.4 \"El Niño de las Pinturas\" (Rue Mequinez, 66)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.4.mp3"
       },
       "geometry": {
@@ -229,7 +229,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.5 Juliana - Calle Maretas, 11",
+        "Name": "8.5 \"Si puedes soñarlo, puedes crearlo\" (Rue Maretas, 11)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.5.mp3"
       },
       "geometry": {
@@ -243,7 +243,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.6 Dulk - Calle Peñita, 6",
+        "Name": "8.6 Peinture murale (Rue Peñita, 6)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.6.mp3"
       },
       "geometry": {
@@ -257,7 +257,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.7 3ttman - Calle El Lomo, 28",
+        "Name": "8.7 \"Los Magos\" (Rue El Lomo, 28)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.7.mp3"
       },
       "geometry": {
@@ -271,7 +271,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.8 Kob - Calle Teobaldo Power, 28",
+        "Name": "8.8 Peinture murale (Rue Teobaldo Power, 28)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.8.mp3"
       },
       "geometry": {
@@ -285,7 +285,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.9 Belin - Calle Puerto Viejo, 17",
+        "Name": "8.9 \"La eterna juventud\" (Rue Puerto Viejo, 17)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.9.mp3"
       },
       "geometry": {
@@ -299,7 +299,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.10 Sabotaje al Montaje - Calle Teobaldo Power, 16",
+        "Name": "8.10 \"Ritual\" (Rue Teobaldo Power, 16)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.10.mp3"
       },
       "geometry": {
@@ -313,7 +313,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.11 FEOFL!P - Calle Teobaldo Power, 8",
+        "Name": "8.11 \"Navíos volátiles\" (Rue Teobaldo Power, 8)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.11.mp3"
       },
       "geometry": {
@@ -327,7 +327,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.12 Roa - Calle El Lomo, 7",
+        "Name": "8.12 Peinture murale (Rue El Lomo, 7)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.12.mp3"
       },
       "geometry": {
@@ -341,7 +341,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.13 Liqen - Calle Cruz Verde, 3",
+        "Name": "8.13 \"Ánfora voladora\" (Rue Cruz Verde, 3)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_fr/8.13.mp3"
       },
       "geometry": {
