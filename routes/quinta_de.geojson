@@ -1,10 +1,25 @@
 {
   "type": "FeatureCollection",
+  "name": "La Quinta (DE)",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. La Giganta – Die ewige Wächterin",
+        "Name": "0. Introduction",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_de/0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4913284,
+          28.4307331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. La Giganta - The Eternal Guardian",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_de/1.mp3"
       },
       "geometry": {
@@ -18,7 +33,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Barranco de la Cruz – Die Wege des Krieges",
+        "Name": "2. Barranco de la Cruz - The Roads of War",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_de/2.mp3"
       },
       "geometry": {
@@ -32,7 +47,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Mirador Callado Blanco – Die wandernde Insel",
+        "Name": "3. Mirador Callado Blanco - The Wandering Island",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_de/3.mp3"
       },
       "geometry": {
@@ -46,7 +61,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Bunker von Santa Úrsula – Die Stimme der Steine",
+        "Name": "4. The Bunker - The Concrete Eye",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_de/4.mp3"
       },
       "geometry": {
@@ -60,7 +75,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Mirador de La Quinta Roja – Das innere Königreich",
+        "Name": "5. Plaza - The Stolen Pulse",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/quinta_de/5.mp3"
       },
       "geometry": {

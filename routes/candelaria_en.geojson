@@ -1,12 +1,12 @@
 {
   "type": "FeatureCollection",
-  "name": "Candelaria Stops",
+  "name": "Candelaria (EN)",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Plaza de la Patrona de Canarias",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/1.%20Candelaria.mp3"
+        "Name": "0. Introduction",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/0. Candelaria-Intro.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -20,8 +20,23 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Basílica de Nuestra Señora de Candelaria",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.%20Candelaria.mp3"
+        "Name": "1. Plaza de la Patrona",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/1. Candelaria.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3697868,
+          28.3513008,
+          0.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.1 Basilica - Part 1",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.1.Candelaria.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -35,8 +50,83 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Ermita de San Blas and Cave of Achbinico",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/3.%20Candelaria.mp3"
+        "Name": "2.2 Basilica - Part 2",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.2.Candelaria.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3694216,
+          28.3512934,
+          0.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.3 Basilica - Part 3",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.3.Candelaria.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3694216,
+          28.3512934,
+          0.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.4 Basilica - Part 4",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.4.Candelaria.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3694216,
+          28.3512934,
+          0.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.5 Basilica - Part 5",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.5.Candelaria.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3694216,
+          28.3512934,
+          0.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.6 Basilica - Part 6",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.6.Candelaria.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3694216,
+          28.3512934,
+          0.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3. Ermita de San Blas & Cave",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/3. Candelaria.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -50,8 +140,38 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Camino Real de Candelaria",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/4.%20Candelaria.mp3"
+        "Name": "4.1 Old Royal Road - Part 1",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/4.1.Candelaria.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3694086,
+          28.3516713,
+          0.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4.2 Old Royal Road - Part 2",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/4.2.Candelaria.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3694086,
+          28.3516713,
+          0.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4.3 Old Royal Road - Part 3",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/4.3.Candelaria.mp3"
       },
       "geometry": {
         "type": "Point",

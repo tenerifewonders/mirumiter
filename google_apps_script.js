@@ -214,9 +214,9 @@ function sendCustomerEmail(email, guideKey, licenses, lang) {
     </div>
   `;
 
-  MailApp.sendEmail({
-    to: email,
-    subject: subject,
-    htmlBody: htmlBody
+  GmailApp.sendEmail(email, subject, '', {
+    htmlBody: htmlBody,
+    name: 'no-reply',
+    from: 'no-reply@mirumiter.com'
   });
 }

@@ -1,11 +1,25 @@
 {
   "type": "FeatureCollection",
-  "name": "Costa Adeje Stops",
+  "name": "Costa Adeje (EN)",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Playa de los Cristianos and Playa de las Vistas",
+        "Name": "0. Introduction",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7177511,
+          28.0503209
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. Playa de los Cristianos",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/1.mp3"
       },
       "geometry": {
@@ -19,7 +33,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Playa del Camisón: The Perfect Balance",
+        "Name": "2. Playa del Camisón",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/2.mp3"
       },
       "geometry": {
@@ -75,7 +89,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Mirador del Dedo and the Natural Pool",
+        "Name": "6. Mirador del Dedo and Natural Pool",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/6.mp3"
       },
       "geometry": {
@@ -89,7 +103,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7. BIC Zone 'El Búnker - El Medio'",
+        "Name": "7. BIC Zone El Búnker",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/7.mp3"
       },
       "geometry": {
@@ -103,7 +117,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8. Playa de las Américas (Surf Zone)",
+        "Name": "8. Playa de las Américas",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_en/8.mp3"
       },
       "geometry": {

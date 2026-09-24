@@ -1,11 +1,11 @@
 {
   "type": "FeatureCollection",
-  "name": "Anaga French Stops",
+  "name": "Anaga (FR)",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "Name": "0. Intro",
+        "Name": "0. Introduction",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.0.mp3"
       },
       "geometry": {
@@ -20,8 +20,23 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Ancien couvent de Santo Domingo",
+        "Name": "1. Stop 1",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3135,
+          28.4859,
+          0.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2. Stop 2",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.2.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -35,8 +50,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Ancien chemin du Pico del Inglés",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.2.mp3"
+        "Name": "3. Stop 3",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.3.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -50,8 +65,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Belvédère du Pico del Inglés",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.3.mp3"
+        "Name": "4. Stop 4",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.4.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -65,8 +80,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Belvédère d'El Bailadero",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.4.mp3"
+        "Name": "5. Stop 5",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -80,8 +95,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Belvédère de Risco Amogoje",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.5.mp3"
+        "Name": "6. Stop 6",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -95,8 +110,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Taganana",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.6.mp3"
+        "Name": "7. Stop 7",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.7.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -110,8 +125,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7. Roque de las Bodegas",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.7.mp3"
+        "Name": "8. Stop 8",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.8.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -125,29 +140,14 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8. Plage d'Almáciga",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.8.mp3"
+        "Name": "9. Stop 9",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.9.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -16.192508,
           28.572064,
-          0.0
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "9. Château de Paso Alto",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_fr/Anaga.9.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.240959,
-          28.480816,
           0.0
         ]
       }

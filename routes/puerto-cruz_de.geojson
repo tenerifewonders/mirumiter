@@ -1,11 +1,25 @@
 {
   "type": "FeatureCollection",
-  "name": "Puerto de la Cruz Stops",
+  "name": "Puerto de la Cruz (DE)",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Taoro-Park und das Gran Hotel Taoro",
+        "Name": "0. Introduction",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.547949,
+          28.4118131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. Taoro Park and Gran Hotel",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/1.mp3"
       },
       "geometry": {
@@ -19,7 +33,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Kolumbus-Avenue (Avenida de Cristóbal Colón)",
+        "Name": "2. Avenida de Colón",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/2.mp3"
       },
       "geometry": {
@@ -33,7 +47,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Aussichtsplatz der San Telmo-Kapelle",
+        "Name": "3. Paseo de San Telmo",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/3.mp3"
       },
       "geometry": {
@@ -47,8 +61,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "San Telmo-Aussichtspunkt",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/3.mp3"
+        "Name": "4. Church of Nuestra Señora",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/4.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -61,8 +75,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Kirche Unserer Lieben Frau von Peña de Francia",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/4.mp3"
+        "Name": "5. Plaza de Europa",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -75,8 +89,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Europa-Platz",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/5.mp3"
+        "Name": "6. Church of San Francisco",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -89,8 +103,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5.1 Rathaus von Puerto de la Cruz",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/5.mp3"
+        "Name": "7. Plaza del Charco",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/7.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -103,8 +117,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5.2 Altes Zollhaus (Casa de la Aduana)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/5.mp3"
+        "Name": "8.0 La Ranilla - Intro",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.0.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -117,8 +131,204 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5.3 Miranda-Haus (Casa de Miranda)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/5.mp3"
+        "Name": "8.1 La frontera del paraíso",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.2 Ron, ron, ron",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.3 La Macaronesia",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.4 El Niño de las Pinturas",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.5 Si puedes soñarlo",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.6 Mural by Dulk",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.6.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.7 Los Magos",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.7.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.8 Kob",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.8.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.9 La eterna juventud",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.9.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.10 Ritual",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.10.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.11 Navíos volátiles",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.11.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.12 Roa",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.12.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.13 Ánfora voladora",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.13.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.14 The Synthesis of the City",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.14.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "9. Castillo de San Felipe",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/9.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -131,8 +341,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. San Francisco-Kirche",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/6.mp3"
+        "Name": "10. Playa Jardín",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/10.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -145,238 +355,14 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7. Pfützen-Platz (Plaza del Charco)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/7.mp3"
+        "Name": "11. Final thoughts",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/11.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5504946,
-          28.4166788
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8. Das Viertel La Ranilla",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.0.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5538396,
-          28.4175173
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.1 «La frontera del paraíso» (Mequinez-Straße, 2)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.1.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5516327,
-          28.4177858
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.2 «¡Rum, rum, rum, la botella de rum!» (Mequinez-Straße, 4)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.2.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5520908,
-          28.4177605
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.3 «La Macaronesia» (Mequinez-Straße, 21)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.3.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5524578,
-          28.4175767
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.4 «El Niño de las Pinturas» (Mequinez-Straße, 66)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.4.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5442802,
-          28.4176471
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.5 «Si puedes soñarlo, puedes crearlo» (Maretas-Straße, 11)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.5.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5543779,
-          28.4166145
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.6 Wandgemälde (Peñita-Straße, 6)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.6.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5538448,
-          28.4168053
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.7 «Los Magos» (El Lomo-Straße, 28)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.7.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5533527,
-          28.417294
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.8 Wandgemälde (Teobaldo Power-Straße, 28)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.8.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5528499,
-          28.4162771
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.9 «La eterna juventud» (Puerto Viejo-Straße, 17)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.9.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5524201,
-          28.4158471
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.10 «Ritual» (Teobaldo Power-Straße, 16)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.10.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5529532,
-          28.4168439
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.11 «Navíos volátiles» (Teobaldo Power-Straße, 8)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.11.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5529532,
-          28.4168439
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.12 Wandgemälde (El Lomo-Straße, 7)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.12.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5522205,
-          28.4170627
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.13 «Ánfora voladora» (Cruz Verde-Straße, 3)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/8.13.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5521765,
-          28.4174288
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "9. San Felipe-Festung (Castillo de San Felipe)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/9.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5584324,
-          28.4143524
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "10. Strand Jardín (Playa Jardín)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_de/10.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5585252,
-          28.4127752
+          -16.5499245,
+          28.4168196
         ]
       }
     }

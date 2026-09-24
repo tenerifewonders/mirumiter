@@ -1,11 +1,25 @@
 {
   "type": "FeatureCollection",
-  "name": "La Laguna Stops FR",
+  "name": "La Laguna (FR)",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Église de la Concepción — Le Diable de La Laguna",
+        "Name": "0. Introduction",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.320638,
+          28.4905227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. Stop 1",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/1.mp3"
       },
       "geometry": {
@@ -19,7 +33,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Palais de Lercáro — Le fantôme de Catalina",
+        "Name": "2. Stop 2",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/2.mp3"
       },
       "geometry": {
@@ -33,7 +47,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Cathédrale de San Cristóbal de La Laguna — Échos sous la coupole",
+        "Name": "3. Stop 3",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/3.mp3"
       },
       "geometry": {
@@ -47,7 +61,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Calle Obispo Rey Redondo — La rue des demeures nobles",
+        "Name": "4. Stop 4",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/4.mp3"
       },
       "geometry": {
@@ -61,7 +75,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Palais de Nava — Apparitions dans la noblesse",
+        "Name": "5. Stop 5",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/5.mp3"
       },
       "geometry": {
@@ -75,7 +89,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Plaza del Adelantado — L'ancien cœur du pouvoir",
+        "Name": "6. Stop 6",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/6.mp3"
       },
       "geometry": {
@@ -89,8 +103,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.1 La Mairie de La Laguna",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/6.mp3"
+        "Name": "7. Stop 7",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/7.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -103,42 +117,14 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.2 Le Monastère de Santa Catalina de Siena",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/6.mp3"
+        "Name": "8. Stop 8",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/8.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -16.3139553,
           28.4878436
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "6.3 Le Palacete Rodríguez de Azero",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/6.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.3136981,
-          28.488632
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "7. Ancien Couvent de Santo Domingo — Échos de foi, de science et de pirates",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/la-laguna_fr/7.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.3134226,
-          28.4858577
         ]
       }
     }

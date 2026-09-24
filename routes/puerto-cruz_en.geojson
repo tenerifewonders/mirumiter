@@ -1,11 +1,25 @@
 {
   "type": "FeatureCollection",
-  "name": "Puerto de la Cruz Stops",
+  "name": "Puerto de la Cruz (EN)",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Parque Taoro and the Gran Hotel Taoro",
+        "Name": "0. Introduction",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.547949,
+          28.4118131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. Taoro Park and Gran Hotel",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/1.mp3"
       },
       "geometry": {
@@ -19,7 +33,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Avenida de Cristóbal Colón",
+        "Name": "2. Avenida de Colón",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/2.mp3"
       },
       "geometry": {
@@ -33,7 +47,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Plaza-Mirador de la Ermita de San Telmo",
+        "Name": "3. Paseo de San Telmo",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/3.mp3"
       },
       "geometry": {
@@ -47,8 +61,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "Mirador de San Telmo",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/3.mp3"
+        "Name": "4. Church of Nuestra Señora",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/4.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -61,8 +75,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Church of Nuestra Señora de la Peña de Francia",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/4.mp3"
+        "Name": "5. Plaza de Europa",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -75,8 +89,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Plaza de Europa",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+        "Name": "6. Church of San Francisco",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/6.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -89,8 +103,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5.1 Puerto de la Cruz Town Hall",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+        "Name": "7. Plaza del Charco",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/7.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -103,8 +117,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5.2 Casa de la Aduana (Customs House)",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
+        "Name": "8.0 La Ranilla - Intro",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.0.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -117,238 +131,196 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5.3 Casa de Miranda",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/5.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5488618,
-          28.4178853
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "6. Church of San Francisco",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/6.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5499245,
-          28.4168196
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "7. Plaza del Charco",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/7.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5504946,
-          28.4166788
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8. La Ranilla",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.0.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5538396,
-          28.4175173
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "8.1 \"La frontera del paraíso\" (Mequinez Street, 2)",
+        "Name": "8.1 La frontera del paraíso",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.1.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5516327,
-          28.4177858
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.2 \"¡Rum, rum, rum, la botella de rum!\" (Mequinez Street, 4)",
+        "Name": "8.2 Ron, ron, ron",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.2.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5520908,
-          28.4177605
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.3 \"La Macaronesia\" (Mequinez Street, 21)",
+        "Name": "8.3 La Macaronesia",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.3.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5524578,
-          28.4175767
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.4 \"El Niño de las Pinturas\" (Mequinez Street, 66)",
+        "Name": "8.4 El Niño de las Pinturas",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.4.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5542802,
-          28.4176471
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.5 \"Si puedes soñarlo, puedes crearlo\" (Maretas Street, 11)",
+        "Name": "8.5 Si puedes soñarlo",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.5.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5543779,
-          28.4166145
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.6 Mural (Peñita Street, 6)",
+        "Name": "8.6 Mural by Dulk",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.6.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5538448,
-          28.4168053
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.7 \"Los Magos\" (El Lomo Street, 28)",
+        "Name": "8.7 Los Magos",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.7.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5533527,
-          28.417294
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.8 Mural (Teobaldo Power Street, 28)",
+        "Name": "8.8 Kob",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.8.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5528499,
-          28.4162771
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.9 \"La eterna juventud\" (Puerto Viejo Street, 17)",
+        "Name": "8.9 La eterna juventud",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.9.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5524201,
-          28.4158471
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.10 \"Ritual\" (Teobaldo Power Street, 16)",
+        "Name": "8.10 Ritual",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.10.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5529532,
-          28.4168439
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.11 \"Navíos volátiles\" (Teobaldo Power Street, 8)",
+        "Name": "8.11 Navíos volátiles",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.11.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5529532,
-          28.4168439
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.12 Mural (El Lomo Street, 7)",
+        "Name": "8.12 Roa",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.12.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5522205,
-          28.4170627
+          -16.5501121,
+          28.4179927
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.13 \"Ánfora voladora\" (Cruz Verde Street, 3)",
+        "Name": "8.13 Ánfora voladora",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.13.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5521765,
-          28.4174288
+          -16.5501121,
+          28.4179927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "8.14 The Synthesis of the City",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.14.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5501121,
+          28.4179927
         ]
       }
     },
@@ -361,8 +333,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5584324,
-          28.4143524
+          -16.5488618,
+          28.4178853
         ]
       }
     },
@@ -375,8 +347,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5585252,
-          28.4127752
+          -16.5499245,
+          28.4168196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "11. Final thoughts",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/11.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5499245,
+          28.4168196
         ]
       }
     }

@@ -1,11 +1,25 @@
 {
   "type": "FeatureCollection",
-  "name": "Costa Adeje Stops",
+  "name": "Costa Adeje (FR)",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Playa de Los Cristianos & Playa de Las Vistas",
+        "Name": "0. Introduction",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7177511,
+          28.0503209
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "1. Playa de los Cristianos",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/1.mp3"
       },
       "geometry": {
@@ -33,7 +47,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Golden Mile (Playa de las Américas)",
+        "Name": "3. The Golden Mile",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/3.mp3"
       },
       "geometry": {
@@ -47,7 +61,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Promenade Francisco Andrade Fumero & Jardin Danilenko",
+        "Name": "4. Francisco Andrade Fumero Promenade",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/4.mp3"
       },
       "geometry": {
@@ -61,7 +75,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Sculpture du Piège à vent",
+        "Name": "5. The Wind Trap",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/5.mp3"
       },
       "geometry": {
@@ -75,7 +89,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Mirador del Dedo & piscine naturelle",
+        "Name": "6. Mirador del Dedo and Natural Pool",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/6.mp3"
       },
       "geometry": {
@@ -89,7 +103,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7. BIC ZONE \"El Búnker - El Medio\"",
+        "Name": "7. BIC Zone El Búnker",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/7.mp3"
       },
       "geometry": {
@@ -103,7 +117,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8. Playa de las Américas (zone de surf)",
+        "Name": "8. Playa de las Américas",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/8.mp3"
       },
       "geometry": {
@@ -173,7 +187,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "13. La Caleta & Parque de La Fresa",
+        "Name": "13. La Caleta and Parque de la Fresa",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/costa-adeje_fr/13.mp3"
       },
       "geometry": {

@@ -1,7 +1,21 @@
 {
   "type": "FeatureCollection",
-  "name": "La Orotava Stops DE",
+  "name": "La Orotava Stops (DE)",
   "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "0. Einführung",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5232417,
+          28.3906668
+        ]
+      }
+    },
     {
       "type": "Feature",
       "properties": {
@@ -19,7 +33,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Liceo Taoro",
+        "Name": "2.0 Liceo de Taoro",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/2.0.mp3"
       },
       "geometry": {
@@ -33,7 +47,63 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Die Jardines Victoria und das Freimaurermausoleum",
+        "Name": "2.1 Die Terrassengärten",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/2.1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5226334,
+          28.3901557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.2 Die Eingangshalle",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/2.2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5226334,
+          28.3901557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.3 Die Café-Terrasse",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/2.3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5226334,
+          28.3901557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.4 Die Treppe",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/2.4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5226334,
+          28.3901557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3.1 Das Eisentor",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/3.1.mp3"
       },
       "geometry": {
@@ -47,8 +117,134 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Hijuela del Botánico",
+        "Name": "3.2 Die Obere Terrasse",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/3.2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5229748,
+          28.3895012
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3.3 Die Mittelachse",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/3.3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5229748,
+          28.3895012
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3.4 Das Mausoleum",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/3.4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5229748,
+          28.3895012
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3.5 Die Untere Terrasse",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/3.5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5229748,
+          28.3895012
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4.0 Hijuela del Jardín Botánico",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/4.0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4.1 Die Mittelachse",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/4.1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4.2 Die Araukarie",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/4.2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4.3 Das Wasserbecken",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/4.3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4.4 Der Drache und der Kreis",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/4.4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4.5 Die Umfassungsmauer",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/4.5.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -75,7 +271,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Iglesia de La Concepción",
+        "Name": "6.1 Das Hauptportal",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.1.mp3"
       },
       "geometry": {
@@ -89,8 +285,190 @@
     {
       "type": "Feature",
       "properties": {
+        "Name": "6.2 Das Hauptschiff",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.3 Kalvarienkapelle",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.3.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.4 Kandelariakapelle",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.4.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.5 Kopf des Evangelienschiffs",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.5.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.6 Seelenkapelle",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.6.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.7 Kopf des Epistelschiffs",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.7.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.8 Hochaltar",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.8.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.9 Chor",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.9.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.10 Große Sakristei",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.10.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.11 Museumsebene 1",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.11.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.12 Dokumente und Pfarrregister",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.12.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.13 Museumsebene 2",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.13.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6.14 Rückkehr ins Schiff",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/6.14.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "Name": "7. Calle Tomás Zerolo",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/7_DE.mp3"
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/7.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -103,8 +481,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8. Molino de gofio La Máquina",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/8_DE.mp3"
+        "Name": "8. Molino de Gofio La Máquina",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/8.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -117,8 +495,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "9.1 La Casa de Los Balcones",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/9_DE.mp3"
+        "Name": "9. Zusätzliche Besichtigungen",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/9.mp3"
       },
       "geometry": {
         "type": "Point",
@@ -131,13 +509,13 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "9.2 Museo Molino de Gofio Del Hoyo",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/9_DE.mp3"
+        "Name": "10.0 Casa Palacio Lercaro",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/10.0.mp3"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.5260507,
+          -16.5260499,
           28.3890959
         ]
       }
@@ -145,8 +523,36 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "10. Casa Palacio Lercaro",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/10.0.mp3"
+        "Name": "10.1 Das Vestibül",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/10.1.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5260499,
+          28.3890959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "10.2 Der Innenhof",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/10.2.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5260499,
+          28.3890959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "10.3 Das Café-Restaurant",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/10.3.mp3"
       },
       "geometry": {
         "type": "Point",
