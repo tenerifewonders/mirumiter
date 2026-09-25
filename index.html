@@ -369,6 +369,9 @@
       color: #0284c7;
     }
 
+    .track-disabled { cursor: default !important; }
+    .track-disabled .track-arrow { visibility: hidden; }
+
     #audio-list li.active-track {
       background: #e0f2fe !important;
       border-left: 5px solid #0284c7 !important;
@@ -950,7 +953,48 @@
           return res.json();
         })
         .then(data => {
+          const isOrotavaEnglish = route.id === 'la-orotava' && currentLang === 'en';
+          const isMainStop = name => /^\s*\d+\.\s/.test(name);
+
+          if (isOrotavaEnglish) {
+            data.features.forEach(feature => {
+              const properties = feature.properties || {};
+              const audioUrl = properties.audio || '';
+              const name = properties.Name || '';
+              const isSubItem = /^\s*\d+\.\d+/.test(name);
+              const li = document.createElement('li');
+              li.className = 'track-opt1'
+                + (isSubItem ? ' track-subitem' : '')
+                + (audioUrl ? '' : ' track-disabled');
+
+              const trackLeft = document.createElement('div');
+              trackLeft.className = 'track-left';
+              const playBadge = document.createElement('span');
+              playBadge.className = 'play-badge';
+              playBadge.textContent = audioUrl ? (isSubItem ? '\u21b3' : '\u25b6') : '\u2022';
+              const title = document.createElement('span');
+              title.textContent = name;
+              trackLeft.append(playBadge, title);
+
+              const arrow = document.createElement('span');
+              arrow.className = 'track-arrow';
+              arrow.textContent = audioUrl ? '\u203a' : '';
+              li.append(trackLeft, arrow);
+
+              if (audioUrl) {
+                li.setAttribute('data-audio', audioUrl);
+                li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
+              } else {
+                li.setAttribute('aria-disabled', 'true');
+              }
+
+              audioList.appendChild(li);
+            });
+          }
+
           geoJsonLayer = L.geoJSON(data, {
+            filter: feature =>
+              !isOrotavaEnglish || isMainStop(feature.properties?.Name || ''),
             onEachFeature: (feature, layer) => {
               const audioUrl = feature.properties.audio;
               let name = feature.properties.Name || '';
@@ -1009,7 +1053,8 @@
                 if (!markersByAudio[audioUrl]) {
                   markersByAudio[audioUrl] = layer;
 
-                  // Check if track is a sub-indexed item (e.g. 5.2, 8.10)
+                  if (!isOrotavaEnglish) {
+                    // Check if track is a sub-indexed item (e.g. 5.2, 8.10)
                   const isSubItem = /^\s*\d+\.\d+/.test(name);
 
                   // Option 1 Track Card
@@ -1024,11 +1069,12 @@
                     <span class="track-arrow">›</span>
                   `;
                   li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
-                  audioList.appendChild(li);
+                    audioList.appendChild(li);
+                  }
                 }
-              }
 
-              layer.on('click', () => activateTrack(audioUrl, 'marker'));
+                layer.on('click', () => activateTrack(audioUrl, 'marker'));
+              }
             }
           }).addTo(map);
         });
