@@ -5,7 +5,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "0. Introduction",
+        "Name": "0. Intro",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.0.mp3"
       },
       "geometry": {
@@ -20,7 +20,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Stop 1",
+        "Name": "1. Former Convent of Santo Domingo",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.1.mp3"
       },
       "geometry": {
@@ -35,7 +35,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Stop 2",
+        "Name": "2. Old path to Pico del Inglés",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.2.mp3"
       },
       "geometry": {
@@ -50,7 +50,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Stop 3",
+        "Name": "3. Pico del Inglés Viewpoint",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.3.mp3"
       },
       "geometry": {
@@ -65,7 +65,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Stop 4",
+        "Name": "4. Bailadero Viewpoint",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.4.mp3"
       },
       "geometry": {
@@ -80,7 +80,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Stop 5",
+        "Name": "5. Risco Amogoje Viewpoint",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.5.mp3"
       },
       "geometry": {
@@ -95,7 +95,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Stop 6",
+        "Name": "6. Taganana",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.6.mp3"
       },
       "geometry": {
@@ -110,7 +110,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7. Stop 7",
+        "Name": "7. Roque de las Bodegas",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.7.mp3"
       },
       "geometry": {
@@ -125,7 +125,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8. Stop 8",
+        "Name": "8. Almáciga Beach",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.8.mp3"
       },
       "geometry": {
@@ -140,7 +140,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "9. Stop 9",
+        "Name": "9. Paso Alto Castle",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/anaga_en/Anaga.9.mp3"
       },
       "geometry": {
