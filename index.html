@@ -348,12 +348,7 @@
       flex-shrink: 0;
     }
     .track-opt1 .track-arrow { color: #94a3b8; font-size: 16px; }
-
-    /* Section headings without their own audio: visible, same height/font as main tracks,
-       slightly indented, and with an empty play-space so they do not look like audio tracks. */
     .track-section-header {
-      margin-left: 24px;
-      width: calc(100% - 24px);
       cursor: default !important;
     }
     .track-section-header:hover {
@@ -361,13 +356,12 @@
       border-color: #e2e8f0 !important;
     }
     .track-section-header .play-badge {
-      background: transparent !important;
-      color: transparent !important;
-      border: none !important;
+      visibility: hidden;
     }
     .track-section-header .track-arrow {
       visibility: hidden;
     }
+
 
     /* Sub-item / sub-indexed track indentation styling */
     .track-subitem {
@@ -971,31 +965,43 @@
         })
         .then(data => {
           const features = data.features || [];
+
+          // Section rules:
+          // - A heading is a feature whose name is "N. ..." and has no audio.
+          // - A main audio track is "N. ..." with audio.
+          // - A sub-track is "N.M ..." / "N.M. ..." with audio.
+          //
+          // IMPORTANT: we do not replace the GeoJSON markers with synthetic
+          // markers. Every real GeoJSON point keeps its own position. A
+          // no-audio section marker activates the first audio in that section.
+          const getSectionNumber = (name) => {
+            const m = String(name || '').match(/^\s*(\d+)\.(?=\s|\d)/);
+            return m ? m[1] : null;
+          };
+
+          const isNumberedSectionHeading = (name) => {
+            const n = String(name || '');
+            return /^\s*\d+\.\s/.test(n);
+          };
+
+          const isSubTrack = (name) => {
+            const n = String(name || '');
+            return /^\s*\d+\.\d+(?:\.|\s)/.test(n);
+          };
+
+          // Determine the first audio feature belonging to each section.
+          // This is done independently of whether the heading itself exists
+          // in the current language GeoJSON (DE/FR may omit some headings).
           const firstAudioBySection = {};
-
-          // Find the first real audio track belonging to every numbered section.
-          // This is used only for the MAP marker of a heading without its own audio.
-          features.forEach((feature, index) => {
-            const props = feature.properties || {};
-            const name = props.Name || '';
-            if (props.audio) return;
-
-            const sectionMatch = name.match(/^\s*(\d+)\.\s/);
-            if (!sectionMatch) return;
-
-            const sectionNumber = sectionMatch[1];
-            for (let i = index + 1; i < features.length; i++) {
-              const next = features[i];
-              const nextProps = next.properties || {};
-              const nextName = nextProps.Name || '';
-
-              // Stop when the next top-level numbered section begins.
-              if (/^\s*(\d+)\.\s/.test(nextName) && !/^\s*\d+\.\d+/.test(nextName)) break;
-
-              if (nextProps.audio) {
-                firstAudioBySection[sectionNumber] = nextProps.audio;
-                break;
-              }
+          let currentSection = null;
+          features.forEach(feature => {
+            const name = feature.properties?.Name || '';
+            const section = getSectionNumber(name);
+            if (section !== null) {
+              currentSection = section;
+            }
+            if (currentSection !== null && feature.properties?.audio && !firstAudioBySection[currentSection]) {
+              firstAudioBySection[currentSection] = feature.properties.audio;
             }
           });
 
@@ -1004,57 +1010,93 @@
               const props = feature.properties || {};
               const audioUrl = props.audio || null;
               const name = props.Name || '';
-              const sectionMatch = name.match(/^\s*(\d+)\.\s/);
-              const subMatch = name.match(/^\s*(\d+)\.\d+/);
-              const isSection = !audioUrl && !!sectionMatch;
-              const sectionNumber = sectionMatch ? sectionMatch[1] : (subMatch ? subMatch[1] : null);
-              const sectionAudio = sectionNumber ? firstAudioBySection[sectionNumber] : null;
-              const markerAudio = audioUrl || (isSection ? sectionAudio : null);
+              const section = getSectionNumber(name);
+              const isHeading = !audioUrl && isNumberedSectionHeading(name);
+              const markerAudio = isHeading && section ? firstAudioBySection[section] : audioUrl;
 
               layer.bindPopup(name);
 
-              // IMPORTANT: a numbered heading without audio is still rendered in the
-              // playlist. It is NOT an audio track and therefore has no data-audio.
-              // Its map marker, however, activates the first audio of that section.
-              if (isSection) {
+              if (audioUrl) {
+                // One playlist entry per audio URL, preserving GeoJSON order.
+                if (!markersByAudio[audioUrl]) {
+                  markersByAudio[audioUrl] = layer;
+
+                  const subItem = isSubTrack(name);
+                  const li = document.createElement('li');
+                  li.className = 'track-opt1' + (subItem ? ' track-subitem' : '');
+                  li.setAttribute('data-audio', audioUrl);
+                  li.innerHTML = `
+                    <div class="track-left">
+                      <span class="play-badge">${subItem ? '↳' : '▶'}</span>
+                      <span>${name}</span>
+                    </div>
+                    <span class="track-arrow">›</span>
+                  `;
+                  li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
+                  audioList.appendChild(li);
+                }
+              } else if (isHeading) {
+                // Real section heading: same height, typography and horizontal
+                // alignment as a main track, but without a play button.
                 const header = document.createElement('li');
                 header.className = 'track-opt1 track-section-header';
                 header.innerHTML = `
                   <div class="track-left">
-                    <span class="play-badge" aria-hidden="true"></span>
+                    <span class="play-badge"></span>
                     <span>${name}</span>
                   </div>
-                  <span class="track-arrow" aria-hidden="true">›</span>
+                  <span class="track-arrow"></span>
                 `;
                 audioList.appendChild(header);
-              } else if (audioUrl && !markersByAudio[audioUrl]) {
-                markersByAudio[audioUrl] = layer;
-
-                // 1, 2.0, 2.1, 3.5 etc. with a decimal are sub-indexed items.
-                const isSubItem = /^\s*\d+\.\d+/.test(name);
-                const li = document.createElement('li');
-                li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
-                li.setAttribute('data-audio', audioUrl);
-                li.innerHTML = `
-                  <div class="track-left">
-                    <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
-                    <span>${name}</span>
-                  </div>
-                  <span class="track-arrow">›</span>
-                `;
-                li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
-                audioList.appendChild(li);
               }
 
-              // Map behavior is kept separate from playlist behavior.
-              // A section heading with no audio activates its first child audio.
+              // Every real GeoJSON marker remains clickable. A section heading
+              // activates its first child audio; an audio point activates itself.
               if (markerAudio) {
                 layer.on('click', () => activateTrack(markerAudio, 'marker'));
               }
             }
           }).addTo(map);
-        })
-        .catch(err => console.error('[GeoJSON]', err));
+
+          // For languages where a section heading is absent from the GeoJSON,
+          // insert a visual heading at the correct place in the playlist.
+          // The actual audio entries remain untouched and keep their own map
+          // markers. This prevents sections such as 3 from being mistaken for
+          // 3.5 or 2 from being mistaken for 2.4.
+          const renderedNames = Array.from(audioList.children).map(li => li.querySelector('.track-left span:last-child')?.textContent || '');
+          const existingSections = new Set();
+          renderedNames.forEach(name => {
+            const m = name.match(/^\s*(\d+)\.\s/);
+            if (m) existingSections.add(m[1]);
+          });
+
+          // We only synthesize a numbered heading when the current data has
+          // child tracks but no real heading. Its text is deliberately just
+          // the section number, because the source GeoJSON does not provide
+          // a localized heading for it.
+          const children = Array.from(audioList.children);
+          let lastSection = null;
+          children.forEach((li, idx) => {
+            const nameEl = li.querySelector('.track-left span:last-child');
+            const name = nameEl ? nameEl.textContent : '';
+            const m = name.match(/^\s*(\d+)\.(\d+)/);
+            if (!m) return;
+            const section = m[1];
+            if (section === lastSection || existingSections.has(section)) return;
+            lastSection = section;
+
+            const header = document.createElement('li');
+            header.className = 'track-opt1 track-section-header';
+            header.innerHTML = `
+              <div class="track-left">
+                <span class="play-badge"></span>
+                <span>${section}.</span>
+              </div>
+              <span class="track-arrow"></span>
+            `;
+            audioList.insertBefore(header, li);
+          });
+        });
 
       // Geolocation
       if ("geolocation" in navigator) {
