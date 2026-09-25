@@ -980,8 +980,10 @@
               heading.style.cursor = 'default';
               heading.innerHTML = `
                 <div class="track-left">
-                  <span><strong>${name}</strong></span>
+                  <span class="play-badge" style="visibility:hidden;"></span>
+                  <span>${name}</span>
                 </div>
+                <span class="track-arrow">›</span>
               `;
               audioList.appendChild(heading);
               return;
