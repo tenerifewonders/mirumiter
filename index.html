@@ -950,22 +950,47 @@
           return res.json();
         })
         .then(data => {
-          geoJsonLayer = L.geoJSON(data, {
-            // Only features with audio become map markers. Section headings
-            // remain in the playlist as non-clickable headings.
-            filter: (feature) => !!(feature.properties && feature.properties.audio),
-            onEachFeature: (feature, layer) => {
-              const audioUrl = feature.properties.audio;
-              const name = feature.properties.Name;
-              layer.bindPopup(name);
+          // The map uses one marker per numbered section.
+          // Sections without their own audio use the first real audio below them:
+          // 2 -> 2.0, 3 -> 3.1, 4 -> 4.1, 6 -> 6.1, 10 -> 10.1.
+          // All subtracks in the same section point to that same map marker.
+          const mapLayer = L.layerGroup().addTo(map);
+          geoJsonLayer = mapLayer;
 
-              if (!markersByAudio[audioUrl]) {
-                markersByAudio[audioUrl] = layer;
-              }
+          const isSection = (name) => /^\s*\d+\.\s/.test(name || '');
+          const isSubItem = (name) => /^\s*\d+\.\d+\.\s/.test(name || '');
 
-              layer.on('click', () => activateTrack(audioUrl, 'marker'));
+          for (let i = 0; i < data.features.length; i++) {
+            const sectionFeature = data.features[i];
+            const sectionName = sectionFeature.properties?.Name || '';
+
+            if (!isSection(sectionName) || isSubItem(sectionName)) continue;
+
+            // Collect this section and all of its child tracks until the next section.
+            const sectionFeatures = [sectionFeature];
+            for (let j = i + 1; j < data.features.length; j++) {
+              const candidateName = data.features[j].properties?.Name || '';
+              if (isSection(candidateName) && !isSubItem(candidateName)) break;
+              sectionFeatures.push(data.features[j]);
             }
-          }).addTo(map);
+
+            // Use the section's own audio when it has one; otherwise use its first child audio.
+            const primaryFeature = sectionFeatures.find(f => f.properties?.audio);
+            if (!primaryFeature) continue;
+
+            const primaryAudio = primaryFeature.properties.audio;
+            const coords = primaryFeature.geometry.coordinates;
+            const marker = L.marker([coords[1], coords[0]]);
+            marker.bindPopup(sectionName);
+            marker.on('click', () => activateTrack(primaryAudio, 'marker'));
+            marker.addTo(mapLayer);
+
+            // Every audio track belonging to this section uses the same map marker.
+            sectionFeatures.forEach(f => {
+              const audioUrl = f.properties?.audio;
+              if (audioUrl) markersByAudio[audioUrl] = marker;
+            });
+          }
 
           // Build the playlist from the GeoJSON itself, preserving its exact
           // order. Features without audio are section headings; audio features
