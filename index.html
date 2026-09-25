@@ -349,6 +349,26 @@
     }
     .track-opt1 .track-arrow { color: #94a3b8; font-size: 16px; }
 
+    /* Section headings without their own audio: visible, same height/font as main tracks,
+       slightly indented, and with an empty play-space so they do not look like audio tracks. */
+    .track-section-header {
+      margin-left: 24px;
+      width: calc(100% - 24px);
+      cursor: default !important;
+    }
+    .track-section-header:hover {
+      background: #ffffff !important;
+      border-color: #e2e8f0 !important;
+    }
+    .track-section-header .play-badge {
+      background: transparent !important;
+      color: transparent !important;
+      border: none !important;
+    }
+    .track-section-header .track-arrow {
+      visibility: hidden;
+    }
+
     /* Sub-item / sub-indexed track indentation styling */
     .track-subitem {
       margin-left: 24px;
@@ -926,7 +946,7 @@
   mainTileLayer = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
     minZoom: 11,
     maxZoom: 18,
-    maxNativeZoom: 18,
+    maxNativeZoom: 17,
     tileSize: 256
   }).addTo(map);
 }
@@ -950,39 +970,91 @@
           return res.json();
         })
         .then(data => {
+          const features = data.features || [];
+          const firstAudioBySection = {};
+
+          // Find the first real audio track belonging to every numbered section.
+          // This is used only for the MAP marker of a heading without its own audio.
+          features.forEach((feature, index) => {
+            const props = feature.properties || {};
+            const name = props.Name || '';
+            if (props.audio) return;
+
+            const sectionMatch = name.match(/^\s*(\d+)\.\s/);
+            if (!sectionMatch) return;
+
+            const sectionNumber = sectionMatch[1];
+            for (let i = index + 1; i < features.length; i++) {
+              const next = features[i];
+              const nextProps = next.properties || {};
+              const nextName = nextProps.Name || '';
+
+              // Stop when the next top-level numbered section begins.
+              if (/^\s*(\d+)\.\s/.test(nextName) && !/^\s*\d+\.\d+/.test(nextName)) break;
+
+              if (nextProps.audio) {
+                firstAudioBySection[sectionNumber] = nextProps.audio;
+                break;
+              }
+            }
+          });
+
           geoJsonLayer = L.geoJSON(data, {
             onEachFeature: (feature, layer) => {
-              const audioUrl = feature.properties.audio;
-              const name = feature.properties.Name;
+              const props = feature.properties || {};
+              const audioUrl = props.audio || null;
+              const name = props.Name || '';
+              const sectionMatch = name.match(/^\s*(\d+)\.\s/);
+              const subMatch = name.match(/^\s*(\d+)\.\d+/);
+              const isSection = !audioUrl && !!sectionMatch;
+              const sectionNumber = sectionMatch ? sectionMatch[1] : (subMatch ? subMatch[1] : null);
+              const sectionAudio = sectionNumber ? firstAudioBySection[sectionNumber] : null;
+              const markerAudio = audioUrl || (isSection ? sectionAudio : null);
+
               layer.bindPopup(name);
 
-              if (audioUrl) {
-                if (!markersByAudio[audioUrl]) {
-                  markersByAudio[audioUrl] = layer;
+              // IMPORTANT: a numbered heading without audio is still rendered in the
+              // playlist. It is NOT an audio track and therefore has no data-audio.
+              // Its map marker, however, activates the first audio of that section.
+              if (isSection) {
+                const header = document.createElement('li');
+                header.className = 'track-opt1 track-section-header';
+                header.innerHTML = `
+                  <div class="track-left">
+                    <span class="play-badge" aria-hidden="true"></span>
+                    <span>${name}</span>
+                  </div>
+                  <span class="track-arrow" aria-hidden="true">›</span>
+                `;
+                audioList.appendChild(header);
+              } else if (audioUrl && !markersByAudio[audioUrl]) {
+                markersByAudio[audioUrl] = layer;
 
-                  // Check if track is a sub-indexed item (e.g. 5.2, 8.10)
-                  const isSubItem = /^\s*\d+\.\d+/.test(name);
-
-                  // Option 1 Track Card
-                  const li = document.createElement('li');
-                  li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
-                  li.setAttribute('data-audio', audioUrl);
-                  li.innerHTML = `
-                    <div class="track-left">
-                      <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
-                      <span>${name}</span>
-                    </div>
-                    <span class="track-arrow">›</span>
-                  `;
-                  li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
-                  audioList.appendChild(li);
-                }
+                // 1, 2.0, 2.1, 3.5 etc. with a decimal are sub-indexed items.
+                const isSubItem = /^\s*\d+\.\d+/.test(name);
+                const li = document.createElement('li');
+                li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
+                li.setAttribute('data-audio', audioUrl);
+                li.innerHTML = `
+                  <div class="track-left">
+                    <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
+                    <span>${name}</span>
+                  </div>
+                  <span class="track-arrow">›</span>
+                `;
+                li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
+                audioList.appendChild(li);
               }
 
-              layer.on('click', () => activateTrack(audioUrl, 'marker'));
+              // Map behavior is kept separate from playlist behavior.
+              // A section heading with no audio activates its first child audio.
+              if (markerAudio) {
+                layer.on('click', () => activateTrack(markerAudio, 'marker'));
+              }
             }
           }).addTo(map);
-        });
+        })
+        .catch(err => console.error('[GeoJSON]', err));
 
       // Geolocation
       if ("geolocation" in navigator) {
