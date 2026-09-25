@@ -241,7 +241,7 @@
     .maps-btn { border-left: 3px solid #4285f4; }
     .tips-btn { border-left: 3px solid #f59e0b; }
 
-    /* Offline Installation Banner */
+    /* Offline Installation Banner (Option 3 Sol Nube) */
     .install-banner {
       margin: 8px 15px;
       padding: 6px 12px;
@@ -282,7 +282,7 @@
     .install-banner .install-steps div { margin-bottom: 4px; }
     .install-banner .install-steps div:last-child { margin-bottom: 0; }
 
-    /* Route Notice */
+    /* Route Notice (e.g. Puerto de la Cruz warning) */
     .route-notice {
       margin: 8px 15px;
       padding: 10px 14px;
@@ -301,7 +301,7 @@
       color: #1e293b;
     }
 
-    /* Audio Playlist */
+    /* Audio Playlist (Option 1 Spotify Card Style) */
     #audio-list {
       padding: 15px;
       list-style: none;
@@ -312,6 +312,7 @@
       max-width: 600px;
     }
     #audio-list li {
+      cursor: pointer;
       transition: all 0.2s ease;
       user-select: none;
     }
@@ -324,7 +325,6 @@
       border: 1px solid #e2e8f0;
       border-radius: 10px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-      cursor: pointer;
     }
     .track-opt1:hover { background: #f8fafc; border-color: #cbd5e1; }
     .track-opt1 .track-left {
@@ -348,23 +348,6 @@
       flex-shrink: 0;
     }
     .track-opt1 .track-arrow { color: #94a3b8; font-size: 16px; }
-
-    /* Group Header / Section Title (Non-playable) */
-    .track-header {
-      cursor: default !important;
-      background: #f1f5f9 !important;
-      border: 1px solid #e2e8f0;
-      box-shadow: none !important;
-    }
-    .track-header:hover {
-      background: #f1f5f9 !important;
-      border-color: #e2e8f0 !important;
-    }
-    .track-header .track-left {
-      font-weight: 700;
-      color: #0f172a;
-      font-size: 14.5px;
-    }
 
     /* Sub-item / sub-indexed track indentation styling */
     .track-subitem {
@@ -578,16 +561,16 @@
         tipsUrl: { en: './tips/EN-PUERTO-CRUZ.html', de: './tips/DE-PUERTO-CRUZ.html', fr: './tips/FR-PUERTO-CRUZ.html' },
         mapsUrl: 'https://www.google.com/maps/dir/?api=1&origin=28.4118131,-16.547949&destination=28.4127752,-16.5585252&waypoints=28.417542,-16.5417437%7C28.4187585,-16.544278%7C28.4176278,-16.5456288%7C28.4173442,-16.5463681%7C28.4170105,-16.5481873%7C28.4183182,-16.5491026%7C28.4168196,-16.5499245%7C28.4166788,-16.5504946%7C28.4175173,-16.5538396%7C28.4143524,-16.5584324&travelmode=walking',
         notice: {
-          en: {
-            text: 'Please note that the starting point and the end of the route are 2.2 km apart. There is an 84-meter downward slope with stairs between the first and second stops.<br><span style="font-size:11px;">Some travelers prefer to do the first stop and then drive to the second one; from that point on, the route is completely flat.</span>'
-          },
-          de: {
-            text: 'Bitte beachten Sie, dass Start- und Endpunkt der Route 2,2 km voneinander entfernt sind. Zwischen der ersten und der zweiten Station gibt es ein Gefälle von 84 Höhenmetern mit Treppen.<br><span style="font-size:11px;">Einige Reisende ziehen es vor, die erste Station zu besuchen und dann mit dem Auto zur zweiten zu fahren; von dort an ist der Weg völlig flach.</span>'
-          },
-          fr: {
-            text: "Veuillez noter que le point de départ et la fin du parcours sont distants de 2,2 km. Il y a un dénivelé descendant de 84 mètres avec des escaliers entre le premier et le deuxième arrêt.<br><span style='font-size:11px;'>Certains voyageurs préfèrent faire le premier arrêt puis se rendre au second en voiture ; à partir de là, le trajet est entièrement plat.</span>"
-          }
-        }
+  en: {
+    text: 'Please note that the starting point and the end of the route are 2.2 km apart. There is an 84-meter downward slope with stairs between the first and second stops.<br><span style="font-size:11px;">Some travelers prefer to do the first stop and then drive to the second one; from that point on, the route is completely flat.</span>'
+  },
+  de: {
+    text: 'Bitte beachten Sie, dass Start- und Endpunkt der Route 2,2 km voneinander entfernt sind. Zwischen der ersten und der zweiten Station gibt es ein Gefälle von 84 Höhenmetern mit Treppen.<br><span style="font-size:11px;">Einige Reisende ziehen es vor, die erste Station zu besuchen und dann mit dem Auto zur zweiten zu fahren; von dort an ist der Weg völlig flach.</span>'
+  },
+  fr: {
+    text: "Veuillez noter que le point de départ et la fin du parcours sont distants de 2,2 km. Il y a un dénivelé descendant de 84 mètres avec des escaliers entre le premier et le deuxième arrêt.<br><span style='font-size:11px;'>Certains voyageurs préfèrent faire le premier arrêt puis se rendre au second en voiture ; à partir de là, le trajet est entièrement plat.</span>"
+  }
+}
       },
       'candelaria': {
         id: 'candelaria',
@@ -626,7 +609,7 @@
       'all_access': Object.keys(ROUTES_DATA)
     };
 
-    // Automatic Language Detection
+    // Automatic Language Detection (1. URL param ?lang=de -> 2. LocalStorage -> 3. Browser Language -> 4. Default 'en')
     function detectLanguage() {
       const params = new URLSearchParams(window.location.search);
       const urlLang = params.get('lang') || params.get('idioma');
@@ -788,18 +771,18 @@
 
     let currentRoute = null;
 
-    function updateRouteNotice(route) {
-      const noticeEl = document.getElementById('route-notice');
-      if (!noticeEl) return;
-      const langNotice = route && route.notice ? (route.notice[currentLang] || route.notice.en) : null;
-      if (!langNotice) {
-        noticeEl.style.display = 'none';
-        noticeEl.innerHTML = '';
-        return;
-      }
-      noticeEl.innerHTML = langNotice.text;
-      noticeEl.style.display = 'block';
-    }
+ function updateRouteNotice(route) {
+  const noticeEl = document.getElementById('route-notice');
+  if (!noticeEl) return;
+  const langNotice = route && route.notice ? (route.notice[currentLang] || route.notice.en) : null;
+  if (!langNotice) {
+    noticeEl.style.display = 'none';
+    noticeEl.innerHTML = '';
+    return;
+  }
+  noticeEl.innerHTML = langNotice.text;
+  noticeEl.style.display = 'block';
+}
 
     function changeLanguage(lang) {
       currentLang = lang;
@@ -857,6 +840,7 @@
       msg.className = 'license-msg';
       msg.textContent = 'Validating license with Supabase...';
 
+      // Support comma-separated license codes in URL or input (e.g. LIC1,LIC2,LIC3)
       const codeList = rawCode.split(',').map(c => c.trim()).filter(Boolean);
 
       const { data, error } = await supabaseClient
@@ -870,9 +854,11 @@
         return;
       }
 
+      // Process unlocked routes and detect language from guide column
       data.forEach(row => {
         const rawGuide = row.guide.toLowerCase().trim();
         
+        // Detect language from guide column (e.g. puerto-cruz_de, heritage_collection_fr, etc.)
         let detectedLang = null;
         if (rawGuide.endsWith('_de')) detectedLang = 'de';
         else if (rawGuide.endsWith('_fr')) detectedLang = 'fr';
@@ -967,15 +953,17 @@
           geoJsonLayer = L.geoJSON(data, {
             onEachFeature: (feature, layer) => {
               const audioUrl = feature.properties.audio;
-              const name = feature.properties.Name || '';
+              const name = feature.properties.Name;
               layer.bindPopup(name);
 
               if (audioUrl) {
                 if (!markersByAudio[audioUrl]) {
                   markersByAudio[audioUrl] = layer;
 
+                  // Check if track is a sub-indexed item (e.g. 5.2, 8.10)
                   const isSubItem = /^\s*\d+\.\d+/.test(name);
 
+                  // Option 1 Track Card
                   const li = document.createElement('li');
                   li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
                   li.setAttribute('data-audio', audioUrl);
@@ -989,21 +977,9 @@
                   li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
                   audioList.appendChild(li);
                 }
-              } else {
-                // Section Title Without Audio
-                const li = document.createElement('li');
-                li.className = 'track-opt1 track-header';
-                li.innerHTML = `
-                  <div class="track-left">
-                    <span>${name}</span>
-                  </div>
-                `;
-                audioList.appendChild(li);
               }
 
-              if (audioUrl) {
-                layer.on('click', () => activateTrack(audioUrl, 'marker'));
-              }
+              layer.on('click', () => activateTrack(audioUrl, 'marker'));
             }
           }).addTo(map);
         });
@@ -1022,8 +998,6 @@
     }
 
     function activateTrack(audioUrl, triggerSource) {
-      if (!audioUrl) return;
-
       const player = document.getElementById("audio-player");
       if (player.src !== audioUrl) {
         player.src = audioUrl;
