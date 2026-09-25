@@ -989,6 +989,16 @@
             return /^\s*\d+\.\d+(?:\.|\s)/.test(n);
           };
 
+          // In Santa Cruz, points 3 and 7 are visual section headings only.
+          // Their own GeoJSON entries may still contain an audio URL, but that
+          // URL must not become a playlist track or the audio activated by the
+          // heading marker. The first child (3.1 / 7.1) is used instead.
+          const forcedNoAudioSections = route.id === 'santa-cruz' ? new Set(['3', '7']) : new Set();
+          const isForcedHeading = (name) => {
+            const section = getSectionNumber(name);
+            return section !== null && forcedNoAudioSections.has(section) && !isSubTrack(name);
+          };
+
           // Determine the first audio feature belonging to each section.
           // This is done independently of whether the heading itself exists
           // in the current language GeoJSON (DE/FR may omit some headings).
@@ -1000,7 +1010,7 @@
             if (section !== null) {
               currentSection = section;
             }
-            if (currentSection !== null && feature.properties?.audio && !firstAudioBySection[currentSection]) {
+            if (currentSection !== null && feature.properties?.audio && !isForcedHeading(name) && !firstAudioBySection[currentSection]) {
               firstAudioBySection[currentSection] = feature.properties.audio;
             }
           });
@@ -1008,8 +1018,9 @@
           geoJsonLayer = L.geoJSON(data, {
             onEachFeature: (feature, layer) => {
               const props = feature.properties || {};
-              const audioUrl = props.audio || null;
               const name = props.Name || '';
+              const forcedHeading = isForcedHeading(name);
+              const audioUrl = forcedHeading ? null : (props.audio || null);
               const section = getSectionNumber(name);
               const isHeading = !audioUrl && isNumberedSectionHeading(name);
               const markerAudio = isHeading && section ? firstAudioBySection[section] : audioUrl;
