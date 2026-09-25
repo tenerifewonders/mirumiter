@@ -1052,7 +1052,18 @@
 
               // Every real GeoJSON marker remains clickable. A section heading
               // activates its first child audio; an audio point activates itself.
+              //
+              // Several section headings and all their child stops share EXACTLY
+              // the same coordinates. Leaflet therefore puts the last marker
+              // (e.g. 3.5) on top and its click handler wins. Put the no-audio
+              // section marker above its children so clicking the visible main
+              // point 3/2/4/6/10 activates the first child of that section.
               if (markerAudio) {
+                if (isHeading && layer.setZIndexOffset) {
+                  layer.setZIndexOffset(10000);
+                } else if (layer.setZIndexOffset) {
+                  layer.setZIndexOffset(0);
+                }
                 layer.on('click', () => activateTrack(markerAudio, 'marker'));
               }
             }
