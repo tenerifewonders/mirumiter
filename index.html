@@ -349,19 +349,6 @@
     }
     .track-opt1 .track-arrow { color: #94a3b8; font-size: 16px; }
 
-    .track-section-header {
-      cursor: default !important;
-      background: #ffffff !important;
-    }
-    .track-section-header:hover {
-      background: #ffffff !important;
-      border-color: #e2e8f0 !important;
-    }
-    .track-section-header .track-left {
-      font-weight: 700;
-      color: #1e293b;
-    }
-
     /* Sub-item / sub-indexed track indentation styling */
     .track-subitem {
       margin-left: 24px;
@@ -939,7 +926,7 @@
   mainTileLayer = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
     minZoom: 11,
     maxZoom: 18,
-    maxNativeZoom: 17,
+    maxNativeZoom: 18,
     tileSize: 256
   }).addTo(map);
 }
@@ -963,86 +950,36 @@
           return res.json();
         })
         .then(data => {
-          const features = data.features || [];
-          const firstAudioBySection = {};
-
-          features.forEach((feature, index) => {
-            const props = feature.properties || {};
-            const name = props.Name || '';
-            if (props.audio) return;
-
-            const sectionMatch = name.match(/^\s*(\d+)\.\s/);
-            if (!sectionMatch) return;
-
-            const sectionNumber = sectionMatch[1];
-
-            for (let i = index + 1; i < features.length; i++) {
-              const next = features[i];
-              const nextProps = next.properties || {};
-              const nextName = nextProps.Name || '';
-
-              if (/^\s*(\d+)\.\s/.test(nextName) &&
-                  !/^\s*\d+\.\d+/.test(nextName)) {
-                break;
-              }
-
-              if (nextProps.audio) {
-                firstAudioBySection[sectionNumber] = nextProps.audio;
-                break;
-              }
-            }
-          });
-
           geoJsonLayer = L.geoJSON(data, {
             onEachFeature: (feature, layer) => {
-              const props = feature.properties || {};
-              const audioUrl = props.audio || null;
-              const name = props.Name || '';
-
-              const sectionMatch = name.match(/^\s*(\d+)\.\s/);
-              const subMatch = name.match(/^\s*(\d+)\.\d+/);
-              const isSection = !audioUrl && !!sectionMatch;
-              const sectionNumber = sectionMatch
-                ? sectionMatch[1]
-                : (subMatch ? subMatch[1] : null);
-              const sectionAudio = sectionNumber
-                ? firstAudioBySection[sectionNumber]
-                : null;
-              const markerAudio = audioUrl || (isSection ? sectionAudio : null);
-
+              const audioUrl = feature.properties.audio;
+              const name = feature.properties.Name;
               layer.bindPopup(name);
 
-              if (isSection) {
-                const header = document.createElement('li');
-                header.className = 'track-opt1 track-section-header';
-                header.innerHTML = `
-                  <div class="track-left">
-                    <span>${name}</span>
-                  </div>
-                `;
-                audioList.appendChild(header);
-              } else if (audioUrl && !markersByAudio[audioUrl]) {
-                markersByAudio[audioUrl] = layer;
+              if (audioUrl) {
+                if (!markersByAudio[audioUrl]) {
+                  markersByAudio[audioUrl] = layer;
 
-                const isSubItem = /^\s*\d+\.\d+/.test(name);
+                  // Check if track is a sub-indexed item (e.g. 5.2, 8.10)
+                  const isSubItem = /^\s*\d+\.\d+/.test(name);
 
-                const li = document.createElement('li');
-                li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
-                li.setAttribute('data-audio', audioUrl);
-                li.innerHTML = `
-                  <div class="track-left">
-                    <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
-                    <span>${name}</span>
-                  </div>
-                  <span class="track-arrow">›</span>
-                `;
-                li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
-                audioList.appendChild(li);
+                  // Option 1 Track Card
+                  const li = document.createElement('li');
+                  li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
+                  li.setAttribute('data-audio', audioUrl);
+                  li.innerHTML = `
+                    <div class="track-left">
+                      <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
+                      <span>${name}</span>
+                    </div>
+                    <span class="track-arrow">›</span>
+                  `;
+                  li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
+                  audioList.appendChild(li);
+                }
               }
 
-              if (markerAudio) {
-                layer.on('click', () => activateTrack(markerAudio, 'marker'));
-              }
+              layer.on('click', () => activateTrack(audioUrl, 'marker'));
             }
           }).addTo(map);
         });
