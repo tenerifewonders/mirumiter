@@ -33,7 +33,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.0 Liceo de Taoro",
+        "Name": "2.0 Liceo de Taoro – Nachklänge der Erleuchtung",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/2.0.mp3"
       },
       "geometry": {
@@ -47,7 +47,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.1 Die Terrassengärten",
+        "Name": "2.1 Die Terrassengärten – Der Puls der Uhr",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/2.1.mp3"
       },
       "geometry": {
@@ -61,7 +61,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.2 Die Eingangshalle",
+        "Name": "2.2 Die Liceo-Halle: Proportion und Begegnung",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/2.2.mp3"
       },
       "geometry": {
@@ -75,7 +75,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.3 Die Café-Terrasse",
+        "Name": "2.3 Die Café-Terrasse – Die Lichter des Verstehens",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/2.3.mp3"
       },
       "geometry": {
@@ -89,7 +89,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.4 Die Treppe",
+        "Name": "2.4 Die Treppe – Die Geometrie des Denkens",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/2.4.mp3"
       },
       "geometry": {
@@ -103,7 +103,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.1 Das Eisentor",
+        "Name": "3.1 Das Eisentor – Ein Garten, der nie erblühen sollte",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/3.1.mp3"
       },
       "geometry": {
@@ -117,7 +117,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.2 Die Obere Terrasse",
+        "Name": "3.2 Die Obere Terrasse – Geometrie und Trotz",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/3.2.mp3"
       },
       "geometry": {
@@ -131,7 +131,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.3 Die Mittelachse",
+        "Name": "3.3 Die Mittelachse – Die Treppe zwischen den Welten",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/3.3.mp3"
       },
       "geometry": {
@@ -145,7 +145,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.4 Das Mausoleum",
+        "Name": "3.4 Das Mausoleum – Der Tempel des verbannten Edelmanns",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/3.4.mp3"
       },
       "geometry": {
@@ -159,7 +159,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.5 Die Untere Terrasse",
+        "Name": "3.5 Die Untere Terrasse – Die Stimme der Stille",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/3.5.mp3"
       },
       "geometry": {
@@ -173,7 +173,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.0 Hijuela del Jardín Botánico",
+        "Name": "4.1 Die Mittelachse",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/4.0.mp3"
       },
       "geometry": {
@@ -187,21 +187,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.1 Die Mittelachse",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/4.1.mp3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.524097,
-          28.3890788
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Name": "4.2 Die Araukarie",
+        "Name": "4.2 Die Araukarie: Ein lebendiger Kompass",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/4.2.mp3"
       },
       "geometry": {
@@ -243,7 +229,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.5 Die Umfassungsmauer",
+        "Name": "4.5 Die Umfassungsmauer & Abschied",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/4.5.mp3"
       },
       "geometry": {
@@ -509,7 +495,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "10.0 Casa Palacio Lercaro",
+        "Name": "10.0 Casa Palacio Lercaro — Das Herrenhaus des Ortes (Einleitung)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_de/10.0.mp3"
       },
       "geometry": {
