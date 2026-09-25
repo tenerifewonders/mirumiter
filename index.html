@@ -348,20 +348,6 @@
       flex-shrink: 0;
     }
     .track-opt1 .track-arrow { color: #94a3b8; font-size: 16px; }
-    .track-section-header {
-      cursor: default !important;
-    }
-    .track-section-header:hover {
-      background: #ffffff !important;
-      border-color: #e2e8f0 !important;
-    }
-    .track-section-header .play-badge {
-      visibility: hidden;
-    }
-    .track-section-header .track-arrow {
-      visibility: hidden;
-    }
-
 
     /* Sub-item / sub-indexed track indentation styling */
     .track-subitem {
@@ -538,7 +524,7 @@
         center: [28.5330, -16.2640],
         zoom: 12,
         maxNativeZoom: 14,
-        stopsCount: 9,
+        stopsCount: 10,
         tipsUrl: { en: './tips/EN-ANAGA.html', de: './tips/DE-ANAGA.html', fr: './tips/FR-ANAGA.html' },
         mapsUrl: 'https://www.google.com/maps/dir/28.485858,-16.313423/28.535007,-16.268433/28.533007,-16.263997/28.549166,-16.206877/28.558258,-16.205677/28.560470,-16.217270/28.571198,-16.204568/28.572064,-16.192508/28.480816,-16.240959'
       },
@@ -940,7 +926,7 @@
   mainTileLayer = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
     minZoom: 11,
     maxZoom: 18,
-    maxNativeZoom: 17,
+    maxNativeZoom: 18,
     tileSize: 256
   }).addTo(map);
 }
@@ -964,81 +950,75 @@
           return res.json();
         })
         .then(data => {
-          const features = data.features || [];
-
-          // Section rules:
-          // - A heading is a feature whose name is "N. ..." and has no audio.
-          // - A main audio track is "N. ..." with audio.
-          // - A sub-track is "N.M ..." / "N.M. ..." with audio.
-          //
-          // IMPORTANT: we do not replace the GeoJSON markers with synthetic
-          // markers. Every real GeoJSON point keeps its own position. A
-          // no-audio section marker activates the first audio in that section.
-          const getSectionNumber = (name) => {
-            const m = String(name || '').match(/^\s*(\d+)\.(?=\s)/);
-            return m ? m[1] : null;
-          };
-
-          const isNumberedSectionHeading = (name) => {
-            const n = String(name || '');
-            return /^\s*\d+\.\s/.test(n);
-          };
-
-          const isSubTrack = (name) => {
-            const n = String(name || '');
-            return /^\s*\d+\.\d+(?:\.|\s)/.test(n);
-          };
-
-          // In Santa Cruz, points 3 and 7 are visual section headings only.
-          // Their own GeoJSON entries may still contain an audio URL, but that
-          // URL must not become a playlist track or the audio activated by the
-          // heading marker. The first child (3.1 / 7.1) is used instead.
-          const forcedNoAudioSections = route.id === 'santa-cruz' ? new Set(['3', '7']) : new Set();
-          const isForcedHeading = (name) => {
-            const section = getSectionNumber(name);
-            return section !== null && forcedNoAudioSections.has(section) && !isSubTrack(name);
-          };
-
-          // Determine the first audio feature belonging to each section.
-          // This is done independently of whether the heading itself exists
-          // in the current language GeoJSON (DE/FR may omit some headings).
-          const firstAudioBySection = {};
-          let currentSection = null;
-          features.forEach(feature => {
-            const name = feature.properties?.Name || '';
-            const section = getSectionNumber(name);
-            if (section !== null) {
-              currentSection = section;
-            }
-            if (currentSection !== null && feature.properties?.audio && !isForcedHeading(name) && !firstAudioBySection[currentSection]) {
-              firstAudioBySection[currentSection] = feature.properties.audio;
-            }
-          });
-
           geoJsonLayer = L.geoJSON(data, {
             onEachFeature: (feature, layer) => {
-              const props = feature.properties || {};
-              const name = props.Name || '';
-              const forcedHeading = isForcedHeading(name);
-              const audioUrl = forcedHeading ? null : (props.audio || null);
-              const section = getSectionNumber(name);
-              const isHeading = !audioUrl && isNumberedSectionHeading(name);
-              const markerAudio = isHeading && section ? firstAudioBySection[section] : audioUrl;
+              const audioUrl = feature.properties.audio;
+              let name = feature.properties.Name || '';
+
+              // Anaga: keep the track identity tied to its audio filename
+              // so the displayed title does not depend on the order of GeoJSON features.
+              if (route.id === 'anaga') {
+                const match = (audioUrl || '').match(/\/(\d+)\.mp3(?:$|[?#])/);
+                const stopNumber = match ? parseInt(match[1], 10) : null;
+                const anagaNames = {
+                  en: {
+                    0: '0. Intro',
+                    1: '1. Former Convent of Santo Domingo',
+                    2: '2. Old path to Pico del Inglés',
+                    3: '3. Pico del Inglés Viewpoint',
+                    4: '4. Bailadero Viewpoint',
+                    5: '5. Risco Amogoje Viewpoint',
+                    6: '6. Taganana',
+                    7: '7. Roque de las Bodegas',
+                    8: '8. Almáciga Beach',
+                    9: '9. Paso Alto Castle'
+                  },
+                  de: {
+                    0: '0. Einführung',
+                    1: '1. Ehemaliges Kloster Santo Domingo',
+                    2: '2. Alter Weg zum Pico del Inglés',
+                    3: '3. Aussichtspunkt Pico del Inglés',
+                    4: '4. Aussichtspunkt Bailadero',
+                    5: '5. Aussichtspunkt Risco Amogoje',
+                    6: '6. Taganana',
+                    7: '7. Roque de las Bodegas',
+                    8: '8. Strand von Almáciga',
+                    9: '9. Burg Paso Alto'
+                  },
+                  fr: {
+                    0: '0. Introduction',
+                    1: '1. Ancien couvent de Santo Domingo',
+                    2: '2. Ancien chemin vers le Pico del Inglés',
+                    3: '3. Mirador du Pico del Inglés',
+                    4: '4. Mirador de Bailadero',
+                    5: '5. Mirador de Risco Amogoje',
+                    6: '6. Taganana',
+                    7: '7. Roque de las Bodegas',
+                    8: '8. Plage d’Almáciga',
+                    9: '9. Château de Paso Alto'
+                  }
+                };
+                if (stopNumber !== null && anagaNames[currentLang] && anagaNames[currentLang][stopNumber]) {
+                  name = anagaNames[currentLang][stopNumber];
+                }
+              }
 
               layer.bindPopup(name);
 
               if (audioUrl) {
-                // One playlist entry per audio URL, preserving GeoJSON order.
                 if (!markersByAudio[audioUrl]) {
                   markersByAudio[audioUrl] = layer;
 
-                  const subItem = isSubTrack(name);
+                  // Check if track is a sub-indexed item (e.g. 5.2, 8.10)
+                  const isSubItem = /^\s*\d+\.\d+/.test(name);
+
+                  // Option 1 Track Card
                   const li = document.createElement('li');
-                  li.className = 'track-opt1' + (subItem ? ' track-subitem' : '');
+                  li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
                   li.setAttribute('data-audio', audioUrl);
                   li.innerHTML = `
                     <div class="track-left">
-                      <span class="play-badge">${subItem ? '↳' : '▶'}</span>
+                      <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
                       <span>${name}</span>
                     </div>
                     <span class="track-arrow">›</span>
@@ -1046,78 +1026,11 @@
                   li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
                   audioList.appendChild(li);
                 }
-              } else if (isHeading) {
-                // Real section heading: same height, typography and horizontal
-                // alignment as a main track, but without a play button.
-                const header = document.createElement('li');
-                header.className = 'track-opt1 track-section-header';
-                header.innerHTML = `
-                  <div class="track-left">
-                    <span class="play-badge"></span>
-                    <span>${name}</span>
-                  </div>
-                  <span class="track-arrow"></span>
-                `;
-                audioList.appendChild(header);
               }
 
-              // Every real GeoJSON marker remains clickable. A section heading
-              // activates its first child audio; an audio point activates itself.
-              //
-              // Several section headings and all their child stops share EXACTLY
-              // the same coordinates. Leaflet therefore puts the last marker
-              // (e.g. 3.5) on top and its click handler wins. Put the no-audio
-              // section marker above its children so clicking the visible main
-              // point 3/2/4/6/10 activates the first child of that section.
-              if (markerAudio) {
-                if (isHeading && layer.setZIndexOffset) {
-                  layer.setZIndexOffset(10000);
-                } else if (layer.setZIndexOffset) {
-                  layer.setZIndexOffset(0);
-                }
-                layer.on('click', () => activateTrack(markerAudio, 'marker'));
-              }
+              layer.on('click', () => activateTrack(audioUrl, 'marker'));
             }
           }).addTo(map);
-
-          // For languages where a section heading is absent from the GeoJSON,
-          // insert a visual heading at the correct place in the playlist.
-          // The actual audio entries remain untouched and keep their own map
-          // markers. This prevents sections such as 3 from being mistaken for
-          // 3.5 or 2 from being mistaken for 2.4.
-          const renderedNames = Array.from(audioList.children).map(li => li.querySelector('.track-left span:last-child')?.textContent || '');
-          const existingSections = new Set();
-          renderedNames.forEach(name => {
-            const m = name.match(/^\s*(\d+)\.\s/);
-            if (m) existingSections.add(m[1]);
-          });
-
-          // We only synthesize a numbered heading when the current data has
-          // child tracks but no real heading. Its text is deliberately just
-          // the section number, because the source GeoJSON does not provide
-          // a localized heading for it.
-          const children = Array.from(audioList.children);
-          let lastSection = null;
-          children.forEach((li, idx) => {
-            const nameEl = li.querySelector('.track-left span:last-child');
-            const name = nameEl ? nameEl.textContent : '';
-            const m = name.match(/^\s*(\d+)\.(\d+)/);
-            if (!m) return;
-            const section = m[1];
-            if (section === lastSection || existingSections.has(section)) return;
-            lastSection = section;
-
-            const header = document.createElement('li');
-            header.className = 'track-opt1 track-section-header';
-            header.innerHTML = `
-              <div class="track-left">
-                <span class="play-badge"></span>
-                <span>${section}.</span>
-              </div>
-              <span class="track-arrow"></span>
-            `;
-            audioList.insertBefore(header, li);
-          });
         });
 
       // Geolocation

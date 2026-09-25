@@ -5,7 +5,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Auditorio de Tenerife Adán Martín",
+        "Name": "1. Auditorio de Tenerife: The Wave on the Horizon",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/1.mp3"
       },
       "geometry": {
@@ -19,7 +19,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Castillo de San Juan Bautista",
+        "Name": "2. Castillo de San Juan Bautista (Castillo Negro): Lava Sentinel",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/2.mp3"
       },
       "geometry": {
@@ -33,7 +33,20 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Iglesia Matriz de Nuestra Señora de la Concepción",
+        "Name": "3. Church of La Concepción & Calle de la Noria"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2490285,
+          28.4644615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3.1. Church of La Concepción: The Birth of the City",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/3.1.mp3"
       },
       "geometry": {
@@ -47,7 +60,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.1 Calle La Noria",
+        "Name": "3.2. Calle de la Noria: The Historic Heart of Santa Cruz",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/3.2.mp3"
       },
       "geometry": {
@@ -61,7 +74,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Plaza de España",
+        "Name": "4. Plaza de España & Castillo de San Cristóbal",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/4.mp3"
       },
       "geometry": {
@@ -75,7 +88,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.1 Castillo de San Cristóbal",
+        "Name": "4.1. Castillo de San Cristóbal",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/4.mp3"
       },
       "geometry": {
@@ -89,7 +102,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Plaza del Chicharro",
+        "Name": "5. Plaza del Chicharro & Plaza del Príncipe",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/5.mp3"
       },
       "geometry": {
@@ -103,7 +116,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "5.1 Plaza del Príncipe de Asturias",
+        "Name": "5.1. Plaza del Príncipe",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/5.mp3"
       },
       "geometry": {
@@ -117,7 +130,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Templo Masónico de la Logia de Añaza",
+        "Name": "6. The Masonic Temple: Headquarters of Hidden Symbols",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/6.mp3"
       },
       "geometry": {
@@ -131,8 +144,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7. García Sanabria Park",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.1.mp3"
+        "Name": "7. García Sanabria Park: Santa Cruz's Exotic Garden"
       },
       "geometry": {
         "type": "Point",
@@ -145,7 +157,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7.1 Reloj de flores",
+        "Name": "7.1. The Flower Clock – The Symbolic Entrance",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.1.mp3"
       },
       "geometry": {
@@ -159,7 +171,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7.2 Fuente \"La Fecundidad\"",
+        "Name": "7.2. The Fountain and Central Plaza",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.2.mp3"
       },
       "geometry": {
@@ -173,7 +185,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7.3 Paseo de la rosaleda",
+        "Name": "7.3. The Rose Garden Walk",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.3.mp3"
       },
       "geometry": {
@@ -187,7 +199,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7.4 Estanque de Nenúfares",
+        "Name": "7.4. The Water Lily Pond",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.4.mp3"
       },
       "geometry": {
@@ -201,7 +213,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "7.6 \"Monumento al Gato\" (Óscar Domínguez)",
+        "Name": "7.6. The Cat Monument",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/7.6.mp3"
       },
       "geometry": {
@@ -215,7 +227,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8. Plaza de los Patos",
+        "Name": "8. Plaza de los Patos: Echo of Freemasonry",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/8.mp3"
       },
       "geometry": {
@@ -229,7 +241,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "9. Plaza Weyler",
+        "Name": "9. Plaza Weyler: The Crossing Toward the Modern City",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/9.mp3"
       },
       "geometry": {
@@ -243,7 +255,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "10. Casa del Carnaval",
+        "Name": "10. Casa del Carnaval: Tradition and Masks",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/10.mp3"
       },
       "geometry": {
@@ -257,7 +269,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "11. Mercado Ntra. Señora de África",
+        "Name": "11. Market of Nuestra Señora de África (La Recova): The Atlantic Souk",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/11.mp3"
       },
       "geometry": {
@@ -271,7 +283,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "12. TEA Tenerife Espacio de las Artes",
+        "Name": "12. TEA (Tenerife Espacio de las Artes): The Archive of Time",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/12.mp3"
       },
       "geometry": {
@@ -285,7 +297,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "13. Teatro Guimerá",
+        "Name": "13. Teatro Guimerá: The City's First Stage",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/13.mp3"
       },
       "geometry": {
@@ -299,7 +311,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "14. Parroquia de San Francisco de Asís",
+        "Name": "14. Plaza and Church of San Francisco: The Memory of Santa Cruz",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/santa-cruz_en/14.mp3"
       },
       "geometry": {
