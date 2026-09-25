@@ -951,37 +951,56 @@
         })
         .then(data => {
           geoJsonLayer = L.geoJSON(data, {
+            // Only features with audio become map markers. Section headings
+            // remain in the playlist as non-clickable headings.
+            filter: (feature) => !!(feature.properties && feature.properties.audio),
             onEachFeature: (feature, layer) => {
               const audioUrl = feature.properties.audio;
               const name = feature.properties.Name;
               layer.bindPopup(name);
 
-              if (audioUrl) {
-                if (!markersByAudio[audioUrl]) {
-                  markersByAudio[audioUrl] = layer;
-
-                  // Check if track is a sub-indexed item (e.g. 5.2, 8.10)
-                  const isSubItem = /^\s*\d+\.\d+/.test(name);
-
-                  // Option 1 Track Card
-                  const li = document.createElement('li');
-                  li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
-                  li.setAttribute('data-audio', audioUrl);
-                  li.innerHTML = `
-                    <div class="track-left">
-                      <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
-                      <span>${name}</span>
-                    </div>
-                    <span class="track-arrow">›</span>
-                  `;
-                  li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
-                  audioList.appendChild(li);
-                }
+              if (!markersByAudio[audioUrl]) {
+                markersByAudio[audioUrl] = layer;
               }
 
               layer.on('click', () => activateTrack(audioUrl, 'marker'));
             }
           }).addTo(map);
+
+          // Build the playlist from the GeoJSON itself, preserving its exact
+          // order. Features without audio are section headings; audio features
+          // are clickable tracks and correspond to the markers on the map.
+          data.features.forEach(feature => {
+            const audioUrl = feature.properties && feature.properties.audio;
+            const name = feature.properties && feature.properties.Name;
+
+            if (!audioUrl) {
+              const heading = document.createElement('li');
+              heading.className = 'track-opt1';
+              heading.style.cursor = 'default';
+              heading.innerHTML = `
+                <div class="track-left">
+                  <span><strong>${name}</strong></span>
+                </div>
+              `;
+              audioList.appendChild(heading);
+              return;
+            }
+
+            const isSubItem = /^\s*\d+\.\d+/.test(name);
+            const li = document.createElement('li');
+            li.className = 'track-opt1' + (isSubItem ? ' track-subitem' : '');
+            li.setAttribute('data-audio', audioUrl);
+            li.innerHTML = `
+              <div class="track-left">
+                <span class="play-badge">${isSubItem ? '↳' : '▶'}</span>
+                <span>${name}</span>
+              </div>
+              <span class="track-arrow">›</span>
+            `;
+            li.addEventListener('click', () => activateTrack(audioUrl, 'list'));
+            audioList.appendChild(li);
+          });
         });
 
       // Geolocation

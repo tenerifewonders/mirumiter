@@ -5,23 +5,29 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "0. Introduction",
+        "Name": "0. Introduction: The geometric light of secret societies",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/0.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5232417, 28.3906668]
+        "coordinates": [
+          -16.5232417,
+          28.3906668
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "1. Plaza de la Constitución",
+        "Name": "1. Plaza de la Constitución – The Heart of the Town",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/1.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5232417, 28.3906668]
+        "coordinates": [
+          -16.5232417,
+          28.3906668
+        ]
       }
     },
     {
@@ -32,436 +38,570 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5226334, 28.3901557]
+        "coordinates": [
+          -16.5226334,
+          28.3901557
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.1 The Terrace Gardens",
+        "Name": "2.0. Liceo de Taoro – Echoes of Enlightenment",
+        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/2.0.mp3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5226334,
+          28.3901557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.1. The Terrace Gardens – The Pulse of the Clock",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/2.1.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5226334, 28.3901557]
+        "coordinates": [
+          -16.5226334,
+          28.3901557
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.2 The Liceo Hall",
+        "Name": "2.2. The Liceo Hall: Proportion and Encounter",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/2.2.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5226334, 28.3901557]
+        "coordinates": [
+          -16.5226334,
+          28.3901557
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.3 The Cafeteria Terrace",
+        "Name": "2.3. The Cafeteria Terrace – The Lights of Understanding",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/2.3.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5226334, 28.3901557]
+        "coordinates": [
+          -16.5226334,
+          28.3901557
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.4 The Staircase",
+        "Name": "2.4. The Staircase – The Geometry of Thought",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/2.4.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5226334, 28.3901557]
+        "coordinates": [
+          -16.5226334,
+          28.3901557
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "3. Jardines Victoria",
+        "Name": "3. The Victoria Gardens & The Masonic Mausoleum — The Exile at Quinta Roja",
         "audio": ""
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5229748, 28.3895012]
+        "coordinates": [
+          -16.5229748,
+          28.3895012
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.1 The Iron Gate",
+        "Name": "3.1. The Iron Gate: A Garden That Was Never Meant to Bloom",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/3.1.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5229748, 28.3895012]
+        "coordinates": [
+          -16.5229748,
+          28.3895012
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.2 The Upper Terrace",
+        "Name": "3.2. The Upper Terrace: Geometry and Defiance",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/3.2.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5229748, 28.3895012]
+        "coordinates": [
+          -16.5229748,
+          28.3895012
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.3 The Central Axis",
+        "Name": "3.3. The Central Axis: The Stairway Between Worlds",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/3.3.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5229748, 28.3895012]
+        "coordinates": [
+          -16.5229748,
+          28.3895012
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.4 The Mausoleum",
+        "Name": "3.4. The Mausoleum: The Temple of the Exiled Nobleman",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/3.4.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5229748, 28.3895012]
+        "coordinates": [
+          -16.5229748,
+          28.3895012
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "3.5 The Lower Terrace",
+        "Name": "3.5. The Lower Terrace: The Voice of Silence",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/3.5.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5229748, 28.3895012]
+        "coordinates": [
+          -16.5229748,
+          28.3895012
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Hijuela del Botánico",
+        "Name": "4. Hijuela del Jardín Botánico — The Geometry of Living Light",
         "audio": ""
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.524097, 28.3890788]
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.1 The Central Axis",
+        "Name": "4.1. The Central Axis",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/4.1.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.524097, 28.3890788]
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.2 The Araucaria",
+        "Name": "4.2. The Araucaria: A Living Compass",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/4.2.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.524097, 28.3890788]
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.3 The Water Basin",
+        "Name": "4.3. The Water Basin",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/4.3.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.524097, 28.3890788]
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.4 The Dragon Tree",
+        "Name": "4.4. The Dragon Tree and the Circle",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/4.4.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.524097, 28.3890788]
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.5 The Peripheral Wall",
+        "Name": "4.5. The Peripheral Wall",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/4.5.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.524097, 28.3890788]
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.6 Farewell",
+        "Name": "4.6. Enlightenment Rationalism",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/4.6.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.524097, 28.3890788]
+        "coordinates": [
+          -16.524097,
+          28.3890788
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "5. Town Hall Square",
+        "Name": "5. Town Hall Square – The Geometry of Civic Power",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/5.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5249449, 28.3893242]
+        "coordinates": [
+          -16.5249449,
+          28.3893242
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6. Church of La Concepción",
+        "Name": "6. The Church of La Concepción — Symbols Written in Stone",
         "audio": ""
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.1 The Main Entrance",
+        "Name": "6.1. The Main Entrance",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.1.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.2 The Nave and Central Axis",
+        "Name": "6.2. The Nave and Central Axis",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.2.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.3 Chapel of Calvary",
+        "Name": "6.3. Chapel of Calvary",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.3.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.4 Chapel of Candelaria",
+        "Name": "6.4. Chapel of Candelaria",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.4.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.5 Head of the Gospel Nave",
+        "Name": "6.5. Head of the Gospel Nave",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.5.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.6 Chapel of the Souls",
+        "Name": "6.6. Chapel of the Souls",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.6.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.7 Head of the Epistle Nave",
+        "Name": "6.7. Head of the Epistle Nave",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.7.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.8 High Altar",
+        "Name": "6.8. High Altar",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.8.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.9 Choir",
+        "Name": "6.9. Choir",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.9.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.10 Main Sacristy",
+        "Name": "6.10. Main Sacristy",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.10.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.11 Museum Level 1",
+        "Name": "6.11. Museum Level 1 – Liturgical Treasure",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.11.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.12 Documents and Parish Records",
+        "Name": "6.12. Museum Level 1 – Documents and Records",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.12.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "6.13 Museum Level 2 & Return",
+        "Name": "6.13. Museum Level 2 – Upper Floor & Closing",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/6.13.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5256631, 28.389966]
+        "coordinates": [
+          -16.5256631,
+          28.389966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "7. Calle Tomás Zerolo",
+        "Name": "7. Calle Tomás Zerolo – The Enigma of the Mark",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/7.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5241823, 28.3907512]
+        "coordinates": [
+          -16.5241823,
+          28.3907512
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "8. Molino de Gofio La Máquina",
+        "Name": "8. Molino de Gofio La Máquina – The Sound of Ancestral Grain",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/8.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5260502, 28.3889326]
+        "coordinates": [
+          -16.5260502,
+          28.3889326
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "9. Additional Touristic Visit",
+        "Name": "9. The Museums (Casa de los Balcones & Museo Molino del Hoyo)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/9.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5258333, 28.3883333]
+        "coordinates": [
+          -16.5258333,
+          28.3883333
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "10. Casa de los Balcones",
+        "Name": "10. Casa Palacio Lercaro — The manor house of the town",
         "audio": ""
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5260499, 28.3890959]
+        "coordinates": [
+          -16.5260499,
+          28.3890959
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "10.1 The Entrance Hall",
+        "Name": "10.1. The Entrance Hall",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/10.1.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5260499, 28.3890959]
+        "coordinates": [
+          -16.5260499,
+          28.3890959
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "10.2 The Courtyard",
+        "Name": "10.2. The Courtyard",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/10.2.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5260499, 28.3890959]
+        "coordinates": [
+          -16.5260499,
+          28.3890959
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "10.3 The Café-Restaurant",
+        "Name": "10.3. The Café-Restaurant",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/10.3.mp3"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-16.5260499, 28.3890959]
+        "coordinates": [
+          -16.5260499,
+          28.3890959
+        ]
       }
     }
   ]
