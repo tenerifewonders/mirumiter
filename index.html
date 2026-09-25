@@ -961,25 +961,30 @@
           return res.json();
         })
         .then(data => {
-          // Sections such as "2. Liceo..." are headings, not audio tracks.
-          // Their first child track supplies the audio used when the section
-          // marker itself is clicked.
+          // A real section heading is a feature WITHOUT an audio URL.
+          // Numbered main tracks such as 0, 1, 5, 7, 8 and 9 DO have audio
+          // and must therefore remain clickable tracks in the playlist.
+          // Headings such as 2, 3, 4, 6 and 10 have no audio and use their
+          // first child track as the audio activated from the section marker.
           const features = data.features || [];
           const firstAudioBySection = {};
-          let currentSection = null;
 
-          features.forEach(feature => {
+          features.forEach((feature, index) => {
             const name = feature.properties?.Name || '';
-            const sectionMatch = name.match(/^\s*(\d+)\.\s+(?!\d)/);
-            const subMatch = name.match(/^\s*(\d+)\.(\d+)/);
+            if (feature.properties?.audio) return;
 
-            if (sectionMatch && !subMatch) {
-              currentSection = sectionMatch[1];
-              return;
-            }
+            const sectionMatch = name.match(/^\s*(\d+)\.\s/);
+            if (!sectionMatch) return;
 
-            if (subMatch && feature.properties?.audio && !firstAudioBySection[subMatch[1]]) {
-              firstAudioBySection[subMatch[1]] = feature.properties.audio;
+            const sectionNumber = sectionMatch[1];
+            for (let i = index + 1; i < features.length; i++) {
+              const next = features[i];
+              const nextName = next.properties?.Name || '';
+              if (/^\s*(\d+)\.\s/.test(nextName) && !/^\s*\d+\.\d+/.test(nextName)) break;
+              if (next.properties?.audio) {
+                firstAudioBySection[sectionNumber] = next.properties.audio;
+                break;
+              }
             }
           });
 
@@ -988,9 +993,9 @@
               const props = feature.properties || {};
               const name = props.Name || '';
               const audioUrl = props.audio || null;
-              const sectionMatch = name.match(/^\s*(\d+)\.\s+(?!\d)/);
+              const sectionMatch = name.match(/^\s*(\d+)\.\s/);
+              const isSection = !audioUrl && !!sectionMatch;
               const subMatch = name.match(/^\s*(\d+)\.(\d+)/);
-              const isSection = !!sectionMatch && !subMatch;
               const sectionNumber = sectionMatch ? sectionMatch[1] : (subMatch ? subMatch[1] : null);
               const sectionAudio = sectionNumber ? firstAudioBySection[sectionNumber] : null;
               const markerAudio = audioUrl || (isSection ? sectionAudio : null);
