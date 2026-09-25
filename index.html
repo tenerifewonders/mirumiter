@@ -1005,6 +1005,25 @@
               : name;
           };
 
+          const getFirstSubstopAudio = feature => {
+            const parentMatch = getFeatureName(feature).match(/^\s*(\d+)\.\s/);
+            if (!parentMatch) return '';
+
+            const parentNumber = Number(parentMatch[1]);
+            const childAudio = data.features
+              .map(candidate => {
+                const candidateName = getFeatureName(candidate);
+                const match = candidateName.match(/^\s*(\d+)\.(\d+)(?:\.|\s|$)/);
+                return match && Number(match[1]) === parentNumber && candidate.properties?.audio
+                  ? { order: Number(match[2]), audio: candidate.properties.audio }
+                  : null;
+              })
+              .filter(Boolean)
+              .sort((a, b) => a.order - b.order);
+
+            return childAudio[0]?.audio || '';
+          };
+
           const seenAudioUrls = new Set();
           data.features.forEach(feature => {
             const properties = feature.properties || {};
@@ -1051,9 +1070,10 @@
 
               layer.bindPopup(name);
 
-              if (audioUrl) {
-                if (!markersByAudio[audioUrl]) markersByAudio[audioUrl] = layer;
-                layer.on('click', () => activateTrack(audioUrl, 'marker'));
+              const markerAudioUrl = audioUrl || getFirstSubstopAudio(feature);
+              if (markerAudioUrl) {
+                if (!markersByAudio[markerAudioUrl]) markersByAudio[markerAudioUrl] = layer;
+                layer.on('click', () => activateTrack(markerAudioUrl, 'marker'));
               }
             }
           }).addTo(map);
