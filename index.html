@@ -975,7 +975,7 @@
           // markers. Every real GeoJSON point keeps its own position. A
           // no-audio section marker activates the first audio in that section.
           const getSectionNumber = (name) => {
-            const m = String(name || '').match(/^\s*(\d+)\.(?=\s|\d)/);
+            const m = String(name || '').match(/^\s*(\d+)\.(?=\s)/);
             return m ? m[1] : null;
           };
 
