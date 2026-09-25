@@ -922,14 +922,18 @@
 
     function initMapAndRoute(route) {
       if (!map) {
-        map = L.map('map', { attributionControl: false });
-        mainTileLayer = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
-          minZoom: 10,
-          maxZoom: 18,
-          maxNativeZoom: 18,
-          tileSize: 256
-        }).addTo(map);
-      }
+  map = L.map('map', { 
+    attributionControl: false,
+    minZoom: 13 // 👈 ¡Súper importante! Bloquea el mapa a nivel global
+  });
+
+  mainTileLayer = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
+    minZoom: 13,
+    maxZoom: 18,
+    maxNativeZoom: 18,
+    tileSize: 256
+  }).addTo(map);
+}
 
       map.setView(route.center, route.zoom);
       setTimeout(() => {

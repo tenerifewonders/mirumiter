@@ -10,10 +10,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5232417,
-          28.3906668
-        ]
+        "coordinates": [-16.5232417, 28.3906668]
       }
     },
     {
@@ -24,24 +21,18 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5232417,
-          28.3906668
-        ]
+        "coordinates": [-16.5232417, 28.3906668]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.0 Liceo de Taoro",
-        "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/orotava_en/2.0.mp3"
+        "Name": "2. Liceo de Taoro",
+        "audio": ""
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5226334,
-          28.3901557
-        ]
+        "coordinates": [-16.5226334, 28.3901557]
       }
     },
     {
@@ -52,10 +43,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5226334,
-          28.3901557
-        ]
+        "coordinates": [-16.5226334, 28.3901557]
       }
     },
     {
@@ -66,10 +54,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5226334,
-          28.3901557
-        ]
+        "coordinates": [-16.5226334, 28.3901557]
       }
     },
     {
@@ -80,10 +65,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5226334,
-          28.3901557
-        ]
+        "coordinates": [-16.5226334, 28.3901557]
       }
     },
     {
@@ -94,10 +76,18 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5226334,
-          28.3901557
-        ]
+        "coordinates": [-16.5226334, 28.3901557]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "3. Jardines Victoria",
+        "audio": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.5229748, 28.3895012]
       }
     },
     {
@@ -108,10 +98,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5229748,
-          28.3895012
-        ]
+        "coordinates": [-16.5229748, 28.3895012]
       }
     },
     {
@@ -122,10 +109,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5229748,
-          28.3895012
-        ]
+        "coordinates": [-16.5229748, 28.3895012]
       }
     },
     {
@@ -136,10 +120,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5229748,
-          28.3895012
-        ]
+        "coordinates": [-16.5229748, 28.3895012]
       }
     },
     {
@@ -150,10 +131,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5229748,
-          28.3895012
-        ]
+        "coordinates": [-16.5229748, 28.3895012]
       }
     },
     {
@@ -164,10 +142,18 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5229748,
-          28.3895012
-        ]
+        "coordinates": [-16.5229748, 28.3895012]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4. Hijuela del Botánico",
+        "audio": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.524097, 28.3890788]
       }
     },
     {
@@ -178,10 +164,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.524097,
-          28.3890788
-        ]
+        "coordinates": [-16.524097, 28.3890788]
       }
     },
     {
@@ -192,10 +175,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.524097,
-          28.3890788
-        ]
+        "coordinates": [-16.524097, 28.3890788]
       }
     },
     {
@@ -206,10 +186,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.524097,
-          28.3890788
-        ]
+        "coordinates": [-16.524097, 28.3890788]
       }
     },
     {
@@ -220,10 +197,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.524097,
-          28.3890788
-        ]
+        "coordinates": [-16.524097, 28.3890788]
       }
     },
     {
@@ -234,10 +208,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.524097,
-          28.3890788
-        ]
+        "coordinates": [-16.524097, 28.3890788]
       }
     },
     {
@@ -248,10 +219,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.524097,
-          28.3890788
-        ]
+        "coordinates": [-16.524097, 28.3890788]
       }
     },
     {
@@ -262,10 +230,18 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5249449,
-          28.3893242
-        ]
+        "coordinates": [-16.5249449, 28.3893242]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "6. Church of La Concepción",
+        "audio": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -276,10 +252,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -290,10 +263,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -304,10 +274,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -318,10 +285,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -332,10 +296,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -346,10 +307,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -360,10 +318,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -374,10 +329,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -388,10 +340,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -402,10 +351,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -416,10 +362,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -430,10 +373,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -444,10 +384,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5256631,
-          28.389966
-        ]
+        "coordinates": [-16.5256631, 28.389966]
       }
     },
     {
@@ -458,10 +395,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5241823,
-          28.3907512
-        ]
+        "coordinates": [-16.5241823, 28.3907512]
       }
     },
     {
@@ -472,10 +406,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5260502,
-          28.3889326
-        ]
+        "coordinates": [-16.5260502, 28.3889326]
       }
     },
     {
@@ -486,10 +417,18 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5258333,
-          28.3883333
-        ]
+        "coordinates": [-16.5258333, 28.3883333]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "10. Casa de los Balcones",
+        "audio": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.5260499, 28.3890959]
       }
     },
     {
@@ -500,10 +439,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5260499,
-          28.3890959
-        ]
+        "coordinates": [-16.5260499, 28.3890959]
       }
     },
     {
@@ -514,10 +450,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5260499,
-          28.3890959
-        ]
+        "coordinates": [-16.5260499, 28.3890959]
       }
     },
     {
@@ -528,10 +461,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5260499,
-          28.3890959
-        ]
+        "coordinates": [-16.5260499, 28.3890959]
       }
     }
   ]
