@@ -7,7 +7,6 @@
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icon-192.png">
   <meta name="theme-color" content="#121212">
 
   <!-- Leaflet & Supabase -->
@@ -924,15 +923,21 @@
     }
 
     function initMapAndRoute(route) {
- if (!map) {
-  map = L.map('map', { attributionControl: false });
-  mainTileLayer = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
-    minZoom: 11,
-    maxZoom: 18,
-    maxNativeZoom: 18,
-    tileSize: 256
-  }).addTo(map);
-}
+      if (!map) {
+        map = L.map('map', { attributionControl: false });
+      }
+
+      // Route-specific tile limit: never request zoom levels that do not exist.
+      const routeMaxZoom = route.maxNativeZoom || 18;
+      if (mainTileLayer) {
+        map.removeLayer(mainTileLayer);
+      }
+      mainTileLayer = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
+        minZoom: 11,
+        maxZoom: routeMaxZoom,
+        maxNativeZoom: routeMaxZoom,
+        tileSize: 256
+      }).addTo(map);
 
       map.setView(route.center, route.zoom);
       setTimeout(() => {
@@ -993,9 +998,52 @@
             }
           };
 
+          const laLagunaNames = {
+            en: {
+              0: '0. Introduction: The City Where Mist Hides Stories',
+              1: '1. Church of La Concepción – The Devil of La Laguna',
+              2: "2. Lercáro Palace – Catalina's Ghost",
+              3: '3. Cathedral of San Cristóbal de La Laguna – Echoes Beneath the Dome',
+              4: '4. Calle Obispo Rey Redondo – The Street of Noble Houses',
+              5: '5. Nava Palace – Apparitions in the Nobility',
+              6: '6. Plaza del Adelantado – The Ancient Heart of Power',
+              7: '7. Old Convent of Santo Domingo – Echoes of Faith, Science, and Pirates',
+              8: "8. Epilogue: Alonso Fernández de Lugo's Rounds"
+            },
+            de: {
+              0: '0. Einführung: Die Stadt, in der der Nebel Geschichten verbirgt',
+              1: '1. Kirche La Concepción – Der Teufel von La Laguna',
+              2: '2. Lercáro-Palast – Catalinas Geist',
+              3: '3. Kathedrale von San Cristóbal de La Laguna – Echos unter der Kuppel',
+              4: '4. Calle Obispo Rey Redondo – Die Straße der Adelshäuser',
+              5: '5. Nava-Palast – Erscheinungen im Adel',
+              6: '6. Plaza del Adelantado – Das alte Machtzentrum',
+              7: '7. Altes Kloster Santo Domingo – Echos von Glaube, Wissenschaft und Piraten',
+              8: '8. Epilog: Die Runden von Alonso Fernández de Lugo'
+            },
+            fr: {
+              0: '0. Introduction : La ville où la brume cache les histoires',
+              1: '1. Église de La Concepción – Le Diable de La Laguna',
+              2: '2. Palais Lercáro – Le fantôme de Catalina',
+              3: '3. Cathédrale de San Cristóbal de La Laguna – Des échos sous la coupole',
+              4: '4. Calle Obispo Rey Redondo – La rue des demeures nobles',
+              5: '5. Palais Nava – Apparitions dans la noblesse',
+              6: '6. Plaza del Adelantado – L’ancien cœur du pouvoir',
+              7: '7. Ancien couvent de Santo Domingo – Échos de foi, de science et de pirates',
+              8: '8. Épilogue : Les rondes d’Alonso Fernández de Lugo'
+            }
+          };
+
           const getFeatureName = feature => {
             const properties = feature.properties || {};
             const name = properties.Name || '';
+            if (route.id === 'la-laguna') {
+              const match = (properties.audio || '').match(/\/(\d+)\.mp3(?:$|[?#])/);
+              const stopNumber = match ? parseInt(match[1], 10) : null;
+              return stopNumber !== null && laLagunaNames[currentLang] && laLagunaNames[currentLang][stopNumber]
+                ? laLagunaNames[currentLang][stopNumber]
+                : name;
+            }
             if (route.id !== 'anaga') return name;
 
             const match = (properties.audio || '').match(/\/(\d+)\.mp3(?:$|[?#])/);
