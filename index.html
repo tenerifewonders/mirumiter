@@ -960,7 +960,12 @@
           return res.json();
         })
         .then(data => {
-          const isSubIndexedStop = name => /^\s*\d+\.\d+/.test(name);
+          const isSubIndexedStop = name => {
+            const match = name.match(/^\s*(\d+)\.(\d+)(?:\.|\s|$)/);
+            if (!match) return false;
+
+            return !(route.id === 'puerto-cruz' && Number(match[1]) === 8 && Number(match[2]) === 0);
+          };
           const anagaNames = {
             en: {
               0: '0. Intro',
