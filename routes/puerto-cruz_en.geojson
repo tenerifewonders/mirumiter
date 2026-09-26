@@ -131,7 +131,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.1. \"La frontera del para?so\" (Mequinez Street, 2)",
+        "Name": "8.1. \"La frontera del para\u00edso\" (Mequinez Street, 2)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.1.mp3"
       },
       "geometry": {
@@ -145,7 +145,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.2. \"?Rum, rum, rum, la botella de rum!\" (Mequinez Street, 4)",
+        "Name": "8.2. \"\u00a1Rum, rum, rum, la botella de rum!\" (Mequinez Street, 4)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.2.mp3"
       },
       "geometry": {
@@ -173,7 +173,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.4. \"El Ni?o de las Pinturas\" (Mequinez Street, 66)",
+        "Name": "8.4. \"El Ni\u00f1o de las Pinturas\" (Mequinez Street, 66)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.4.mp3"
       },
       "geometry": {
@@ -187,7 +187,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.5. \"Si puedes so?arlo, puedes crearlo\" (Maretas Street, 11)",
+        "Name": "8.5. \"Si puedes so\u00f1arlo, puedes crearlo\" (Maretas Street, 11)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.5.mp3"
       },
       "geometry": {
@@ -201,7 +201,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.6. Mural (Pe?ita Street, 6)",
+        "Name": "8.6. Mural (Pe\u00f1ita Street, 6)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.6.mp3"
       },
       "geometry": {
@@ -271,7 +271,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.11. \"Nav?os vol?tiles\" (Teobaldo Power Street, 8)",
+        "Name": "8.11. \"Nav\u00edos vol\u00e1tiles\" (Teobaldo Power Street, 8)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.11.mp3"
       },
       "geometry": {
@@ -299,7 +299,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.13. \"?nfora voladora\" (Cruz Verde Street, 3)",
+        "Name": "8.13. \"\u00c1nfora voladora\" (Cruz Verde Street, 3)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.13.mp3"
       },
       "geometry": {
