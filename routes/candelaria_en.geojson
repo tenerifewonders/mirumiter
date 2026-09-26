@@ -13,7 +13,7 @@
         "coordinates": [
           -16.3697868,
           28.3513008,
-          0.0
+          0
         ]
       }
     },
@@ -28,14 +28,29 @@
         "coordinates": [
           -16.3697868,
           28.3513008,
-          0.0
+          0
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.1 Basilica - Part 1",
+        "Name": "2. Basilica of Nuestra Se\u00f1ora de Candelaria - The Mysterious Appearance That United Two Worlds.",
+        "audio": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3694216,
+          28.3512934,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2.1. The sanctuary facing the ocean.",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.1.Candelaria.mp3"
       },
       "geometry": {
@@ -43,14 +58,14 @@
         "coordinates": [
           -16.3694216,
           28.3512934,
-          0.0
+          0
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.2 Basilica - Part 2",
+        "Name": "2.2. The mystery of the dark woman.",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.2.Candelaria.mp3"
       },
       "geometry": {
@@ -58,14 +73,14 @@
         "coordinates": [
           -16.3694216,
           28.3512934,
-          0.0
+          0
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.3 Basilica - Part 3",
+        "Name": "2.3. CENTRAL NAVE \u2014 The path to the Virgin.",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.3.Candelaria.mp3"
       },
       "geometry": {
@@ -73,14 +88,14 @@
         "coordinates": [
           -16.3694216,
           28.3512934,
-          0.0
+          0
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.4 Basilica - Part 4",
+        "Name": "2.4. THE HIGH ALTAR \u2014 The Virgin of Candelaria.",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.4.Candelaria.mp3"
       },
       "geometry": {
@@ -88,14 +103,14 @@
         "coordinates": [
           -16.3694216,
           28.3512934,
-          0.0
+          0
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.5 Basilica - Part 5",
+        "Name": "2.5. Chaxiraxi and the Virgin: a single presence.",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.5.Candelaria.mp3"
       },
       "geometry": {
@@ -103,14 +118,14 @@
         "coordinates": [
           -16.3694216,
           28.3512934,
-          0.0
+          0
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "2.6 Basilica - Part 6",
+        "Name": "2.6. Tour of the temple.",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/2.6.Candelaria.mp3"
       },
       "geometry": {
@@ -118,7 +133,7 @@
         "coordinates": [
           -16.3694216,
           28.3512934,
-          0.0
+          0
         ]
       }
     },
@@ -133,14 +148,29 @@
         "coordinates": [
           -16.3690522,
           28.3497505,
-          0.0
+          0
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.1 Old Royal Road - Part 1",
+        "Name": "4. Old Royal Road (section by the plaza) - Memory Lives in the Road to Candelaria.",
+        "audio": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3694086,
+          28.3516713,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "4.1. THE ROAD - The Route of Past and Present.",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/4.1.Candelaria.mp3"
       },
       "geometry": {
@@ -148,14 +178,14 @@
         "coordinates": [
           -16.3694086,
           28.3516713,
-          0.0
+          0
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.2 Old Royal Road - Part 2",
+        "Name": "4.2. THE GREAT PILGRIMAGE - August 15th.",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/4.2.Candelaria.mp3"
       },
       "geometry": {
@@ -163,14 +193,14 @@
         "coordinates": [
           -16.3694086,
           28.3516713,
-          0.0
+          0
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Name": "4.3 Old Royal Road - Part 3",
+        "Name": "4.3. A TRADITION THAT COMES FROM FAR.",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/candelaria_en/4.3.Candelaria.mp3"
       },
       "geometry": {
@@ -178,7 +208,7 @@
         "coordinates": [
           -16.3694086,
           28.3516713,
-          0.0
+          0
         ]
       }
     }
