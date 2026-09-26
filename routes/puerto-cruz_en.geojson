@@ -33,7 +33,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "2. Avenida de Colón",
+        "Name": "2. Avenida de Col\u00f3n",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/2.mp3"
       },
       "geometry": {
@@ -61,7 +61,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "4. Church of Nuestra Señora",
+        "Name": "4. Church of Nuestra Se\u00f1ora",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/4.mp3"
       },
       "geometry": {
@@ -117,7 +117,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.0 La Ranilla - Intro",
+        "Name": "8.0. La Ranilla: Where the City Dreams Itself (Introduction)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.0.mp3"
       },
       "geometry": {
@@ -131,7 +131,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.1 La frontera del paraíso",
+        "Name": "8.1. \"La frontera del para?so\" (Mequinez Street, 2)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.1.mp3"
       },
       "geometry": {
@@ -145,7 +145,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.2 Ron, ron, ron",
+        "Name": "8.2. \"?Rum, rum, rum, la botella de rum!\" (Mequinez Street, 4)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.2.mp3"
       },
       "geometry": {
@@ -159,7 +159,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.3 La Macaronesia",
+        "Name": "8.3. \"La Macaronesia\" (Mequinez Street, 21)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.3.mp3"
       },
       "geometry": {
@@ -173,7 +173,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.4 El Niño de las Pinturas",
+        "Name": "8.4. \"El Ni?o de las Pinturas\" (Mequinez Street, 66)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.4.mp3"
       },
       "geometry": {
@@ -187,7 +187,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.5 Si puedes soñarlo",
+        "Name": "8.5. \"Si puedes so?arlo, puedes crearlo\" (Maretas Street, 11)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.5.mp3"
       },
       "geometry": {
@@ -201,7 +201,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.6 Mural by Dulk",
+        "Name": "8.6. Mural (Pe?ita Street, 6)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.6.mp3"
       },
       "geometry": {
@@ -215,7 +215,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.7 Los Magos",
+        "Name": "8.7. \"Los Magos\" (El Lomo Street, 28)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.7.mp3"
       },
       "geometry": {
@@ -229,7 +229,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.8 Kob",
+        "Name": "8.8. Mural (Teobaldo Power Street, 28)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.8.mp3"
       },
       "geometry": {
@@ -243,7 +243,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.9 La eterna juventud",
+        "Name": "8.9. \"La eterna juventud\" (Puerto Viejo Street, 17)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.9.mp3"
       },
       "geometry": {
@@ -257,7 +257,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.10 Ritual",
+        "Name": "8.10. \"Ritual\" (Teobaldo Power Street, 16)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.10.mp3"
       },
       "geometry": {
@@ -271,7 +271,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.11 Navíos volátiles",
+        "Name": "8.11. \"Nav?os vol?tiles\" (Teobaldo Power Street, 8)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.11.mp3"
       },
       "geometry": {
@@ -285,7 +285,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.12 Roa",
+        "Name": "8.12. Mural (El Lomo Street, 7)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.12.mp3"
       },
       "geometry": {
@@ -299,7 +299,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.13 Ánfora voladora",
+        "Name": "8.13. \"?nfora voladora\" (Cruz Verde Street, 3)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.13.mp3"
       },
       "geometry": {
@@ -313,7 +313,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "8.14 The Synthesis of the City",
+        "Name": "8.14. La Ranilla: The Synthesis of the City (Outro)",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/8.14.mp3"
       },
       "geometry": {
@@ -341,7 +341,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "10. Playa Jardín",
+        "Name": "10. Playa Jard\u00edn",
         "audio": "https://xzymbvnljudyypdyuisf.supabase.co/storage/v1/object/public/puerto-cruz_en/10.mp3"
       },
       "geometry": {
