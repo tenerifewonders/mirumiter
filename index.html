@@ -927,15 +927,17 @@
         map = L.map('map', { attributionControl: false });
       }
 
-      // Route-specific tile limit: never request zoom levels that do not exist.
-      const routeMaxZoom = route.maxNativeZoom || 18;
+      // Allow one extra zoom level; Leaflet scales the highest native tiles there.
+      const routeNativeZoom = route.maxNativeZoom || 18;
+      const routeMaxZoom = routeNativeZoom + 1;
+      map.setMaxZoom(routeMaxZoom);
       if (mainTileLayer) {
         map.removeLayer(mainTileLayer);
       }
       mainTileLayer = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
         minZoom: 11,
         maxZoom: routeMaxZoom,
-        maxNativeZoom: routeMaxZoom,
+        maxNativeZoom: routeNativeZoom,
         tileSize: 256
       }).addTo(map);
 
